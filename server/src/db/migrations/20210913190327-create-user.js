@@ -4,18 +4,43 @@ module.exports = {
     await queryInterface.createTable('Users', {
       id: {
         allowNull: false,
-        autoIncrement: true,
+        defaultValue: Sequelize.UUID,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.UUID
       },
+
       name: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
       },
-      createdAt: {
+
+      email: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        unique: true,
+        validate: {
+          isEmail: {
+            msg: "Invalid e-mail!"
+          }
+        }
+      },
+      
+      password: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+
+      role: {
+        type: Sequelize.ENUM("user", "client", "admin"),
+        allowNull: false
+      },
+
+      created_at: {
         allowNull: false,
         type: Sequelize.DATE
       },
-      updatedAt: {
+
+      updated_at: {
         allowNull: false,
         type: Sequelize.DATE
       }
