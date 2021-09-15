@@ -1,18 +1,17 @@
-/*
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
-
-const userRoutes = require("./routes/userRoutes");
+const app = express();
 
 const PORT = process.env.PORT || 3000;
 
-const app = express();
+
 
 app.use(cors());
 app.use(express.json());
 
-app.use("/user", userRoutes);
+app.use("/user", require("./routes/userRoutes"));
+app.use("/review", require("./routes/reviewRoutes"));
 
 app.listen(PORT, () => console.log("Servidor está rodando na porta: " + PORT));
-*/
+

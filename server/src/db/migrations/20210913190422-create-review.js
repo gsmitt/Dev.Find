@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('Reviews', {
+    await queryInterface.createTable('reviews', {
       id: {
         type: Sequelize.UUID,
         primaryKey: true,
@@ -17,7 +17,7 @@ module.exports = {
         allowNull: false,
         unique: true,
         references: {
-          model: "Users",
+          model: "users",
           key: "id"
         },        
         onUpdate: "CASCADE",
@@ -29,7 +29,7 @@ module.exports = {
         allowNull: false,
         unique: true,
         references: {
-          model: "Users",
+          model: "users",
           key: "id"
         },        
         onUpdate: "CASCADE",
@@ -41,17 +41,17 @@ module.exports = {
         allowNull: null
       },
       
-      createdAt: {
+      created_at: {
         allowNull: false,
         type: Sequelize.DATE
       },
-      updatedAt: {
+      updated_at: {
         allowNull: false,
         type: Sequelize.DATE
       }
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('Reviews');
+    await queryInterface.dropTable('reviews');
   }
 };

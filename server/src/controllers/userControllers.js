@@ -1,12 +1,17 @@
-const userServices = require("../services/userServices");
+const createHttpError = require("http-errors");
+const { User } = require("../db/models");
+
 
 async function get(req, res, next) {
-    try {   
-        const user = await userServices.getUser(res.locals.userId);
+    const userId = req.params.id
+
+    try {
+        const user = await User.findOne({where: { id: userId} });
+        console.log(user);
+
         res.json(user);
-    } catch (error) {
-        console.log(error);
-        next(error);
+    } catch (err) {
+        console.log(err);
     }
 }
 
@@ -15,11 +20,21 @@ async function create(req, res, next) {
         const user = {
             ...req.body
         }
-        const newUser = await userServices.createUser(user);
+        const { name, email, password, role} = user;  
+        
+        const [ newUser, created ] = await User.findOrCreate({
+            where: { email },
+            defaults: {name, password,role}
+        });
+    
+        if (!created) {
+            throw new createHttpError(409, "User already exists");
+        }
+
         res.json(newUser);
-    } catch (error) {
-        console.log(error);
-        next(error);
+    } catch (err) {
+        console.log(err);
+        next(err);
     }
 }
 
