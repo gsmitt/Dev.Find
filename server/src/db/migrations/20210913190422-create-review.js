@@ -27,7 +27,6 @@ module.exports = {
       user_get: {
         type: Sequelize.UUID,
         allowNull: false,
-        unique: true,
         references: {
           model: "users",
           key: "id"

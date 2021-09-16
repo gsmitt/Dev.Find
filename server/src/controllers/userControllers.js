@@ -1,3 +1,4 @@
+const { Op } = require("sequelize");
 const createHttpError = require("http-errors");
 const { User } = require("../db/models");
 
@@ -6,7 +7,7 @@ async function get(req, res, next) {
     const userId = req.params.id
 
     try {
-        const user = await User.findOne({where: { id: userId} });
+        const user = await User.findOne({where: { id: userId } });
         console.log(user);
 
         res.json(user);
@@ -20,11 +21,11 @@ async function create(req, res, next) {
         const user = {
             ...req.body
         }
-        const { name, email, password, role} = user;  
+        const { name, email, password, role, username} = user;  
         
         const [ newUser, created ] = await User.findOrCreate({
-            where: { email },
-            defaults: {name, password,role}
+            where: {[Op.or]: [{ email }, { username }]},
+            defaults: {name, password, role, email, username}
         });
     
         if (!created) {

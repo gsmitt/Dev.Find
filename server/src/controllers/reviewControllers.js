@@ -3,12 +3,12 @@ const createHttpError = require("http-errors");
 const { Review } = require("../db/models");
 
 async function get(req, res, next) {
-    const reviewId = req.params.id
+    const reviewedId = req.params.id
     try {
-        const review = await Review.findOne({where: { id: reviewId} });
-        console.log(review);
+        const reviews = await Review.findAll({where: { user_get: reviewedId} });
+        console.log(reviews);
 
-        res.json(review);
+        res.json(reviews);
     } catch (err) {
         console.log(err);
     }
@@ -23,19 +23,21 @@ async function create(req, res, next) {
         
         const [ newReview, created ] = await Review.findOrCreate({
             where: {[Op.and]: [{ user_req }, { user_get }]},
-            defaults: { description, score }
+            defaults: { description, score, user_req, user_get}
         });
     
         if (!created) {
             throw new createHttpError(409, "This user has already made a review for this user!");
         }
 
-        res.json(newUser);
+        res.json(newReview);
     } catch (err) {
         console.log(err);
         next(err);
     }
 }
+
+
 
 module.exports = {
     get,

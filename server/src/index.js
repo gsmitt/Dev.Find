@@ -12,6 +12,8 @@ app.use(express.json());
 
 app.use("/user", require("./routes/userRoutes"));
 app.use("/review", require("./routes/reviewRoutes"));
+app.use("/post", require("./routes/postRoutes"));
+app.use("/auth", require("./routes/authRoutes"));
 
 app.listen(PORT, () => console.log("Servidor está rodando na porta: " + PORT));
 
