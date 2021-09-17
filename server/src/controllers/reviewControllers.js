@@ -27,7 +27,7 @@ async function create(req, res, next) {
         });
     
         if (!created) {
-            throw new createHttpError(409, "This user has already made a review for this user!");
+            throw new createHttpError(409, "This user has already made a review for this user");
         }
 
         res.json(newReview);

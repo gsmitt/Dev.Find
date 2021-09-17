@@ -8,8 +8,6 @@ async function get(req, res, next) {
 
     try {
         const user = await User.findOne({where: { id: userId } });
-        console.log(user);
-
         res.json(user);
     } catch (err) {
         console.log(err);
