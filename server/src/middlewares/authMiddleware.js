@@ -17,12 +17,12 @@ module.exports = (permissions) => {
             if (!permissions.includes(payload.role)) {
                 next(createHttpError(403, "You don't have permission"));    
             }              
-            
-            res.locals.userId = payload.sub;
+            res.locals.userId = payload.id;
+            res.locals.userRole = payload.role;
 
             next();
-        } catch (error) {
-            console.log(error);
+        } catch (err) {
+            console.log(err);
             next(createHttpError(401, "Invalid Token"));
         }    
     }    
