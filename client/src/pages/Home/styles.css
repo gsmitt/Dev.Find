@@ -1,3 +1,4 @@
+
 *{
     margin: 0;
     padding: 0;
@@ -8,6 +9,12 @@ body{
     background-color:  white;
 }
 
+.text-list{
+    font-size: 34px;
+    color: white;
+    padding-top: 50px;
+    margin-left: 20px;
+}
 .container{
     background-color: #ff9900;
     height: 500px;
@@ -17,9 +24,27 @@ body{
 .body-list{
     list-style: none;
 }
-
-.text-list{
-    font-size: 28px;
-    color: white;
-    margin-left: 30px;
+.botao-contratar{
+    border: 2px solid #fff;
+    background-color: #fff;
+    padding: 5px 5%;
+    justify-content: center;
 }
+.botao-seja-um{
+    border: hidden;
+    background-color: #783f04;
+    padding: 5px 5%;
+    justify-content: center;
+}
+.texto-botao-contratar{
+    color: #783f04;
+    font-size: 20px;
+    text-align: center;
+}
+.texto-botao-seja-um{
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+}
+
+
