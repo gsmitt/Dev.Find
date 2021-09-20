@@ -3,34 +3,23 @@
     padding: 0;
     box-sizing: border-box;  
 }
-.logo{
-    width: 18%;
-}
-.geral{
-    background-color: lightgrey;
-}
-.lista-header{
-    list-style: none;
-    display: flex;
-    right: 100px;
-    align-items: center;
-}
-.item-lista-header{
-    display: inline-block;
-    justify-content: space-between;
-    padding-left: 10px;
-    align-items: center;
+
+body{
+    background-color:  white;
 }
 
-.lista-header .item-lista-header{
-    margin-left: 50;
-    
-  }
-.texto-nav-link{
-    text-decoration: none;
+.container{
+    background-color: #ff9900;
+    height: 500px;
+    max-width: 100%;
 }
-.texto-home{
-    color: #783F04;
-    text-decoration: none;
-    
+
+.body-list{
+    list-style: none;
+}
+
+.text-list{
+    font-size: 28px;
+    color: white;
+    margin-left: 30px;
 }
