@@ -5,11 +5,12 @@ const { Post } = require("../db/models");
 
 
 async function create(req, res, next) {
+    const user_id = res.locals.userId;
     try {
         const post = {
             ...req.body
         }
-        const { user_id, description, title } = post;  
+        const { description, title } = post;  
         
         const newPost = await Post.create({
             user_id,
@@ -28,13 +29,19 @@ async function create(req, res, next) {
 }
 
 async function deletePost(req,res,next) {
-    const postId = req.params.id
+    const target = req.params.id
+    const userId = res.locals.userId;
+    const userRole = res.locals.userRole;
+    
     try {
-        const post = await Post.findOne({where: { id: postId } });
+        const post = await Post.findOne({where: { id: target } });
         
         if (!post) throw new createHttpError(404, "This post does not exist");
 
-        Post.destroy({where: { id: postId }})
+
+        if (!((userId == post.user_id) || (userRole == "admin"))) throw new createHttpError(403, "You don't have permission to do this");
+
+        Post.destroy({where: { id: target }})
         
         res.json()
     } catch (err) {
@@ -44,11 +51,16 @@ async function deletePost(req,res,next) {
 }
  
 async function update(req,res,next) {
-    const postId = req.params.id
+    const target = req.params.id
+    const userId = res.locals.userId;
+    const userRole = res.locals.userRole;
+    
     try{
-        const post = await Post.findOne({where: { id: postId } });
+        const post = await Post.findOne({where: { id: target } });
         
         if (!post) throw new createHttpError(404, "This post does not exist");
+
+        if (!((userId == post.user_id) || (userRole == "admin"))) throw new createHttpError(403, "You don't have permission to do this");
 
         Object.assign(post, req.body);
 

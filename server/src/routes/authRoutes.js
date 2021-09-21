@@ -5,6 +5,7 @@ router.post("/login", authControllers.login);
 router.post("/refreshToken", authControllers.refresh);
 
 // login google
-// router.post("/login-google", authControllers.loginGoogle);
+
+router.post("/login-google", authControllers.loginGoogle);
 
 module.exports = router;

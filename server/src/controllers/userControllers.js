@@ -38,14 +38,18 @@ async function create(req, res, next) {
 }
 
 async function deleteUser(req,res,next) {
+    const target = req.params.id
     const userId = res.locals.userId;
+    const userRole = res.locals.userRole;
     try {
-        const user = await User.findOne({where: { id: userId } });
-        if (!user){
-            throw new createHttpError(404, "This user does not exist");
-        } else {
-            User.destroy({where: { id: userId }})
-        }
+        const user = await User.findOne({where: { id: target } });
+        
+        if (!user) throw new createHttpError(404, "This user does not exist");
+
+        if (!((userId == user.id) || (userRole == "admin"))) throw new createHttpError(403, "You don't have permission to do this");
+
+        User.destroy({where: { id: target }})
+        
         res.json()
     } catch (err) {
         console.log(err);
@@ -54,13 +58,17 @@ async function deleteUser(req,res,next) {
 }
 
 async function update(req,res,next) {
+    const target = req.params.id
     const userId = res.locals.userId;
+    const userRole = res.locals.userRole;
 
     try{
-        const user = await User.findOne({where: { id: userId } });
+        const user = await User.findOne({where: { id: target } });
         
         if (!user) throw new createHttpError(404, "This user does not exist");
 
+        if (!((userId == user.id) || (userRole == "admin"))) throw new createHttpError(403, "You don't have permission to do this");
+       
         Object.assign(user, req.body);
 
         const updated = await user.save();
