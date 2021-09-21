@@ -1,6 +1,8 @@
 import "./styles.css";
 import React from "react";
 import logo from "./logo.png"
+import { FaGithub } from 'react-icons/fa';
+import { FaLinkedin } from 'react-icons/fa';
 
 export class Footer extends React.Component {
     render() {
@@ -12,15 +14,19 @@ export class Footer extends React.Component {
                     <footer>
                         <li className="logo-list"><img className="logo-1" src={logo} alt="" /></li>
                         <li className="footer-itens-list">
-                            <a className="a-texts">Sobre</a>
-                            <a className="a-texts">login</a>
-                            <a className="a-texts">cadastra-se</a>
-                            <a className="a-texts">contato</a>
-                            <a className="a-texts">Siga-nos</a>
+                            <a href="#" className="a-texts">Sobre</a> <br />
+                            <a href="#" className="a-texts">login</a> <br />
+                            <a href="#" className="a-texts">cadastra-se</a> <br />
+                            <a href="#" className="a-texts">contato</a> <br />
+                            <a href="#" className="a-texts">Siga-nos</a> <br /> <br />
+                        </li>
+                        <li className="icon-list">
+                            <a href="#" className="icon-itens"><FaGithub /></a>
+                            <a href="#" className="icon-itens"><FaLinkedin /></a>
                         </li>
                         <section className="section-container">
-                            <p className="text-p">© 2021 dev.find( ) — Direitos
-                                7reservados</p>
+                            <p className="text-p">© 2021 dev.find( ) — Direitos</p>
+                            <p className="text-p2">reservados</p>
                         </section>
                     </footer>
                 </div>
