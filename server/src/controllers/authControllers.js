@@ -110,9 +110,23 @@ async function refresh(req, res, next) {
     }
 }
 
+async function loginGoogle(req, res, next) {
+    try {
+        const { googleToken } = req.body;
+
+        const tokens = await authServices.loginGoogle(googleToken);        
+
+        res.json(tokens);
+    } catch (error) {
+        console.log(error);
+        next(error);
+    }
+}
+
 
 
 module.exports = {
     login,
-    refresh
+    refresh,
+    loginGoogle
 }
