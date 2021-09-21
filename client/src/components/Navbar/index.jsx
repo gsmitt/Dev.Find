@@ -15,6 +15,9 @@ function Navbar() {
   
     return (
       <>
+      <div className={sidebar ? "filter-on" : "filter-off"}>
+
+      </div>
         <IconContext.Provider value={{ color: '#060b26' }}>
           
           <div className='navbar'>

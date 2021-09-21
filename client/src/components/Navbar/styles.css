@@ -1,4 +1,4 @@
-.navbar {
+  .navbar {
     background-color: #fff;
     height: 65px;
     width: 500px;
@@ -8,6 +8,27 @@
     align-items: center;
   }
   
+  .filter-off {
+    background-color: #000;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 3;
+    opacity: 0%;
+    pointer-events: none;
+  }
+
+  .filter-on {
+    background-color: #000;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 3;
+    transition: ease .5s;
+    opacity: 30%;
+    pointer-events: none;
+  }
+
   .menu-bars {
     margin-left: 10rem;
     font-size: 25px;
@@ -24,6 +45,7 @@
     top: 0;
     right:-100%;
     transition: 850ms;
+    z-index: 4;
   }
   
   .nav-menu.active {
