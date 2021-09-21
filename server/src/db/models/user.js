@@ -9,8 +9,13 @@ module.exports = (sequelize, DataTypes) => {
       this.hasMany(models.Post, { foreignKey: "user_id" })
       this.hasMany(models.Review, { foreignKey: "user_req" })
       this.hasMany(models.Review, { foreignKey: "user_get" })
+      this.hasOne(models.RefreshToken, { foreignKey: "user_id" })
+    }
+    isPasswordValid(password) {
+      return bcrypt.compareSync(password, this.password);
     }
   };
+
   User.init({
     id: {
       type: DataTypes.UUID,
