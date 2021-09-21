@@ -33,8 +33,9 @@ body{
 .botao-seja-um{
     border: hidden;
     background-color: #783f04;
-    padding: 5px 5%;
+    padding: 8px 6%;
     justify-content: center;
+    margin-top: 15px;
 }
 .texto-botao-contratar{
     color: #783f04;
@@ -46,5 +47,64 @@ body{
     font-size: 20px;
     text-align: center;
 }
-
-
+.buttons{
+    margin-top: 150px;
+}
+.titulo{
+    text-align: center;
+}
+.p-title-1{
+    color: #FF9900;
+}
+.p-title-2{
+    color: #783f04;
+}
+.p-desc{
+    color: #ffff;
+    background-color: #ff9900;
+    margin-top: 20px;
+    text-align: center  ;
+}
+.titulo--icon{
+    text-align: center;
+    color: #ff9900;
+}
+.desc--icon{
+    text-align: center;
+    margin-right: 10px;
+    margin-top: 20px;
+    color: #783f04;
+}
+.icon--desc{
+    margin-top: 20px;
+    font-size: 40px;
+    text-align: center;
+}
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 20px 20px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "."
+      "."
+      "."
+      "."
+      ".";
+  }
+  
+ .box{
+    border: 2px solid #ff9900;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top:50px;
+    padding-top: 40%;
+    background-color: transparent;
+}
+.box-text{
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    text-align: center;
+}
