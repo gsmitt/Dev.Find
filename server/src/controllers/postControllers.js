@@ -27,8 +27,42 @@ async function create(req, res, next) {
     }
 }
 
+async function deletePost(req,res,next) {
+    const postId = req.params.id
+    try {
+        const post = await Post.findOne({where: { id: postId } });
+        
+        if (!post) throw new createHttpError(404, "This post does not exist");
 
+        Post.destroy({where: { id: postId }})
+        
+        res.json()
+    } catch (err) {
+        console.log(err);
+        next(err);
+    }
+}
+ 
+async function update(req,res,next) {
+    const postId = req.params.id
+    try{
+        const post = await Post.findOne({where: { id: postId } });
+        
+        if (!post) throw new createHttpError(404, "This post does not exist");
+
+        Object.assign(post, req.body);
+
+        const updated = await post.save();
+
+        res.json(updated)
+    } catch(err) {
+        console.log(err);
+        next(err);
+    }
+}
 
 module.exports = {
-    create
+    create,
+    deletePost,
+    update
 };
