@@ -11,6 +11,7 @@ body{
 .nav-container{
     background-color: white;
     height: 60px;
+    position: fixed;
     display: flex;
 }
 
@@ -37,7 +38,7 @@ body{
     align-items: center;
     margin-left: 20px;
 }
-  
+
 .texto-nav-link{
     text-decoration: none;
 }

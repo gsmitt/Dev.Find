@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;  
+}
+
+.footer-container{
+    background-color:#051120;
+    height: 500px;
+    max-width: 100%;
+    display: flex;
+}
+
+.logo-1{
+    width: 50%;
+    margin-top: 6px;
+    margin-left: 50px;
+}
+
+.footer-itens-list{
+    list-style: none;
+    right: 20px;
+    align-items: center;
+}
+
+.a-texts{
+    color: white;
+}
+
+.footer-itens-list{
+
+}
+
+.section-container{
+    background-color: white;
+    margin-top: 500px;
+}
+
+.text-p{
+    color: black;
+}
