@@ -1,18 +1,20 @@
 import './App.css';
 import React from "react";
-import { NavBar } from "../src/components/Navbar";
+import Navbar from './components/Navbar';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Footer } from "../src/components/Footer";
-import { Home } from "../src/pages/Home"
+import { Home } from "../src/pages/Home";
+
 
 
 function App() {
   return (
-    <div className="App">
-      <NavBar></NavBar>
-      <Home></Home>
-      <Footer></Footer>
-
-    </div>
+    <>
+      <Router>
+        <Navbar />
+        <Home/>
+      </Router>
+    </>
   );
 }
 

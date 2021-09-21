@@ -25,7 +25,9 @@ export class Home extends React.Component {
                             <button className="botao-contratar"><p className="texto-botao-contratar">Contratar</p></button>
                             <br />
                             <button className="botao-seja-um"><p className="texto-botao-seja-um">Seja um desenvolvedor</p></button>
+
                         </center>
+
                     </div>
                 </div>
                 <div className="desc">
@@ -38,18 +40,18 @@ export class Home extends React.Component {
                         que necessitam do serviço.
                         <br /><br /> <br />
                     </p>
-                    <br />
+                
                     <h1 className="titulo"> <span className="p-title-1">como</span> <span className="p-title-2">funciona?</span></h1>
                     <br />
                     <div className="icon--desc"><BiBulb /></div>
                     <h3 className="titulo--icon ">Contrate</h3>
                     <p className="desc--icon">Publique a sua vaga para milhares de
-                        profissionais,
+                    profissionais,
                         você irá receber propostas de freelancers talentosos em poucos minutos.</p>
                     <div className="icon--desc"><BiBulb /></div>
                     <h3 className="titulo--icon ">Seja um de nós</h3>
                     <p className="desc--icon">Publique a sua vaga para milhares de
-                        profissionais,
+                    profissionais,
                         você irá receber propostas de freelancers talentosos em poucos minutos.</p>
 
                     <br /><br />
@@ -68,12 +70,12 @@ export class Home extends React.Component {
                     </p>
                     <br /> <h1 className="titulo"> <span className="p-title-1">nossas</span> <span className="p-title-2">vantagens</span></h1>
                     <div className="parent">
-                        <div className="box"><p className="box-text">+<NumberCounter end={100} delay={4}/></p></div>
-                        <div className="box"><p className="box-text"><NumberCounter end={100} delay={4}/></p></div>
-                        <div className="box"><p className="box-text"><NumberCounter end={100} delay={4}/></p></div>
-                        <div className="box"><p className="box-text"><NumberCounter end={100} delay={4}/></p></div>
-                        <div className="box"><p className="box-text"><NumberCounter end={100} delay={4}/></p></div>
-                        <div className="box"><p className="box-text"><NumberCounter end={100} delay={4}/></p></div>
+                        <div className="box"><p className="box-text">+<NumberCounter end={100} delay={4} /></p></div>
+                        <div className="box"><p className="box-text"><NumberCounter end={100} delay={4} /></p></div>
+                        <div className="box"><p className="box-text"><NumberCounter end={100} delay={4} /></p></div>
+                        <div className="box"><p className="box-text"><NumberCounter end={100} delay={4} /></p></div>
+                        <div className="box"><p className="box-text"><NumberCounter end={100} delay={4} /></p></div>
+                        <div className="box"><p className="box-text"><NumberCounter end={100} delay={4} /></p></div>
                     </div>
                 </div>
 
