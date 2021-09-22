@@ -15,7 +15,7 @@ export class Home extends React.Component {
                 <div className="container">
                     <li className="body-list">
                         <p className="text-list">
-                            precisando de <br />
+                            Precisando de <br />
                             desenvolvedores? <br />
                             aqui você encontra!
                         </p>
@@ -34,7 +34,7 @@ export class Home extends React.Component {
                     <br /> <h1 className="titulo"> <span className="p-title-1">quem</span> <span className="p-title-2">somos</span></h1> <br />
                     <p className="p-desc">
                         <br />
-                        a dev.find( ) é uma  entidade que surgiu <br />
+                        A dev.find( ) é uma  entidade que surgiu <br />
                         com o propósito de facilitar o encontro <br />
                         de prestadores de serviços TI e pessoas <br />
                         que necessitam do serviço.
@@ -60,7 +60,7 @@ export class Home extends React.Component {
                     <p className="p-desc">
                         <br />
                         <br />
-                        nosso objetivo é tornar cada vez mais <br />
+                        Nosso objetivo é tornar cada vez mais <br />
                         acessível a busca de desenvolvedores. <br />
                         Assim honrando o nome dev.find( ). <br />
                         <br />
