@@ -98,3 +98,37 @@
     width: 150px;
     margin-left: 10px;
 }
+
+.entrar {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 8px 0px 8px 16px;
+  list-style: none;
+  height: 60px;
+  text-align: center;
+  
+}
+
+.entrar a {
+  text-decoration: none;
+  color: #fff;
+  background-color: #ff9900;
+  text-align: center;
+  font-weight: 400;
+  font-size: 18px;
+  width: 95%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  margin-top: 50px;
+  
+}
+.entrar span{
+  margin-left: 45px;
+}
+.entrar a:hover {
+  background-color: #FF9900;
+  opacity: 0.3;
+}
