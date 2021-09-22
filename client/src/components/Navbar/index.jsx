@@ -4,7 +4,6 @@ import { FaBars } from 'react-icons/fa'
 import logo from "./logo.png"
 import { Link } from 'react-router-dom'
 import { SidebarData } from './SidebarData';
-import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import { IconContext } from 'react-icons';
 
