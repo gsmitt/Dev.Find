@@ -15,15 +15,16 @@ export class Footer extends React.Component {
                     <footer>
                         <li className="logo-list"><Logo cor="white"/></li>
                         <li className="footer-itens-list">
-                            <a href="#" className="a-texts">Sobre</a> <br />
-                            <a href="#" className="a-texts">login</a> <br />
-                            <a href="#" className="a-texts">cadastra-se</a> <br />
-                            <a href="#" className="a-texts">contato</a> <br />
-                            <a href="#" className="a-texts">Siga-nos</a> <br /> <br />
+                            <a href="/sobre" className="a-texts">Sobre</a> <br />
+                            <a href="/login" className="a-texts">Login</a> <br />
+                            <a href="/cadastro" className="a-texts">Cadastra-se</a> <br />
+                            <a href="/contato" className="a-texts">Contato</a> <br />
+                            <p className="a-texts">Siga-nos</p> <br /> 
                         </li>
                         <li className="icon-list">
-                            <a href="#" className="icon-itens"><FaGithub /></a>
-                            <a href="#" className="icon-itens"><FaLinkedin /></a>
+                            <a href="https://github.com/gsmitt/Dev.Find"  className="icon-itens"><FaGithub /></a>
+                            <a href="https://www.linkedin.com/in/tech-soldiers-%E2%A0%80-15a588221/" className="icon-itens"><FaLinkedin /></a>
+                            <hr className="line"></hr>
                         </li>
                         <section className="section-container">
                             <p className="text-p">© 2021 dev.find( ) — Direitos</p>

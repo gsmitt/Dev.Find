@@ -1,6 +1,7 @@
 import "./styles.css";
 import React from "react";
 import { BiBulb } from "react-icons/bi";
+import { FaUserFriends } from "react-icons/fa";
 import NumberCounter from 'number-counter';
 
 
@@ -45,10 +46,10 @@ export class Home extends React.Component {
                     <br />
                     <div className="icon--desc"><BiBulb /></div>
                     <h3 className="titulo--icon ">Contrate</h3>
-                    <p className="desc--icon">Publique a sua vaga para milhares de
+                    <p className="desc--icon">Publique o seu projeto para milhares de
                     profissionais,
                         você irá receber propostas de freelancers talentosos em poucos minutos.</p>
-                    <div className="icon--desc"><BiBulb /></div>
+                    <div className="icon--desc"><FaUserFriends /></div>
                     <h3 className="titulo--icon ">Seja um de nós</h3>
                     <p className="desc--icon">Publique a sua vaga para milhares de
                     profissionais,
