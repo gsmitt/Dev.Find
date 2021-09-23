@@ -14,11 +14,11 @@ export class Footer extends React.Component {
                     <footer>
                         <li className="logo-list"><img className="logo-1" src={logo} alt="" /></li>
                         <li className="footer-itens-list">
-                            <a href="#" className="a-texts">Sobre</a> <br />
-                            <a href="#" className="a-texts">Login</a> <br />
-                            <a href="#" className="a-texts">Cadastra-se</a> <br />
-                            <a href="#" className="a-texts">Contato</a> <br />
-                            <a href="#" className="a-texts">Siga-nos</a> <br /> <br />
+                            <a href="/sobre" className="a-texts">Sobre</a> <br />
+                            <a href="/login" className="a-texts">Login</a> <br />
+                            <a href="/cadastro" className="a-texts">Cadastra-se</a> <br />
+                            <a href="/contato" className="a-texts">Contato</a> <br />
+                            <p className="a-texts">Siga-nos</p> <br /> 
                         </li>
                         <li className="icon-list">
                             <a href="https://github.com/gsmitt/Dev.Find"  className="icon-itens"><FaGithub /></a>

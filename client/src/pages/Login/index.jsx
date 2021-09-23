@@ -5,17 +5,19 @@ export function Login() {
     return (
         <div className="holder">
             <div className="parent">
-                <h3>Sign Up</h3>
-                <form action="">
+               <center>
+               <form action="">
+                        <input className="input--login" type="email" placeholder="E-mail" required/>
                     <div>
-                        <input type="text" placeholder="Usuário" required />
-                        <span class="border"></span>
+                        <input className="input--login2" type="password" placeholder="Senha" required/>
                     </div>
-                    <div>
-                        <input type="email" placeholder="E-mail" required/>
-                        <span class="border"></span>
-                    </div>
+                    <input type="submit" value="Entrar" class="private-inp"/>
+                    <p className="text--baixo">
+                    Não é membro?
+                    <a href="/cadastro" className="link--text"> Cadastre-se</a>
+                </p>
                 </form>
+               </center>
             </div>
         </div>
     );
