@@ -26,7 +26,7 @@ export const SidebarData = [
   },
   {
     title: 'Entrar',
-    path: '/entrar',
+    path: '/login',
     cName: 'entrar'
   },
 ];
