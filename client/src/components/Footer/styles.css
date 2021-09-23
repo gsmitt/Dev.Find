@@ -12,10 +12,8 @@
     flex-direction: column;
 }
 
-.logo-1{
-    width: 50%;
-    margin-top: 7px;
-    margin-left: 70px;
+.logo-list{
+    margin-left: 25vw;
 }
 
 .footer-itens-list{

@@ -3,6 +3,8 @@ const { User, RefreshToken } = require("../db/models");
 const jwt = require("jsonwebtoken");
 const validator = require("email-validator");
 const ms = require("ms");
+const { OAuth2Client } = require('google-auth-library');
+const { randomBytes } = require("crypto");
 
 
 async function createRefreshToken(id, role) {
@@ -110,19 +112,47 @@ async function refresh(req, res, next) {
     }
 }
 
+// aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa Falta terminar, não aguento mais.
 async function loginGoogle(req, res, next) {
+    const CLIENT_ID = process.env.GOOGLE_CLIENT_ID;
+    const client = new OAuth2Client(CLIENT_ID);
+
     try {
         const { googleToken } = req.body;
 
-        const tokens = await authServices.loginGoogle(googleToken);        
+        const ticket = await client.verifyIdToken({
+            idToken: googleToken,
+            audience: CLIENT_ID,
+        });
+    
+        const payload = ticket.getPayload();      
+        
+        console.log(payload);
+
+
+        const [ user ] = await User.findOrCreate({
+            where: {
+                email: payload.email
+            },
+            defaults: {
+                name: payload.name,
+                password: randomBytes(16).toString("hex")
+
+            }
+        });
+
+        const accessToken = await createAccessToken(user.id);
+        const refreshToken = await createRefreshToken(user.id);
+
+        const tokens = { accessToken, refreshToken };
 
         res.json(tokens);
     } catch (error) {
         console.log(error);
         next(error);
+        throw new createHttpError(401, "Invalid Google Token");
     }
 }
-
 
 
 module.exports = {
