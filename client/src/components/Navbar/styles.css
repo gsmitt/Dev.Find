@@ -1,10 +1,10 @@
   .navbar {
     background-color: #fff;
     height: 65px;
-    width: 500px;
+    width: 100vw;
     display: flex;
     position: fixed;
-    justify-content: start;
+    justify-content: space-between;
     align-items: center;
     font-family: 'Roboto Slab', serif;
     font-size: 400;
@@ -32,11 +32,17 @@
   }
 
   .menu-bars {
-    margin-left: 10rem;
+    padding-right: 5vw;
     font-size: 25px;
     background: none;
   }
   
+  .menu-bars2 {
+    padding-left: 160px;
+    font-size: 25px;
+    background: none;
+  }
+
   .nav-menu {
     background-color: #fff;
     width: 200px;

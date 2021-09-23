@@ -1,7 +1,7 @@
 import "./styles.css";
 import React, { useState } from 'react';
 import { FaBars } from 'react-icons/fa'
-import logo from "./logo.png"
+
 import { Link } from 'react-router-dom'
 import { SidebarData } from './SidebarData';
 import * as AiIcons from 'react-icons/ai';
@@ -31,7 +31,7 @@ function Navbar() {
             <ul className='nav-menu-items' onClick={showSidebar}>
               
               <li className='navbar-toggle'>
-                <Link to='#' className='menu-bars'>
+                <Link to='#' className='menu-bars2'>
                   <AiIcons.AiOutlineClose />
                 </Link>
               </li>
