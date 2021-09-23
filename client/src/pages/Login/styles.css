@@ -5,11 +5,66 @@
 }
 .holder{
     display: flex;
-    background: #2196f3;
+    background: #fff;
     height: 90vh;
     align-items: center;
     justify-content: center;
-    font-size: 3rem;
+    font-size: 3rem;    
+}
+.input--login{
+    border: 5px solid #ff9900;
+    height: 50px;
+    width: 300px;
+    margin-bottom: 20px;
+}
+.input--login::placeholder{
+    font-family: 'Roboto Slab', serif;
+    font-size: 20px;
+    margin-left: 10px;
+}
+.input--login::-moz-focus-inner{
+    font-size: 20px;
+}
+.input--login2{
+    border: 5px solid #ff9900;
+    height: 50px;
+    width: 300px;
+}
+.input--login2::placeholder{
+    font-family: 'Roboto Slab', serif;
+    font-size: 20px;
+    margin-left: 10px;
     
-    
+}
+.input--login:focus{
+    font-size: 20px;
+}
+.input--login2:focus{
+    font-size: 20px;
+}
+.text--baixo{
+    font-size: 16px;
+    color: #783F04;
+}
+.link--text{
+    text-decoration: none;
+    color: #ff9900;
+}
+form{
+    margin-bottom: 20px;
+}
+form .private-inp{
+    border: 5px solid #ff9900;
+    font-family: 'Roboto Slab', serif;
+    display: block;
+    margin: auto;
+    background: transparent;
+    height: 50px;
+    width: 200px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: #783F04;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
 }
