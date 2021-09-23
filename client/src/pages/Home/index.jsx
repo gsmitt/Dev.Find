@@ -16,7 +16,7 @@ export class Home extends React.Component {
                 <div className="container">
                     <li className="body-list">
                         <p className="text-list">
-                            Precisando de <br />
+                            precisando de <br />
                             desenvolvedores? <br />
                             aqui você encontra!
                         </p>

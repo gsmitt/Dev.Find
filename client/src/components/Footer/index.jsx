@@ -3,6 +3,7 @@ import React from "react";
 import logo from "./logo.png"
 import { FaGithub } from 'react-icons/fa';
 import { FaLinkedin } from 'react-icons/fa';
+import { Logo } from "../Logo";
 
 export class Footer extends React.Component {
     render() {
@@ -12,7 +13,7 @@ export class Footer extends React.Component {
             <>
                 <div className="footer-container">
                     <footer>
-                        <li className="logo-list"><img className="logo-1" src={logo} alt="" /></li>
+                        <li className="logo-list"><Logo cor="white"/></li>
                         <li className="footer-itens-list">
                             <a href="/sobre" className="a-texts">Sobre</a> <br />
                             <a href="/login" className="a-texts">Login</a> <br />

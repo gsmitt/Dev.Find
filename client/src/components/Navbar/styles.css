@@ -93,11 +93,6 @@
     justify-content: start;
     align-items: center;
   }
-  
-  .logo{
-    width: 150px;
-    margin-left: 10px;
-}
 
 .entrar {
   display: flex;

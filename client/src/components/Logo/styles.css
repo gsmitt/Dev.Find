@@ -1,0 +1,30 @@
+.dev{
+    color: #783f04;
+}
+
+.find{
+    color: #ff9900; 
+}
+
+.wraper{
+    font-size: 25px;
+    font-weight: 500;
+    user-select: none;
+    display: flex;
+    align-items: center;
+}
+
+.par{
+    color: #ff9900; 
+    margin-left: 4px;
+}
+
+.white{
+    color: white;
+    font-size: 30px;
+}
+
+.orange{
+    color: #ff9900; 
+    font-size: 30px;
+}
