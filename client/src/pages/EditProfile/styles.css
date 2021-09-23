@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;  
+}
+
+body{
+    background-color:  white;
+    font-family: 'Roboto Slab', serif;
+}
+
+.container--geral{
+    background-color: #ffffff;
+    height: 600px;
+}
+
+.container--box{
+    background-color: rgb(95, 90, 90);
+    margin-left: 20px;
+    display: flex;
+    margin-right: 20px;
+    height: 750px;
+}
+
+.text--box{
+    flex-direction: column;
+}
