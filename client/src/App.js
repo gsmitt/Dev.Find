@@ -3,12 +3,12 @@ import React from "react";
 import Navbar from './components/Navbar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Login } from "../src/pages/Login/index" 
-import { Cadastro } from "../src/pages/Cadastro/index" 
 import { Footer } from "../src/components/Footer";
 import { Home } from "../src/pages/Home";
 import Sobre from './pages/Sobre';
 import Contato from './pages/Contato';
 import Dashboard from './pages/Dashboard';
+import Cadastro from '../src/pages/Cadastro/index';
 
 
 
