@@ -24,12 +24,12 @@ export class Footer extends React.Component {
                         <li className="icon-list">
                             <a href="https://github.com/gsmitt/Dev.Find"  className="icon-itens"><FaGithub /></a>
                             <a href="https://www.linkedin.com/in/tech-soldiers-%E2%A0%80-15a588221/" className="icon-itens"><FaLinkedin /></a>
-                            <hr className="line"></hr>
+                            
                         </li>
-                        <section className="section-container">
+                        <div className="section-container">
                             <p className="text-p">© 2021 dev.find( ) — Direitos</p>
                             <p className="text-p2">reservados</p>
-                        </section>
+                        </div>
                     </footer>
                 </div>
             </>

@@ -30,6 +30,7 @@ body{
     background-color: #fff;
     padding: 5px 5%;
     justify-content: center;
+    font-family: 'Roboto Slab', serif;
 }
 .botao-seja-um{
     border: hidden;
@@ -37,6 +38,7 @@ body{
     padding: 8px 6%;
     justify-content: center;
     margin-top: 15px;
+    font-family: 'Roboto Slab', serif;
 }
 .texto-botao-contratar{
     color: #783f04;
