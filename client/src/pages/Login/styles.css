@@ -16,19 +16,18 @@
     height: 50px;
     width: 300px;
     margin-bottom: 20px;
+    font-size: 20px;
 }
 .input--login::placeholder{
     font-family: 'Roboto Slab', serif;
     font-size: 20px;
     margin-left: 10px;
 }
-.input--login::-moz-focus-inner{
-    font-size: 20px;
-}
 .input--login2{
     border: 5px solid #ff9900;
     height: 50px;
     width: 300px;
+    font-size: 20px;
 }
 .input--login2::placeholder{
     font-family: 'Roboto Slab', serif;

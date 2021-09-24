@@ -6,7 +6,6 @@
 
 .footer-container{
     background-color:#051120;
-    height: 500px;
     max-width: 100%;
     display: flex;
     flex-direction: column;
@@ -46,22 +45,20 @@
 
 .section-container{
     background-color: white;
-    height: 2px;
-    margin-top: 20px;
+
+    margin-top: 30px;
 }
 
-.line{
-    margin-top: 80px;
-    color: gray;
-}
 
 .text-p{
     margin-top: 35px;
     margin-left: 80px;
     color: black;
+    
 }
 
 .text-p2{
     margin-left: 140px;
     color: black;
+   
 }

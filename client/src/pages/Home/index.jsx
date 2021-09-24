@@ -3,6 +3,12 @@ import React from "react";
 import { BiBulb } from "react-icons/bi";
 import { FaUserFriends } from "react-icons/fa";
 import NumberCounter from 'number-counter';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
 
 
 <style>
@@ -23,7 +29,7 @@ export class Home extends React.Component {
                     </li>
                     <div className="buttons">
                         <center>
-                            <button className="botao-contratar"><p className="texto-botao-contratar">Contratar</p></button>
+                           <button className="botao-contratar"><p className="texto-botao-contratar">Contratar</p></button>            
                             <br />
                             <button className="botao-seja-um"><p className="texto-botao-seja-um">Seja um desenvolvedor</p></button>
 

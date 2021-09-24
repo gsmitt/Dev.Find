@@ -16,6 +16,7 @@
     height: 50px;
     width: 300px;
     margin-bottom: 20px;
+    font-size: 20px;
 }
 .input--cadastro::placeholder{
     font-family: 'Roboto Slab', serif;
@@ -28,32 +29,25 @@
     width: 300px;
     margin-top: 20px;
     margin-bottom: 20px;
+    font-size: 20px;
 }
 .input--cadastro3::placeholder{
     font-family: 'Roboto Slab', serif;
     font-size: 20px;
     margin-left: 10px;
 }
-.input--cadastro::-moz-focus-inner{
-    font-size: 20px;
-}
 .input--cadastro2{
     border: 5px solid #ff9900;
     height: 50px;
     width: 300px;
     margin-bottom: 20px;
+    font-size: 20px;
 }
 .input--cadastro2::placeholder{
     font-family: 'Roboto Slab', serif;
     font-size: 20px;
     margin-left: 10px;
     
-}
-.input--cadastro:focus{
-    font-size: 20px;
-}
-.input--cadastro2:focus{
-    font-size: 20px;
 }
 .text--baixo{
     font-size: 16px;
@@ -64,7 +58,7 @@
     color: #ff9900;
 }
 form{
-    margin-top: 40px;
+    margin-top: 60px;
 }
 form .private-inp{
     border: 5px solid #ff9900;
@@ -80,4 +74,11 @@ form .private-inp{
     font-size: 20px;
     font-weight: bold;
     cursor: pointer;
+}
+.checkbox{
+    font-size: 19px;
+    
+}
+.checkbox .check-box-feature{
+    margin-right: 10px;
 }
