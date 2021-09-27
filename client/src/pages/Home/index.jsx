@@ -77,12 +77,12 @@ export class Home extends React.Component {
                     </p>
                     <br /> <h1 className="titulo"> <span className="p-title-1">nossas</span> <span className="p-title-2">vantagens</span></h1>
                     <div className="parent">
-                        <div className="box"><p className="box-text">+<NumberCounter end={100} delay={4} /></p></div>
-                        <div className="box"><p className="box-text"><NumberCounter end={100} delay={4} /></p></div>
-                        <div className="box"><p className="box-text"><NumberCounter end={100} delay={4} /></p></div>
-                        <div className="box"><p className="box-text"><NumberCounter end={100} delay={4} /></p></div>
-                        <div className="box"><p className="box-text"><NumberCounter end={100} delay={4} /></p></div>
-                        <div className="box"><p className="box-text"><NumberCounter end={100} delay={4} /></p></div>
+                        <div className="box"><span className="box-text"><NumberCounter className="box-feature" end={100} delay={4} /></span></div>
+                        <div className="box"><span className="box-text"><NumberCounter className="box-feature" end={100} delay={4} /></span></div>
+                        <div className="box"><span className="box-text"><NumberCounter className="box-feature" end={100} delay={4} /></span></div>
+                        <div className="box"><span className="box-text"><NumberCounter className="box-feature" end={100} delay={4} /></span></div>
+                        <div className="box"><span className="box-text"><NumberCounter className="box-feature" end={100} delay={4} /></span></div>
+                        <div className="box"><span className="box-text"><NumberCounter className="box-feature" end={100} delay={4} /></span></div>
                     </div>
                 </div>
 
