@@ -1,8 +1,7 @@
 const router = require("express").Router();
 const userControllers = require("../controllers/userControllers");
 const auth = require("../middlewares/authMiddleware");
-const multer  = require('multer')
-const upload = multer({ dest: '../../uploads' })
+const upload = require("../middlewares/multer")
 
 const cpUpload = upload.fields([{ name: 'avatar', maxCount: 1 }, { name: 'background', maxCount: 1 }])
 

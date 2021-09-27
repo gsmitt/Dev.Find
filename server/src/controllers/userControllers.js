@@ -1,6 +1,7 @@
 const { Op } = require("sequelize");
 const createHttpError = require("http-errors");
 const { User } = require("../db/models");
+const fs = require("fs")
 
 
 async function get(req, res, next) {
@@ -62,16 +63,38 @@ async function update(req,res,next) {
     const userId = res.locals.userId;
     const userRole = res.locals.userRole;
 
+    const newData = {...req.body}
+
+    if(req.files.avatar){
+        av = req.files.avatar[0]
+        newData.avatar = av.path
+    }
+    if(req.files.background){
+        bg = req.files.background[0]
+        newData.background = bg.path
+    }
+
     try{
         const user = await User.findOne({where: { id: target } });
         
         if (!user) throw new createHttpError(404, "This user does not exist");
 
         if (!((userId == user.id) || (userRole == "admin"))) throw new createHttpError(403, "You don't have permission to do this");
-       
-        console.log(req.body)
 
-        Object.assign(user, req.body);
+        if (newData.avatar){
+            if (user.avatar) {
+                fs.unlinkSync(user.avatar)
+            }
+        }
+
+        if (newData.background){
+            if (user.background) {
+                fs.unlinkSync(user.background)
+            }
+        }
+
+
+        Object.assign(user, newData);
 
         const updated = await user.save();
 
