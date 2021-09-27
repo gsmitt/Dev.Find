@@ -1,4 +1,7 @@
-<h1> Dev.Find( )</h1>
+<div>
+        <img  width="300" src="https://uploaddeimagens.com.br/images/003/452/106/original/logo-dev-removebg-preview.png?1632769383" alt="">
+</div>
+<hr>
 <p>Repositório criado para um projeto que possui a finalidade de concluir o programa Entra21.</p>
 
 <h2>Leitura Panorâmica</h2>
