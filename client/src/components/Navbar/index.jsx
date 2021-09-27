@@ -1,7 +1,6 @@
 import "./styles.css";
 import React, { useState } from 'react';
 import { FaBars } from 'react-icons/fa'
-
 import { Link } from 'react-router-dom'
 import { SidebarData } from './SidebarData';
 import * as AiIcons from 'react-icons/ai';
@@ -13,6 +12,13 @@ function Navbar() {
   
     const showSidebar = () => setSidebar(!sidebar);
   
+    function handleClick() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      })
+    }
+
     return (
       <>
       <div className={sidebar ? "filter-on" : "filter-off"} onClick={showSidebar}>
@@ -37,7 +43,7 @@ function Navbar() {
               </li>
               {SidebarData.map((item, index) => {
                 return (
-                  <li key={index} className={item.cName}>
+                  <li onClick={handleClick} key={index} className={item.cName}>
                     <Link to={item.path}>
                       {item.icon}
                       <span>{item.title}</span>

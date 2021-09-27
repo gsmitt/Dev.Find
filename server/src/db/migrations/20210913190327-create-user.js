@@ -36,6 +36,14 @@ module.exports = {
         allowNull: false,
       },
 
+      avatar: {
+        type: Sequelize.STRING
+      },
+
+      background: {
+        type: Sequelize.STRING
+      },
+
       role: {
         type: Sequelize.ENUM("dev", "client", "admin"),
         allowNull: false

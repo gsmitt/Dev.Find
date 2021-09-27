@@ -69,6 +69,8 @@ async function update(req,res,next) {
 
         if (!((userId == user.id) || (userRole == "admin"))) throw new createHttpError(403, "You don't have permission to do this");
        
+        console.log(req.body)
+
         Object.assign(user, req.body);
 
         const updated = await user.save();
