@@ -8,7 +8,7 @@ import {
     Switch,
     Route,
     Link
-  } from "react-router-dom";
+} from "react-router-dom";
 
 
 <style>
@@ -29,7 +29,7 @@ export class Home extends React.Component {
                     </li>
                     <div className="buttons">
                         <center>
-                           <button className="botao-contratar"><p className="texto-botao-contratar">Contratar</p></button>            
+                            <button className="botao-contratar"><p className="texto-botao-contratar">Contratar</p></button>
                             <br />
                             <button className="botao-seja-um"><p className="texto-botao-seja-um">Seja um desenvolvedor</p></button>
 
@@ -47,19 +47,17 @@ export class Home extends React.Component {
                         que necessitam do serviço.
                         <br /><br /> <br />
                     </p>
-                
+<br />
                     <h1 className="titulo"> <span className="p-title-1">como</span> <span className="p-title-2">funciona?</span></h1>
                     <br />
                     <div className="icon--desc"><BiBulb /></div>
                     <h3 className="titulo--icon ">Contrate</h3>
                     <p className="desc--icon">Publique o seu projeto para milhares de
-                    profissionais,
+                        profissionais,
                         você irá receber propostas de freelancers talentosos em poucos minutos.</p>
                     <div className="icon--desc"><FaUserFriends /></div>
                     <h3 className="titulo--icon ">Seja um de nós</h3>
-                    <p className="desc--icon">Publique a sua vaga para milhares de
-                    profissionais,
-                        você irá receber propostas de freelancers talentosos em poucos minutos.</p>
+                    <p className="desc--icon">Seja um desenvolvedor e fique atento ao nosso feed, milhares de propostas estarão a sua espera.</p>
 
                     <br /><br />
                     <h1 className="titulo"> <span className="p-title-1">nosso</span> <span className="p-title-2">objetivo</span></h1>
@@ -77,12 +75,30 @@ export class Home extends React.Component {
                     </p>
                     <br /> <h1 className="titulo"> <span className="p-title-1">nossas</span> <span className="p-title-2">vantagens</span></h1>
                     <div className="parent">
-                        <div className="box"><span className="box-text"><NumberCounter className="box-feature" end={100} delay={4} /></span></div>
-                        <div className="box"><span className="box-text"><NumberCounter className="box-feature" end={100} delay={4} /></span></div>
-                        <div className="box"><span className="box-text"><NumberCounter className="box-feature" end={100} delay={4} /></span></div>
-                        <div className="box"><span className="box-text"><NumberCounter className="box-feature" end={100} delay={4} /></span></div>
-                        <div className="box"><span className="box-text"><NumberCounter className="box-feature" end={100} delay={4} /></span></div>
-                        <div className="box"><span className="box-text"><NumberCounter className="box-feature" end={100} delay={4} /></span></div>
+                        <div className="box">
+                            <span className="box-text"><NumberCounter className="box-feature" start={0} end={1100} delay={4} preFix="+" postFix="" /></span>
+                            <h5 className="down-text-box">desenvolvedores ativos todos os dias</h5>
+                        </div>
+                        <div className="box">
+                            <span className="box-text"><NumberCounter className="box-feature" start={0} end={500} delay={4} preFix="+" postFix="" /></span>
+                            <h5 className="down-text-box">usúarios cadastrados</h5>
+                        </div>
+                        <div className="box">
+                            <span className="box-text"><NumberCounter className="box-feature" start={0} end={200} delay={4} preFix="+" postFix="" /></span>
+                            <h5 className="down-text-box">projetos postados na página</h5>
+                        </div>
+                        <div className="box">
+                            <span className="box-text"><NumberCounter className="box-feature" start={0} end={300} delay={4} preFix="+" postFix="" /></span>
+                            <h5 className="down-text-box">clientes satisfeitos</h5>
+                        </div>
+                        <div className="box">
+                            <span className="box-text"><NumberCounter className="box-feature" start={0} end={23} delay={4} preFix="+" postFix="" /></span>
+                            <h5 className="down-text-box">desenvolvedores verificados</h5>
+                        </div>
+                        <div className="box">
+                            <span className="box-text"><NumberCounter className="box-feature" start={0} end={2} delay={4} preFix="+" postFix="" /></span>
+                            <h5 className="down-text-box">meses atuando</h5>
+                        </div>
                     </div>
                 </div>
 
