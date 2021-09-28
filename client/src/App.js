@@ -20,17 +20,17 @@ function App() {
     <>
       <Router>
         <Navbar />
-        {/* <Switch>
+        <Switch>
           <Route path='/' exact component={Home} />
           <Route path='/login' component={Login} />
           <Route path='/explorar' component={Dashboard} />
           <Route path='/cadastro' component={Cadastro} />
           <Route path='/sobre' component={Sobre} />
           <Route path='/contato' component={Contato} />
-        </Switch> */}
-        <Layout />
+        </Switch>
+        {/* <Layout />
 
-        <GlobalStyles />
+        <GlobalStyles /> */}
         <Footer />
       </Router>
     </>
