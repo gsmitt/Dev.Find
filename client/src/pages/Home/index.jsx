@@ -3,6 +3,7 @@ import React from "react";
 import { BiBulb } from "react-icons/bi";
 import { FaUserFriends } from "react-icons/fa";
 import NumberCounter from 'number-counter';
+import { TypeWriter } from "../../components/TypeWriter"
 import {
     BrowserRouter as Router,
     Switch,
@@ -26,6 +27,7 @@ export class Home extends React.Component {
                             desenvolvedores? <br />
                             aqui você encontra!
                         </p>
+                        <TypeWriter content="Bom Dia!"/>
                     </li>
                     <div className="buttons">
                         <center>
