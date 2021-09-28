@@ -17,8 +17,8 @@ Assim honrando o nome dev.find( ).</p>
   <div>
       <p><img align="center" alt="João-Js" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" /> JavaScript</p>
       <p><img align="center" alt="João-Js" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"  />TypeScript</p>
-      <p><img align="center" alt="João-Js" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />Html</p>
-      <p><img align="center" alt="João-Js" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" />Css</p>
+      <p><img align="center" alt="João-Js" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />HTML</p>
+      <p><img align="center" alt="João-Js" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" />CSS</p>
   </div>
 
  <div>
@@ -30,7 +30,7 @@ Assim honrando o nome dev.find( ).</p>
   </div>
   <br />
   <div>
-    <p>• Jessé Antônio Efting Serpa</p>
+    <p>• Jessé Antônio Effting Serpa</p>
       <a href="https://github.com/jesseantonio" target="_blank"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" target="_blank"></a>
       <a href="https://www.linkedin.com/in/jess%C3%A9-ant%C3%B4nio-773a79217/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
   </div>
