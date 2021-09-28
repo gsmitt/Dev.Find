@@ -30,9 +30,9 @@ Assim honrando o nome dev.find( ).</p>
   </div>
   <br />
   <div>
-    <p>• Jessé Efting Serpa</p>
+    <p>• Jessé Antônio Efting Serpa</p>
       <a href="https://github.com/jesseantonio" target="_blank"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" target="_blank"></a>
-      <a href="#" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
+      <a href="https://www.linkedin.com/in/jess%C3%A9-ant%C3%B4nio-773a79217/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
   </div>
   <br />
   <div>
