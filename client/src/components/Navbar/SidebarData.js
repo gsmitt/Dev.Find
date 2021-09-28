@@ -25,6 +25,11 @@ export const SidebarData = [
     cName: 'nav-text'
   },
   {
+    title: 'Publicar Projeto',
+    path: '/publicar-projeto',
+    cName: 'nav-text'
+  },
+  {
     title: 'Entrar',
     path: '/login',
     cName: 'entrar'

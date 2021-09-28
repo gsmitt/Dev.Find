@@ -9,6 +9,7 @@ import Sobre from './pages/Sobre';
 import Contato from './pages/Contato';
 import Dashboard from './pages/Dashboard';
 import Cadastro from '../src/pages/Cadastro/index';
+import Publicar from '../src/pages/Publicar/index';
 import Layout from './components/Layout';
 import GlobalStyles from './styles/GlobalStyles';
 
@@ -27,6 +28,7 @@ function App() {
           <Route path='/cadastro' component={Cadastro} />
           <Route path='/sobre' component={Sobre} />
           <Route path='/contato' component={Contato} />
+          <Route path='/publicar-projeto' component={Publicar} />
         </Switch>
         {/* <Layout />
 

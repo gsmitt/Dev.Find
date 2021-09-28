@@ -31,9 +31,9 @@ export class Home extends React.Component {
                     </li>
                     <div className="buttons">
                         <center>
-                            <button className="botao-contratar"><p className="texto-botao-contratar">Contratar</p></button>
+                            <a href="/publicar-projeto"><button className="botao-contratar"><p className="texto-botao-contratar">Contratar</p></button></a>
                             <br />
-                            <button className="botao-seja-um"><p className="texto-botao-seja-um">Seja um desenvolvedor</p></button>
+                            <a href="/login"><button className="botao-seja-um"><p className="texto-botao-seja-um">Seja um desenvolvedor</p></button></a>
 
                         </center>
 
