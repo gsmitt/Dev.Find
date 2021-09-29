@@ -3,7 +3,7 @@ import React from "react";
 import { BiBulb } from "react-icons/bi";
 import { FaUserFriends } from "react-icons/fa";
 import NumberCounter from 'number-counter';
-import { TypeWriter } from "../../components/TypeWriter"
+import Typewriter from 'typewriter-effect';
 import {
     BrowserRouter as Router,
     Switch,
@@ -22,12 +22,25 @@ export class Home extends React.Component {
             <>
                 <div className="container">
                     <li className="body-list">
-                        <p className="text-list">
-                            precisando de <br />
-                            desenvolvedores? <br />
-                            aqui você encontra!
-                        </p>
-                        <TypeWriter content="Bom Dia!"/>
+                        <div className="text-list">
+                            <Typewriter
+                                options={{
+                                    delay:100,
+                                    cursor:"|",
+                                    loop:true
+                                  }}
+
+                                onInit={(typewriter) => {
+                                    typewriter.typeString('precisando de desenvolvedores?<br />')
+                                        .pauseFor(1000)
+                                    typewriter.typeString(" aqui você encontra!")
+                                        .pauseFor(2000)
+                                        .deleteAll()
+                                        .start();
+                                }}
+                            />
+                        </div>
+
                     </li>
                     <div className="buttons">
                         <center>
@@ -49,13 +62,13 @@ export class Home extends React.Component {
                         que necessitam do serviço.
                         <br /><br /> <br />
                     </p>
-<br />
+                    <br />
                     <h1 className="titulo"> <span className="p-title-1">como</span> <span className="p-title-2">funciona?</span></h1>
                     <br />
                     <div className="icon--desc"><BiBulb /></div>
                     <h3 className="titulo--icon ">Contrate</h3>
                     <p className="desc--icon">Publique o seu projeto para milhares de
-                        profissionais,
+                    profissionais,
                         você irá receber propostas de freelancers talentosos em poucos minutos.</p>
                     <div className="icon--desc"><FaUserFriends /></div>
                     <h3 className="titulo--icon ">Seja um de nós</h3>

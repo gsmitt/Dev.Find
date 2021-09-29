@@ -1,25 +1,41 @@
 import './styles.css';
-import React from 'react';
+import React, { useState } from 'react';
 
 export function Cadastro() {
+    let [data,setData] = useState({
+        username: "",
+        email: "",
+        password: "",
+        confpass: "",
+        isdev: false
+    }); 
+
+    const handleChange = e => {
+		const value = e.target.value;
+		const name = e.target.name;
+        setData(prevData => ({...prevData, [name]: value }));
+	}
+
+
+
     return (
         <div className="holder">
             <div className="parent">
                 <center>
                     <form action="">
-                        <input className="input--cadastro3" type="text" placeholder="Nome do Usuário" required />
+                        <input className="input--cadastro3" type="text" name="username" placeholder="Nome do Usuário" value={data.username} onChange={ handleChange } required />
                         <br />
-                        <input className="input--cadastro" type="email" placeholder="E-mail" required />
+                        <input className="input--cadastro" type="email" name="email" placeholder="E-mail" value={data.email} onChange={ handleChange } required />
 
                         <div>
-                            <input className="input--cadastro2" type="password" placeholder="Senha" required />
+                            <input className="input--cadastro2" type="password" name="password" placeholder="Senha" value={data.password} onChange={ handleChange } required />
                         </div>
-                        <input className="input--cadastro2" type="password" placeholder="Confirmar senha" required />
+                        <input className="input--cadastro2" type="password" name="confpass" placeholder="Confirmar senha" value={data.confpass} onChange={ handleChange } required />
                         <div className="checkbox">
-                            <input className="check-box-feature" id="checkbox" type="checkbox" placeholder="Confirmar senha" required />
-                            <label for="checkbox">Quero ser desenvolvedor</label>
+                            <input className="check-box-feature" id="checkbox" type="checkbox" checked={data.isdev} onChange={() => setData(prevData => ({...prevData, isdev: !prevData.isdev})) } />
+                            <label htmlFor="checkbox">Quero ser desenvolvedor</label>
                         </div>
-                        <input type="submit" value="Cadastrar-se" class="private-inp" />
+                        <input type="submit" value="Cadastrar-se" className="private-inp" />
 
                         <p className="text--baixo">
                             Já é membro?
