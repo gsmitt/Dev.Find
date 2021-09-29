@@ -12,8 +12,9 @@ body{
 .text-list{
     font-size: 34px;
     color: white;
-    padding-top: 100px;
+    padding-top: 10vh;
     margin-left: 20px;
+    min-height: 31vh;
 }
 .container{
 
