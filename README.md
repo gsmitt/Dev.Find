@@ -1,8 +1,6 @@
 <div>
-        <img  width="300" src="https://uploaddeimagens.com.br/images/003/452/106/original/logo-dev-removebg-preview.png?1632769383" alt="">
+        <img  width="450" src="https://uploaddeimagens.com.br/images/003/452/106/original/logo-dev-removebg-preview.png?1632769383" alt="">
 </div>
-<hr>
-
 <p>A dev.find( ) é uma  entidade que surgiu 
 com o propósito de facilitar o encontro
 de prestadores de serviços TI e pessoas
