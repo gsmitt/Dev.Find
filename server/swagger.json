@@ -1,0 +1,381 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Dev.find",
+        "description": "REST API para devs encontrarem trabalho"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3001",
+            "description": "Servidor de desenvolvimento"
+        }
+    ],
+    "tags": [
+        {
+            "name": "Users",
+            "description": "Endpoints de Usuários"
+        },
+        {
+            "name": "Post",
+            "description": "Endpoints de Posts"
+        },
+        {
+            "name": "Auth",
+            "description": "Endpoints de Autenticação"
+        },
+        {
+            "name": "Review",
+            "description": "Endpoints de Reviews"
+        }
+    ],
+    "components": {
+        "securitySchemes": {
+            "BearerAuth": {
+                "type": "http",
+                "scheme": "bearer",
+                "bearerFormat": "JWT"
+            }
+        }  
+    },
+    "paths": {
+        "/user": {
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Cria um usuário",
+                "requestBody": {
+                    "description": "Usuário a ser criado",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "name",
+                                    "email",
+                                    "password",
+                                    "role",
+                                    "username"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "description": "Nome do usuário"
+                                    },
+                                    "username": {
+                                        "type": "string",
+                                        "description": "Username do usuário"
+                                    },
+                                    "role": {
+                                        "type": "string",
+                                        "description": "Função do usuário"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "description": "Email do usuário"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "description": "Senha do usuário"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "integer",
+                                            "description": "ID do usuário"
+                                        },
+                                        "name": {
+                                            "type": "string",
+                                            "description": "Nome do usuário"
+                                        },
+                                        "username": {
+                                            "type": "string",
+                                            "description": "Username do usuário"
+                                        },
+                                        "background": {
+                                            "type": "string",
+                                            "description": "Backgroud do usuário"
+                                        },
+                                        "role": {
+                                            "type": "string",
+                                            "description": "Função do usuário"
+                                        },
+                                        "email": {
+                                            "type": "string",
+                                            "description": "Email do usuário"
+                                        },
+                                        "avatar": {
+                                            "type": "string",
+                                            "description": "Url do avatar do usuário"
+                                        },
+                                        "createdAt": {
+                                            "type": "string",
+                                            "description": "Data de criação"
+                                        },
+                                        "updatedAt": {
+                                            "type": "string",
+                                            "description": "Data de atualização"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "409": {
+                        "description": "E-mail já cadastrado."
+                    }
+                }
+            }
+        },
+        "paths": {
+            "/review": {
+                "post": {
+                    "tags": ["Review"],
+                    "summary": "Cria um review",
+                    "requestBody": {
+                        "description": "Review a ser criado",
+                        "required": true,
+                        "content": {
+                            "application/json": {                            
+                                "schema": {
+                                    "required": ["description", "user_req", "user_get","score"],
+                                    "type": "object",
+                                    "properties": {
+                                        "description": {
+                                            "type": "string",
+                                            "description": "Descrição do serviço prestado"                                        
+                                        },
+                                        "user_req": {
+                                            "type": "integer",
+                                            "description": "usuario que recebeu o serviço"                                            
+                                        },
+                                        "user_get": {
+                                            "type": "integer",
+                                            "description": "Usuario que prestou o serviço"
+                                        },
+                                        "score": {
+                                            "type": "Integer",  
+                                            "description": "Nota do serviço prestado"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "responses": {
+                        "200": {
+                            "description": "OK",
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "type": "object",
+                                        "properties": {
+                                            "id": {
+                                                "type": "integer",
+                                                "description": "ID do review"                                            
+                                            },
+                                            "description": {
+                                                "type": "string",
+                                                "description": "Descrição do serviço prestado"                                            
+                                            },
+                                            "user_req": {
+                                                "type": "integer",
+                                                "description": "usuario que recebeu o serviço"                                            
+                                            },
+                                            "user_get": {
+                                                "type": "integer",
+                                                "description": "Usuario que prestou o serviço"
+                                            },
+                                            "score": {
+                                                "type": "integer",
+                                                "description": "Nota do serviço prestado"
+                                            },
+                                            "createdAt": {
+                                                "type": "string",
+                                                "description": "Data de criação"                                            
+                                            },
+                                            "updatedAt": {
+                                                "type": "string",
+                                                "description": "Data de atualização"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "Erros": {
+                            "description": ""                    
+                        }
+                    }
+                }
+            },
+            "paths": {
+                "/post": {
+                    "post": {
+                        "tags": ["Post"],
+                        "summary": "Cria um post",
+                        "requestBody": {
+                            "description": "Post a ser criado",
+                            "required": true,
+                            "content": {
+                                "application/json": {                           
+                                    "schema": {
+                                        "required": ["user_id", "title", "description"],
+                                        "type": "object",
+                                        "properties": {
+                                            "user_id": {
+                                                "type": "integer",
+                                                "description": "Usuário que cria o post"                                        
+                                            },
+                                            "title": {
+                                                "type": "string",
+                                                "description": "Título do post"                                            
+                                            },
+                                            "description": {
+                                                "type": "string",
+                                                "description": "Descrição do post"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "responses": {
+                            "200": {
+                                "description": "OK",
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "type": "object",
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer",
+                                                    "description": "ID do post"                                            
+                                                },
+                                                "user_id": {
+                                                    "type": "integer",
+                                                    "description": "Usuário que cria o post"                                            
+                                                },
+                                                "title": {
+                                                    "type": "string",
+                                                    "description": "Título do post"                                            
+                                                },
+                                                "description": {
+                                                    "type": "string",
+                                                    "description": "Descrição do post"
+                                                },
+                                                "createdAt": {
+                                                    "type": "string",
+                                                    "description": "Data de criação"                                            
+                                                },
+                                                "updatedAt": {
+                                                    "type": "string",
+                                                    "description": "Data de atualização"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "Erros": {
+                                "description": ""                    
+                            }
+                        }
+                    }
+                },
+                "/auth/login": {
+                    "post": {                
+                        "tags": ["Auth"],
+                        "summary": "Recebe o access-token do usuário",
+                        "requestBody": {
+                            "description": "As informações de login do usuário",
+                            "required": true,
+                            "content": {
+                                "application/json": {
+                                    "schema": {                                
+                                        "properties": {
+                                            "email": {
+                                                "type": "string",
+                                                "description": "Email do usuário"                                            
+                                            },
+                                            "username": {
+                                                "type": "string",
+                                                "description": "Username do usuário"                                            
+                                            },
+                                            "password": {
+                                                "type": "string",
+                                                "description": "Senha do usuário"
+                                            }
+                                        },
+                                        "example": {
+                                            "email": "teste@email.com" , "username": "teste_dev",
+                                            "password": "123456"
+                                        }
+                                    }
+                                }                                                          
+                            }
+                        },
+                        "responses": {
+                            "200": {
+                                "description": "OK",
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "type": "string",
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer",
+                                                    "description": "ID do usuário"                                            
+                                                },
+                                                "name": {
+                                                    "type": "string",
+                                                    "description": "Nome do usuário"                                            
+                                                },
+                                                "username": {
+                                                    "type": "string",
+                                                    "description": "Username do usuário"                                            
+                                                },
+                                                "email": {
+                                                    "type": "string",
+                                                    "description": "Email do usuário"                                            
+                                                },
+                                                "avatar": {
+                                                    "type": "string",
+                                                    "description": "Url do avatar do usuário"
+                                                },
+                                                "createdAt": {
+                                                    "type": "string",
+                                                    "description": "Data de criação"                                            
+                                                },
+                                                "updatedAt": {
+                                                    "type": "string",
+                                                    "description": "Data de atualização"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "409": {
+                                "description": "E-mail já cadastrado."                    
+                            }
+                        }                
+                    }
+                }
+            }
+        }
+    }
+}
