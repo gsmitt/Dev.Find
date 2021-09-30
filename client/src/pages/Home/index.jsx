@@ -65,12 +65,12 @@ export class Home extends React.Component {
                     <br />
                     <h1 className="titulo"> <span className="p-title-1">como</span> <span className="p-title-2">funciona?</span></h1>
                     <br />
-                    <div className="icon--desc"><BiBulb /></div>
+                    <div className="icon--desc"><BiBulb className="icon--svg" /></div>
                     <h3 className="titulo--icon ">Contrate</h3>
                     <p className="desc--icon">Publique o seu projeto para milhares de
                     profissionais,
                         você irá receber propostas de freelancers talentosos em poucos minutos.</p>
-                    <div className="icon--desc"><FaUserFriends /></div>
+                    <div className="icon--desc"><FaUserFriends className="icon--svg" /></div>
                     <h3 className="titulo--icon ">Seja um de nós</h3>
                     <p className="desc--icon">Seja um desenvolvedor e fique atento ao nosso feed, milhares de propostas estarão a sua espera.</p>
 
