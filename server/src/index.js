@@ -2,8 +2,8 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const app = express();
-// const swaggerUi = require("swagger-ui-express");
-// const swaggerDocument = require("../swagger.json")
+const swaggerUi = require("swagger-ui-express");
+const swaggerDocument = require("../swagger.json")
 
 const PORT = process.env.PORT || 3001;
 
@@ -21,7 +21,7 @@ app.use("/auth", require("./routes/authRoutes"));
 
 
 // Rota da documentação
-// app.use("/api/docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+ app.use("/api/docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.listen(PORT, () => console.log("Server is running on port: " + PORT));
 
