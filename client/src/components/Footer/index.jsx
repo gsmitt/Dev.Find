@@ -34,8 +34,8 @@ export class Footer extends React.Component {
                             
                         </li>
                         <div className="section-container">
-                            <p className="text-p">© 2021 dev.find( ) — Direitos</p>
-                            <p className="text-p2">reservados</p>
+                            <p className="text-p">© 2021 dev.find( ) — Direitos <br/> reservados</p>
+                            
                         </div>
                     </footer>
                 </div>
