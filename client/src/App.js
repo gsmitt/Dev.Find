@@ -10,8 +10,8 @@ import Contato from './pages/Contato';
 import Dashboard from './pages/Dashboard';
 import Cadastro from '../src/pages/Cadastro/index';
 import Publicar from '../src/pages/Publicar/index';
-import Layout from './components/Layout';
-import ProfilePage from './styles/GlobalStyles';
+import Layout from './components/Layout/index';
+import GlobalStyles from './styles/GlobalStyles';
 import Review from './components/Review'
 
 
@@ -28,16 +28,13 @@ function App() {
           <Route path='/explorar' component={Dashboard} />
           <Route path='/cadastro' component={Cadastro} />
           <Route path='/sobre' component={Sobre} />
-
           <Route path='/contato' component={Contato} />
-
           <Route path='/contato' component={Contato} />
           <Route path='/publicar-projeto' component={Publicar} />
-
         </Switch>
-        {/* <Layout />
-
-        <ProfilePage /> */}
+        {/* <Review /> */}
+        <GlobalStyles />
+        <Route path='/perfil-usuario' component={Layout} />
         <Footer />
       </Router>
     </>

@@ -24,7 +24,7 @@ export const Banner = styled.div`
 
   background: var(--dev);
 
-  position: relative;
+
 `;
 
 export const Avatar = styled.div`
@@ -35,7 +35,6 @@ export const Avatar = styled.div`
   background: var(--gray);
   border-radius: 50%;
 
-  position: absolute;
   bottom: max(-60px, -10vw);
   left: 15px;
 `;

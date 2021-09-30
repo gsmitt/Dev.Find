@@ -15,7 +15,7 @@ export const Body = styled.div`
   display: flex;
   margin-top: 3px;
 
-  position: relative;
+
 `;
 
 export const Avatar = styled.div`
