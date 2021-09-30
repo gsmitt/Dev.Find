@@ -2,9 +2,10 @@ import './styles.css';
 import { api } from "../../services/api";
 import React, { useState } from 'react';
 
-export function Cadastro({ title, url, addUser }) {
+export function Cadastro() {
     let [data, setData] = useState({
         username: "",
+        name: "",
         email: "",
         password: "",
         confpass: "",
@@ -18,43 +19,48 @@ export function Cadastro({ title, url, addUser }) {
     }
     async function handleSubmit(e) {
         e.preventDefault();
-
         try {
-            const user = (await api.post(url, {
-                name: data.username,
-                email: data.email,
+            const user = (await api.post("/user/", {
+                name: data.name,
+                username: data.username.toLowerCase(),
+                email: data.email.toLowerCase(),
                 password: data.password,
                 role: data.isdev? "dev" : "client"
             })).data;
-
-            addUser(user);
+            window.location.replace("../")
         } catch (err) {
             console.log(err);
         }
     }
 
-    const verification = e => {
-
-    };
-
+    async function verifyPassword(e){
+        if(!(data.password === data.confpass)){
+            return alert("As senhas digitadas não coincidem")
+        } 
+        handleSubmit(e)
+    }
 
     return (
         <div className="holder">
             <div className="parent">
                 <center>
-                    <form onSubmit={handleSubmit} action="">
-                        <input className="input--cadastro3" type="text" name="username" placeholder="Nome do Usuário" value={data.username} onChange={handleChange} required />
+                    <form onSubmit={verifyPassword} action="">
+                        <input className="input--cadastro3" type="text" name="username" placeholder="Apelido do Usuário" value={data.username} onChange={handleChange} required />
                         <br />
                         <input className="input--cadastro" type="email" name="email" placeholder="E-mail" value={data.email} onChange={handleChange} required />
-
+                        <br/>
+                        <input className="input--cadastro" type="text" name="name" placeholder="Nome do Usuário" value={data.name} onChange={handleChange} required />
                         <div>
                             <input className="input--cadastro2" type="password" name="password" placeholder="Senha" value={data.password} onChange={handleChange} required />
                         </div>
+
                         <input className="input--cadastro2" type="password" name="confpass" placeholder="Confirmar senha" value={data.confpass} onChange={handleChange} required />
+                        
                         <div className="checkbox">
                             <input className="check-box-feature" id="checkbox" type="checkbox" checked={data.isdev} onChange={() => setData(prevData => ({ ...prevData, isdev: !prevData.isdev }))} />
                             <label htmlFor="checkbox">Quero ser desenvolvedor</label>
                         </div>
+                        
                         <input type="submit" value="Cadastrar-se" className="private-inp" />
 
                         <p className="text--baixo">

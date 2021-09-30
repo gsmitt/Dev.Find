@@ -13,7 +13,7 @@ export function Logo(props) {
 
 
 
-    if (props.cor == "white") {
+    if (props.cor === "white") {
         return (
             <Link to='/' onClick={handleClick} className="wraper">
                 <FaChevronRight color="#ff9900" fontSize="inherit" />
