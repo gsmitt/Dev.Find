@@ -2,11 +2,11 @@ import React from 'react';
 
 import Post from '../Posts';
 
-import { Container, Tab, Posts } from './styles';
+import { Container_Feed, Tab, Posts } from './styles';
 
 const Feed: React.FC = () => {
   return (
-    <Container>
+    <Container_Feed>
       <Tab>Overview</Tab>
       <Tab>Projetos</Tab>
 
@@ -14,7 +14,7 @@ const Feed: React.FC = () => {
         <Post />
         <Post />
       </Posts>
-    </Container>
+    </Container_Feed>
   );
 };
 

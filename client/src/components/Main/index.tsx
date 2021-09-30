@@ -11,16 +11,6 @@ import {
 const Main: React.FC = () => {
   return (
     <Container>
-      <Header>
-        <button>
-        </button>
-
-        <ProfileInfo>
-          <strong>Perfil Usuario</strong>
-          <span>Desenvolvedor</span>
-        </ProfileInfo>
-      </Header>
-
       <ProfilePage />
     </Container>
   );
