@@ -33,8 +33,8 @@ function App() {
           <Route path='/publicar-projeto' component={Publicar} />
         </Switch>
         {/* <Review /> */}
-        <GlobalStyles />
-        <Route path='/perfil-usuario' component={Layout} />
+        {/* <GlobalStyles />
+        <Route path='/perfil-usuario' component={Layout} /> */}
         <Footer />
       </Router>
     </>
