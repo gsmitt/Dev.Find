@@ -7,7 +7,7 @@ import { FaStar } from 'react-icons/fa';
 export function Review() {
 
     return (
-        <div className="container">
+        <div className="container__review">
             <div className="post">
                 <div className="text">Thanks for rating us!</div>
                 <div className="edit">EDIT</div>
