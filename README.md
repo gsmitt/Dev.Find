@@ -1,5 +1,5 @@
-<div align="center">
-        <img width="450" src="https://uploaddeimagens.com.br/images/003/452/106/original/logo-dev-removebg-preview.png?1632769383" alt="">
+<div align="center"><h2></h2>
+        <img width="450" src="https://uploaddeimagens.com.br/images/003/452/106/original/logo-dev-removebg-preview.png?1632769383" alt=""><h2></h2>
 </div>
 <p>A dev.find( ) é uma  entidade que surgiu 
 com o propósito de facilitar o encontro
