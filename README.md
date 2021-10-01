@@ -1,4 +1,4 @@
-<div align="center"><h2></h2>
+<div align="center">
         <img width="450" src="https://uploaddeimagens.com.br/images/003/452/106/original/logo-dev-removebg-preview.png?1632769383" alt=""><h2></h2>
 </div>
 <p>A dev.find( ) é uma  entidade que surgiu 
@@ -21,7 +21,7 @@ Assim honrando o nome dev.find( ).</p>
   <div>
     <h2>Contribuidores:</h2>
     <p>• Gustavo Adriel Mittelmann</p>
-      <a href="https://github.com/gsmitt" target="_blank"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" target="_blank"></a>
+      <a  href="https://github.com/gsmitt" target="_blank"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" target="_blank"></a>
       <a href="https://www.linkedin.com/in/gustavo-adriel-mittelmann-04a596221/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
   </div>
   <br />
