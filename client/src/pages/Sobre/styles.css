@@ -5,8 +5,20 @@
 }
 .sobre{
     display: flex;
-    height: 90vh;
     align-items: center;
     justify-content: center;
-    font-size: 3rem;
+}
+.container-sobre{
+    display: grid;
+    margin-top: 80px;
+    margin-bottom: 20px;
+}
+.area-sobre{
+    border: 2px solid #ff9900;
+    
+    padding-left: 140px;
+    padding-right: 140px;
+    padding-bottom: 125px;
+    margin-top: 10px;
+    background-color: transparent;
 }
