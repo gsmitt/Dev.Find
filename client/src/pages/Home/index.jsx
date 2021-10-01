@@ -36,6 +36,7 @@ export class Home extends React.Component {
                                     typewriter.typeString(" aqui você encontra!")
                                         .pauseFor(2000)
                                         .deleteAll()
+                                        .pauseFor(1000)
                                         .start();
                                 }}
                             />
