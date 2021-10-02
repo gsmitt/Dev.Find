@@ -4,13 +4,13 @@ import { BiBulb } from "react-icons/bi";
 import { FaUserFriends } from "react-icons/fa";
 import NumberCounter from 'number-counter';
 import Typewriter from 'typewriter-effect';
+import { AnimationHome } from "../../components/AnimationHome"
 import {
     BrowserRouter as Router,
     Switch,
     Route,
     Link
 } from "react-router-dom";
-
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
@@ -41,8 +41,8 @@ export class Home extends React.Component {
                                 }}
                             />
                         </div>
-
                     </li>
+                    <AnimationHome/>
                     <div className="buttons">
                         <center>
                             <a href="/publicar-projeto"><button className="botao-contratar"><p className="texto-botao-contratar">Contratar</p></button></a>
