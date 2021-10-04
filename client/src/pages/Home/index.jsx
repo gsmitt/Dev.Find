@@ -34,7 +34,7 @@ export class Home extends React.Component {
                                     typewriter.typeString('precisando de desenvolvedores?<br />')
                                         .pauseFor(1000)
                                     typewriter.typeString(" aqui você encontra!")
-                                        .pauseFor(2000)
+                                        .pauseFor(20000)
                                         .deleteAll()
                                         .pauseFor(1000)
                                         .start();

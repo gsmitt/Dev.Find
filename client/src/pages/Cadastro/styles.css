@@ -9,46 +9,29 @@
     height: 100vh;
     align-items: center;
     justify-content: center;
-    font-size: 3rem;    
+    font-size: 3rem;
+    justify-content: center;    
 }
+.form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 12vh;
+    margin-left: 5vh;
+    margin-right: 5vh;
+}
+
 .input--cadastro{
     border: 5px solid #ff9900;
     height: 50px;
     width: 300px;
     margin: 0;
-    margin-top: 35px;
+    margin-top: 15px;
     font-size: 20px;
 }
 .input--cadastro::placeholder{
     font-family: 'Roboto Slab', serif;
     font-size: 20px;
     margin-left: 10px;
-}
-.input--cadastro3{
-    border: 5px solid #ff9900;
-    height: 50px;
-    width: 300px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    font-size: 20px;
-}
-.input--cadastro3::placeholder{
-    font-family: 'Roboto Slab', serif;
-    font-size: 20px;
-    margin-left: 10px;
-}
-.input--cadastro2{
-    border: 5px solid #ff9900;
-    height: 50px;
-    width: 300px;
-    margin-bottom: 20px;
-    font-size: 20px;
-}
-.input--cadastro2::placeholder{
-    font-family: 'Roboto Slab', serif;
-    font-size: 20px;
-    margin-left: 10px;
-    
 }
 .text--baixo{
     font-size: 16px;

@@ -21,7 +21,7 @@ export function Publicar() {
 
 
 
-                        <input type="submit" value="Publicar" class="private-inp" />
+                        <input type="submit" value="Publicar" className="private-inp" />
 
                       
                     </form>
