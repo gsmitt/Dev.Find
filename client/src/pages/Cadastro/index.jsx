@@ -25,7 +25,7 @@ export function Cadastro() {
                 username: data.username.toLowerCase(),
                 email: data.email.toLowerCase(),
                 password: data.password,
-                role: data.isdev? "dev" : "client"
+                role: data.isdev ? "dev" : "client"
             })).data;
             window.location.replace("../")
         } catch (err) {
@@ -33,43 +33,42 @@ export function Cadastro() {
         }
     }
 
-    async function verifyPassword(e){
-        if(!(data.password === data.confpass)){
+    async function verifyPassword(e) {
+        if (!(data.password === data.confpass)) {
             return alert("As senhas digitadas não coincidem")
-        } 
+        }
         handleSubmit(e)
     }
 
     return (
         <div className="holder">
-            <div className="parent">
-                <center>
-                    <form onSubmit={verifyPassword} action="">
-                        <input className="input--cadastro3" type="text" name="username" placeholder="Apelido do Usuário" value={data.username} onChange={handleChange} required />
-                        <br />
-                        <input className="input--cadastro" type="email" name="email" placeholder="E-mail" value={data.email} onChange={handleChange} required />
-                        <br/>
-                        <input className="input--cadastro" type="text" name="name" placeholder="Nome do Usuário" value={data.name} onChange={handleChange} required />
-                        <div>
-                            <input className="input--cadastro2" type="password" name="password" placeholder="Senha" value={data.password} onChange={handleChange} required />
-                        </div>
 
-                        <input className="input--cadastro2" type="password" name="confpass" placeholder="Confirmar senha" value={data.confpass} onChange={handleChange} required />
-                        
-                        <div className="checkbox">
-                            <input className="check-box-feature" id="checkbox" type="checkbox" checked={data.isdev} onChange={() => setData(prevData => ({ ...prevData, isdev: !prevData.isdev }))} />
-                            <label htmlFor="checkbox">Quero ser desenvolvedor</label>
-                        </div>
-                        
-                        <input type="submit" value="Cadastrar-se" className="private-inp" />
+            <center>
+                <form onSubmit={verifyPassword} action="" className="form">
+                    <input className="input--cadastro" type="text" name="username" placeholder="Apelido do Usuário" value={data.username} onChange={handleChange} required />
 
-                        <p className="text--baixo">
-                            Já é membro?
+                    <input className="input--cadastro" type="email" name="email" placeholder="E-mail" value={data.email} onChange={handleChange} required />
+        
+                    <input className="input--cadastro" type="text" name="name" placeholder="Nome do Usuário" value={data.name} onChange={handleChange} required />
+
+                    <input className="input--cadastro" type="password" name="password" placeholder="Senha" value={data.password} onChange={handleChange} required />
+
+                    <input className="input--cadastro" type="password" name="confpass" placeholder="Confirmar senha" value={data.confpass} onChange={handleChange} required />
+
+                    <div className="checkbox">
+                        <input className="check-box-feature" id="checkbox" type="checkbox" checked={data.isdev} onChange={() => setData(prevData => ({ ...prevData, isdev: !prevData.isdev }))} />
+                        <label htmlFor="checkbox">Quero ser desenvolvedor</label>
+                    </div>
+
+                    <input type="submit" value="Cadastrar-se" className="private-inp" />
+
+                    <p className="text--baixo">
+                        Já é membro?
                             <a href="/login" className="link--text"> Entrar</a>
-                        </p>
-                    </form>
-                </center>
-            </div>
+                    </p>
+                </form>
+            </center>
+
         </div>
     );
 }
