@@ -4,11 +4,11 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
 
-  width: min(601px, 100%);
+  width: 601px;
 
   @media (min-width: 500px) {
-    border-left: 1px solid var(--outline);
-    border-right: 1px solid var(--outline);
+    border-left: 1px solid var(--black);
+    border-right: 1px solid var(--black);
   }
 `;
 
@@ -62,7 +62,7 @@ export const BottomMenu = styled.div`
 
   background: var(--primary);
   width: 100%;
-  border-top: 1px solid var(--outline);
+  border-top: 1px solid var(--wh);
 
   display: flex;
   justify-content: space-between;

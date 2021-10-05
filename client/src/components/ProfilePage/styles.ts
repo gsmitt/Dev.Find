@@ -6,6 +6,7 @@ import Button from '../Button';
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
+  margin-top: 65px;
 
   max-height: 100%;
   overflow-y: auto;
@@ -19,10 +20,9 @@ export const Container = styled.div`
 export const Banner = styled.div`
   flex-shrink: 0;
 
-  width: 100%;
-  height: min(33vw, 199px);
+  height: min( 150px);
 
-  background: var(--dev);
+  background: var(--tertiary);
 
 
 `;
@@ -31,32 +31,37 @@ export const Avatar = styled.div`
   width: max(45px, min(135px, 22vw));
   height: max(45px, min(135px, 22vw));
 
-  border: 3.75px solid var(--primary);
+  border: 3.75px solid var(--tertiary);
   background: var(--gray);
   border-radius: 50%;
+  
 
-  bottom: max(-60px, -10vw);
-  left: 15px;
+  margin-top: 70px;
+  margin-left: 20px;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.7;
+  }
 `;
 
 export const ProfileData = styled.div`
   padding: min(calc(10vw + 7px), 67px) 16px 0;
   background-color: var(--tertiary)
+  color: var(--black)
 
   display: flex;
   flex-direction: column;
 
-  position: relative;
 
   > h1 {
     font-weight: bold;
     font-size: 19px;
+    color: var(--black)
   }
   > h2 {
     font-weight: normal;
     font-size: 15px;
 
-    color: var(--gray);
   }
   > p {
     font-size: 15px;
@@ -74,7 +79,7 @@ export const ProfileData = styled.div`
 
     > li {
       font-size: 15px;
-      color: var(--gray);
+      color: var(--black);
 
       > svg {
         fill: var(--gray);
@@ -96,12 +101,8 @@ export const LocationIcon = styled(LocationOn)`
 `;
 
 export const EditButton = styled(Button)`
-  position: absolute;
-  top: 2vw;
-  right: 7px;
-
-  padding: 4px 16px;
   font-size: 13px;
+  margin-left: 440px;
 
   @media (min-width: 320px) {
     top: 10px;
