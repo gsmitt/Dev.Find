@@ -41,12 +41,17 @@
     font-size: 32px;
     font-weight: bold;
 }
+.cards{
+  display: grid;
+  justify-items: center;
+
+}
 .card {
   position: relative;
   width: 300px;
   height: 400px;
   justify-content: center;
-    text-align: center;
+  text-align: center;
   background: #fff;
   border-radius: 10px;
   background: transparent;
@@ -133,3 +138,38 @@
     background: #03a9f4;
     color: #fff;
   }
+
+  @media(min-width: 768px){
+    .cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  
+}
+}
+
+@media(min-width: 1024px){
+
+}
+
+@media(min-width: 1024px){
+   
+
+}
+
+@media(min-width: 1799px){
+  .text-sobre{
+    font-size: 20px;
+    text-align: center;
+    margin-right: 250px;
+    margin-left: 250px;
+    margin-top: 20px;
+  }
+  .text-sobre2{
+    font-size: 24px;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+  .image{
+    height: 280px;
+  }
+}

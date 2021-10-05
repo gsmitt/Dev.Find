@@ -22,9 +22,8 @@ export class Footer extends React.Component {
                         <li className="logo-list"><Logo cor="white" /></li>
                         <li className="footer-itens-list">
                             <Link onClick={handleClick} to="/sobre" className="a-texts">Sobre</Link><br />
-                            <Link onClick={handleClick} to="/sobre" className="a-texts">Login</Link><br />
-                            <Link onClick={handleClick} to="/sobre" className="a-texts">Cadastrar-se</Link><br />
-                            <Link onClick={handleClick} to="/sobre" className="a-texts">Contato</Link><br />
+                            <Link onClick={handleClick} to="/login" className="a-texts">Login</Link><br />
+                            <Link onClick={handleClick} to="/cadastro" className="a-texts">Cadastrar-se</Link><br />
                             <p className="a-texts">Siga-nos</p> <br />
                         </li>
                         <li className="icon-list">
