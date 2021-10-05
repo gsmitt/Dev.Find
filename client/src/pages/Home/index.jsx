@@ -40,9 +40,9 @@ export class Home extends React.Component {
                                         .start();
                                 }}
                             />
+                            <AnimationHome/>
                         </div>
                     </li>
-                    <AnimationHome/>
                     <div className="buttons">
                         <center>
                             <a href="/publicar-projeto"><button className="botao-contratar"><p className="texto-botao-contratar">Contratar</p></button></a>

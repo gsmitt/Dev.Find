@@ -20,7 +20,7 @@ function App() {
   return (
     <>
       <Router>
-        <Navbar />
+        <Navbar/>
         <Switch>
           <Route path='/' exact component={Home} />
           <Route path='/login' component={Login} />
