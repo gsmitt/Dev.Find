@@ -12,8 +12,11 @@ export default createGlobalStyle`
     --primary: #000;
     --secondary: #000;
     --tertiary: #FF9900;
+    --black: #051120;
+    --image: #051120;
     --search: #202327;
-    --white: #D9D9D9;
+    --white: #FFFFFF;
+    --cinzinha: #d6d6d6;
     --gray: #7A7A7A;
     --outline: #2F3336;
     --like: #E8265E;

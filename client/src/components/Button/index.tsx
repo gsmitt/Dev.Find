@@ -6,8 +6,8 @@ interface Props {
 
 export default styled.button<Props>`
   background: ${(props) => (props.outlined ? 'transparent' : 'var(--dev)')};
-  color: ${(props) => (props.outlined ? 'var(--dev)' : 'var(--white)')};
-  border: ${(props) => (props.outlined ? '1px solid var(--dev)' : 'none')};
+  color: ${(props) => (props.outlined ? 'var(--black)' : 'var(--black)')};
+  border: ${(props) => (props.outlined ? '1px solid var(--black)' : 'none')};
 
   padding: 16px;
   border-radius: 25px;
@@ -21,7 +21,7 @@ export default styled.button<Props>`
   &:hover {
     background: ${(props) =>
       props.outlined
-        ? 'var(--dev-dark-hover)'
-        : 'var(--dev-light-hover)'};
+        ? 'var(--image)'
+        : 'var(--white)'};
   }
 `;

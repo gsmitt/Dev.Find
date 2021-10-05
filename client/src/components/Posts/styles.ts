@@ -3,10 +3,11 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
+  background-color: var(--cinzinha);
 
   padding: 14px 16px;
 
-  border-bottom: 1px solid var(--outline);
+  border-bottom: 1px solid var(--black);
 
   max-width: 100%;
 `;
@@ -14,7 +15,6 @@ export const Container = styled.div`
 export const Body = styled.div`
   display: flex;
   margin-top: 3px;
-
 
 `;
 
@@ -50,7 +50,7 @@ export const Header = styled.div`
 
   > span,
   time {
-    color: var(--gray);
+    color: var(--white);
   }
 
   > strong,
@@ -62,7 +62,7 @@ export const Header = styled.div`
 `;
 
 export const Dot = styled.div`
-  background: var(--gray);
+  background: var(--white);
   width: 2px;
   height: 2px;
   margin: 0 10px;
@@ -78,7 +78,7 @@ export const ImageContent = styled.div`
   width: 100%;
   height: min(285px, max(175px, 41vw));
 
-  background: var(--outline);
+  background: var(--image);
   border-radius: 14px;
 
   cursor: pointer;

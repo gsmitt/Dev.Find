@@ -1,4 +1,5 @@
 import React from 'react';
+import { BsBuilding } from 'react-icons/bs';
 
 import Feed from '../Feed';
 
@@ -33,7 +34,8 @@ const ProfilePage: React.FC = () => {
             User - Location
           </li>
           <li>
-            Company
+            <BsBuilding />
+             Company
           </li>
         </ul>
 
