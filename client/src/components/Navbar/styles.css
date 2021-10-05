@@ -34,13 +34,13 @@
   }
 
   .menu-bars {
-    padding-right: 5vw;
+    margin-right: 5vw;
     font-size: 25px;
     background: none;
   }
   
   .menu-bars2 {
-    padding-left: 160px;
+    margin-left: 160px;
     font-size: 25px;
     background: none;
   }
