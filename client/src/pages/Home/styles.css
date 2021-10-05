@@ -21,6 +21,7 @@ body{
     background-color: #ff9900;
     height: 550px;
     max-width: 100%;
+    z-index: 100000000;
 }
 
 .body-list{
@@ -33,6 +34,7 @@ body{
     justify-content: center;
     font-family: 'Roboto Slab', serif;
     cursor: pointer;
+    z-index: 10000000009;
 }
 .botao-seja-um{
     border: hidden;

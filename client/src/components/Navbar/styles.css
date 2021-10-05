@@ -4,6 +4,7 @@
     width: 100vw;
     display: flex;
     position: fixed;
+    top: 0;
     justify-content: space-between;
     align-items: center;
     font-family: 'Roboto Slab', serif;
