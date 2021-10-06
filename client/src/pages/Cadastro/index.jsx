@@ -1,6 +1,7 @@
 import './styles.css';
 import { api } from "../../services/api";
 import React, { useState } from 'react';
+import validator from 'validator';
 
 export function Cadastro() {
     let [data, setData] = useState({
@@ -19,32 +20,52 @@ export function Cadastro() {
     }
     async function handleSubmit(e) {
         e.preventDefault();
-        try {
-            const user = (await api.post("/user/", {
-                name: data.name,
-                username: data.username.toLowerCase(),
-                email: data.email.toLowerCase(),
-                password: data.password,
-                role: data.isdev ? "dev" : "client"
-            })).data;
-            window.location.replace("../")
-        } catch (err) {
-            console.log(err);
+        if(verifyEmail() && verifyPassword() && isStrongPassword()){
+            try {
+                const user = (await api.post("/user/", {
+                    name: data.name,
+                    username: data.username.toLowerCase(),
+                    email: data.email.toLowerCase(),
+                    password: data.password,
+                    role: data.isdev ? "dev" : "client"
+                })).data;
+                window.location.replace("../")
+            } catch (err) {
+                console.log(err);
+            }
         }
+
     }
 
-    async function verifyPassword(e) {
+    function verifyPassword() {
         if (!(data.password === data.confpass)) {
-            return alert("As senhas digitadas não coincidem")
+             alert("As senhas digitadas não coincidem")
+             return false
         }
-        handleSubmit(e)
+        return true
+    }
+
+    function verifyEmail() {
+        if ((validator.isEmail(data.email) === false)) {
+             alert("E-mail não é válido!")
+             return false
+        }
+        return true
+    }
+
+     function isStrongPassword() {
+        if ((validator.isStrongPassword(data.password) === false)) {
+            alert("Senha fraca!")
+            return false
+        }
+        return true
     }
 
     return (
         <div className="holder">
 
             <center>
-                <form onSubmit={verifyPassword} action="" className="form">
+                <form onSubmit={handleSubmit} action="" className="form">
                     <input className="input--cadastro" type="text" name="username" placeholder="Apelido do Usuário" value={data.username} onChange={handleChange} required />
 
                     <input className="input--cadastro" type="email" name="email" placeholder="E-mail" value={data.email} onChange={handleChange} required />
