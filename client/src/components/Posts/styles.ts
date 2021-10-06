@@ -25,7 +25,7 @@ export const Avatar = styled.div`
   flex-shrink: 0;
   background: var(--gray);
 
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
 `;
@@ -35,7 +35,7 @@ export const Content = styled.div`
 
   width: 100%;
   margin-top: 2px;
-  padding-left: 59px;
+  padding-left: 30px;
 `;
 export const Header = styled.div`
   display: flex;

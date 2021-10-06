@@ -45,7 +45,7 @@ export const Avatar = styled.div`
 `;
 
 export const ProfileData = styled.div`
-  padding: min(calc(10vw + 7px), 67px) 16px 0;
+  padding: min(calc(10vw + 7px), 35px) 16px 0;
   background-color: var(--tertiary)
   color: var(--black)
 
@@ -65,7 +65,7 @@ export const ProfileData = styled.div`
   }
   > p {
     font-size: 15px;
-    margin-top: 11px;
+    margin-top: 12px;
 
     > a {
       text-decoration: none;
@@ -75,7 +75,7 @@ export const ProfileData = styled.div`
   > ul {
     list-style: none;
     margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 
     > li {
       font-size: 15px;
@@ -83,7 +83,7 @@ export const ProfileData = styled.div`
 
       > svg {
         fill: var(--gray);
-        margin-right: 5px;
+        margin-right: 8px;
       }
     }
   }
@@ -103,6 +103,7 @@ export const LocationIcon = styled(LocationOn)`
 export const EditButton = styled(Button)`
   font-size: 13px;
   margin-left: 440px;
+  margin-top: -10px;
 
   @media (min-width: 320px) {
     top: 10px;
