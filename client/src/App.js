@@ -13,7 +13,8 @@ import Profile from './pages/Profile/index';
 import EditModal from './components/EditModal/index'
 import EditProfile from './pages/EditProfile/index'
 import TypeStyles from './styles/GlobalStyles';
-import Review from './components/Review'
+import Review from './components/Review';
+import NotFound from '../src/pages/NotFound/index';
 
 
 
@@ -36,6 +37,7 @@ function App() {
         <Route path='/edit-modal' component={EditModal} />
         <Route path='/perfil-usuario' component={Profile} />
         <Route path='/edit-profile' component={EditProfile} />
+        <Route path='/not-found' component={NotFound} />
         <Footer />
       </Router>
     </>
