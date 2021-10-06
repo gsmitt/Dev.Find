@@ -45,7 +45,7 @@ export class Home extends React.Component {
                     </li>
                     <div className="buttons">
                         <center>
-                            <a href="/publicar-projeto"><button className="botao-contratar"><p className="texto-botao-contratar">Contratar</p></button></a>
+                            <a href={localStorage.getItem("access-token")? "/publicar-projeto" : "/login"}><button className="botao-contratar"><p className="texto-botao-contratar">Contratar</p></button></a>
                             <br />
                             <a href="/login"><button className="botao-seja-um"><p className="texto-botao-seja-um">Seja um desenvolvedor</p></button></a>
                         </center>

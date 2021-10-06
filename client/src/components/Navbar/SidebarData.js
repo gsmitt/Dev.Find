@@ -21,7 +21,7 @@ export const SidebarData = [
   },
   {
     title: 'Publicar Projeto',
-    path: '/publicar-projeto',
+    path: '/login',
     cName: 'nav-text'
   },
   {
