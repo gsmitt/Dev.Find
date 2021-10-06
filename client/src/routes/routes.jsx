@@ -9,31 +9,28 @@ import Sobre from '../pages/Sobre';
 import Dashboard from '../pages/Dashboard';
 import Cadastro from '../pages/Cadastro/index';
 import Publicar from '../pages/Publicar/index';
-import Layout from '../components/Layout/index';
+import Profile from '../pages/Profile/index';
 import GlobalStyles from '../styles/GlobalStyles';
-import Review from '../components/Review'
-
-
-
 
 export function Routes() {
   return (
     <>
-      <Router>
-        <Navbar/>
-        <Switch>
-          <Route path='/' exact component={Home} />
-          <Route path='/login' component={Login} />
-          <Route path='/explorar' component={Dashboard} />
-          <Route path='/cadastro' component={Cadastro} />
-          <Route path='/sobre' component={Sobre} />
-          <Route path={'/publicar-projeto'} component={Publicar} />
-        </Switch>
-        {/* <Review /> */}
-        <GlobalStyles />
-        <Route path='/perfil-usuario' component={Layout} />
-        <Footer />
-      </Router>
-    </>
+    <Router>
+      <Navbar/>
+      <Switch>
+        <Route path='/' exact component={Home} />
+        <Route path='/login' component={Login} />
+        <Route path='/explorar' component={Dashboard} />
+        <Route path='/cadastro' component={Cadastro} />
+        <Route path='/sobre' component={Sobre} />
+        <Route path='/publicar-projeto' component={Publicar} />
+      </Switch>
+      <GlobalStyles />
+      {/* <Route path='/edit-modal' component={EditModal} /> */}
+      <Route path='/perfil-usuario' component={Profile} />
+      {/* <Route path='/edit-profile' component={EditProfile} /> */}
+      <Footer />
+    </Router>
+  </>
   );
 }
