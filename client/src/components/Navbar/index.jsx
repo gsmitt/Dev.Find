@@ -3,20 +3,29 @@ import React, { useState, useEffect } from 'react';
 import { FaBars } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import { SidebarData } from './SidebarData';
+import { LogedSidebarData } from "./LogedSidebarData";
 import * as AiIcons from 'react-icons/ai';
 import { IconContext } from 'react-icons';
 import { Logo } from "../Logo";
+import authServices from "../../services/authServices";
 
 function Navbar() {
     const [sidebar, setSidebar] = useState(false);
     
     const showSidebar = () => setSidebar(!sidebar);
-  
+
+    const accessToken = authServices.getAccessToken();
+
     function handleClick() {
       window.scrollTo({
         top: 0,
         behavior: 'smooth'
       })
+    }
+
+    function logout(){
+      localStorage.removeItem("access-token");
+      localStorage.removeItem("refresh-token");
     }
 
     return (
@@ -40,10 +49,10 @@ function Navbar() {
                   <AiIcons.AiOutlineClose />
                 </Link>
               </li>
-              {SidebarData.map((item, index) => {
+              {(accessToken ? LogedSidebarData : SidebarData).map((item, index) => {
                 return (
                   <li onClick={handleClick} key={index} className={item.cName}>
-                    <Link to={item.path}>
+                    <Link to={item.path} onClick={item.logout ? logout : () => {}}>
                       {item.icon}
                       <span>{item.title}</span>
                     </Link>

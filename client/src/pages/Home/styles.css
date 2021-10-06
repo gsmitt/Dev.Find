@@ -14,7 +14,7 @@ body{
     color: white;
     padding-top: 10vh;
     margin-left: 20px;
-    min-height: 31vh;
+    min-height: 22vh;
 }
 .container{
 
@@ -55,6 +55,7 @@ body{
 }
 .buttons{
     margin-top: 150px;
+    cursor: pointer;
 }
 .titulo{
     text-align: center;
@@ -122,8 +123,29 @@ body{
     display: grid;
 }
 
+@media(max-width: 360px){
+    .text-list{
+        padding-top: 13vh;
+      
+    }
+}
+
+
+@media(min-width: 360px){
+    .subtitulo{
+        visibility: hidden;
+    }
+}
 
 @media(min-width: 768px){
+    .subtitulo{
+        visibility: visible;
+        color: #FFFFFF;
+        font-weight: 200;
+        font-size: 18px;
+        margin-left: 20px;
+        margin-bottom: 50px;
+    }
     .p-desc{
         color: #ffff;
         background-color: #ff9900;
@@ -184,9 +206,30 @@ body{
 }
 }
 
-@media(min-width: 1024px){
-   
-
+@media(min-width: 1800px){
+   .container{
+    min-height: 750px;
+   }
+   .buttons{
+    margin-top: 155px;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    width: max-content;
+    margin-top: 20px;
+    margin-left: 150px;
+}
+.text-list{
+    padding-top: 16vh;
+    font-size: 50px;
+    min-height: 300px;
+}
+.subtitulo{
+    font-weight: 200;
+    font-size: 24px;
+    margin-left: 20px;
+    margin-top: 50px;
+}
 }
 
 @media(min-width: 1199px){

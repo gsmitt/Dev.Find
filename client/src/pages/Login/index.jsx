@@ -17,7 +17,7 @@ export function Login() {
     async function handleSubmit(e) {
         e.preventDefault();
         try {
-            await authServices.signIn(data.credential, data.password);            
+            await authServices.signIn(data.credential.toLocaleLowerCase(), data.password);            
             window.location.replace("../");
         } catch (err) {
             console.log(err.message);

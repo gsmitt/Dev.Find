@@ -1,22 +1,5 @@
 import './App.css';
-import React from "react";
-import Navbar from './components/Navbar';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { Login } from "../src/pages/Login/index"
-import { Footer } from "../src/components/Footer";
-import { Home } from "../src/pages/Home";
-import Sobre from './pages/Sobre';
-import Dashboard from './pages/Dashboard';
-import Cadastro from '../src/pages/Cadastro/index';
-import Publicar from '../src/pages/Publicar/index';
-import Profile from './pages/Profile/index';
-import EditModal from './components/EditModal/index'
-import EditProfile from './pages/EditProfile/index'
-import TypeStyles from './styles/GlobalStyles';
-import Review from './components/Review'
-
-
-
+import { Routes } from './routes/routes.jsx';
 
 function App() {
   return (
@@ -38,6 +21,7 @@ function App() {
         <Footer />
       </Router>
     </>
+    <Routes />
   );
 }
 
