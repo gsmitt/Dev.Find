@@ -56,6 +56,7 @@ body{
 .buttons{
     margin-top: 150px;
     cursor: pointer;
+    position: relative;
 }
 .titulo{
     text-align: center;
