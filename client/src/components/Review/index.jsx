@@ -28,7 +28,7 @@ export function Review() {
                     <textarea className="review-text" cols="30" placeholder="Deixe um comentário..."></textarea>
                 </div>
                 <div className="btn">
-                    <button type="submit">Comment</button>
+                    <button type="submit">Comentar</button>
                 </div>
             </div>
         </div>

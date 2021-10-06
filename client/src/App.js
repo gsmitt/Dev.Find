@@ -31,7 +31,6 @@ function App() {
           <Route path='/sobre' component={Sobre} />
           <Route path='/publicar-projeto' component={Publicar} />
         </Switch>
-        {/* <Review /> */}
         <TypeStyles />
         <Route path='/edit-modal' component={EditModal} />
         <Route path='/perfil-usuario' component={Profile} />

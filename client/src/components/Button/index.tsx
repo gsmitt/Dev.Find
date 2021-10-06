@@ -21,7 +21,7 @@ export default styled.button<Props>`
   &:hover {
     background: ${(props) =>
       props.outlined
-        ? 'var(--image)'
+        ? 'var(--cinzinha)'
         : 'var(--white)'};
   }
 `;

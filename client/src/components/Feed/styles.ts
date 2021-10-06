@@ -7,16 +7,15 @@ export const Container_Feed = styled.div`
 
 export const Tab_Container = styled.div`
   display: flex;
-  margin-top: 10px;
+  margin-bottom: -15px;
   padding: 11px 0 15px;
   align-items: center;
-
 `;
 
 export const Tab = styled.div`
   display: flex;
-  margin-top: 10px;
-  padding: 11px 118px 15px;
+  margin-top: 20px;
+  padding: 11px 116px 15px;
   text-align: center;
 
   font-weight: bold;
@@ -27,11 +26,11 @@ export const Tab = styled.div`
 
   color: var(--black);
   border-bottom: 2px solid var(--black);
-  border-top: 2px solid var(--black);
+  // border-top: 2px solid var(--black);
   
-
   &:hover {
-    background: var(--dev);
+    background: var(--tertiary);
+    color: var(--white)
   }
 `;
 
