@@ -1,12 +1,12 @@
 import React from 'react';
 
 
-import Main from '../Main';
+import Main from '../../components/Main';
 
 
 import { Container, Wrapper } from './styles';
 
-const Layout: React.FC = () => {
+const Profile: React.FC = () => {
   return (
     <Container>
       <Wrapper>
@@ -16,4 +16,4 @@ const Layout: React.FC = () => {
   );
 };
 
-export default Layout;
+export default Profile;
