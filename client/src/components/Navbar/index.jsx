@@ -1,5 +1,5 @@
 import "./styles.css";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaBars } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import { SidebarData } from './SidebarData';
@@ -9,7 +9,7 @@ import { Logo } from "../Logo";
 
 function Navbar() {
     const [sidebar, setSidebar] = useState(false);
-  
+    
     const showSidebar = () => setSidebar(!sidebar);
   
     function handleClick() {
@@ -29,7 +29,6 @@ function Navbar() {
           <div className='navbar'>
           <Logo/>
             <Link to='#' className='menu-bars'>
-                
               <FaBars onClick={showSidebar} />
             </Link>
           </div>

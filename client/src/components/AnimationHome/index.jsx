@@ -11,7 +11,7 @@ export function AnimationHome(props) {
         var l = 150;
 
         for (var i = 0; i <= l; i += 1) {
-          var x = anime.random(0, 100);
+          var x = anime.random(0, 96);
 
           var n = 1;
 
@@ -25,7 +25,7 @@ export function AnimationHome(props) {
             }
             container.appendChild(dot);
 
-            var size = anime.random(2, 5);
+            var size = anime.random(2, 4);
 
             dot.style.width = size + "px";
             dot.style.height = size + "px";
@@ -39,7 +39,7 @@ export function AnimationHome(props) {
         
 
         var tl = anime.timeline({
-          loop: true,
+          loop: true, 
         });
         
         tl
@@ -50,9 +50,9 @@ export function AnimationHome(props) {
             value: "-560px",
 
             duration: function (e, i) {
-              return anime.random(20000, 25000) / e.style.width.replace("px", "")
+              return anime.random(4000, 5000) * e.style.width.replace("px", "")
             },
-            delay: anime.stagger(200)
+            delay: anime.stagger(400)
           }
         })
 
@@ -64,9 +64,9 @@ export function AnimationHome(props) {
             value: "-560px",
 
             duration: function (e, i) {
-              return anime.random(20000, 25000) / e.style.width.replace("px", "")
+              return anime.random(4000, 5000) * e.style.width.replace("px", "")
             },
-            delay: anime.stagger(200)
+            delay: anime.stagger(400)
           }
         },12350);
 

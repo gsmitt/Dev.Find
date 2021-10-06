@@ -1,6 +1,5 @@
 import "./styles.css";
 import React from "react";
-import logo from "./logo.png"
 import { FaGithub } from 'react-icons/fa';
 import { FaLinkedin } from 'react-icons/fa';
 import { Logo } from "../Logo";
