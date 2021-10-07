@@ -11,4 +11,29 @@ export const Wrapper = styled.div`
 
   display: flex;
   justify-content: center;
+
+@media(max-width: 360px){
+  
+}
+
+@media(min-width: 360px){
+  width: 100%;
+}
+
+@media(min-width: 768px){
+
+}
+
+@media(min-width: 1024px){
+
+  }
+  
+@media(min-width: 1800px){
+     
+  }
+@media(min-width: 1199px){
+    
+  
+  }
 `;
+
