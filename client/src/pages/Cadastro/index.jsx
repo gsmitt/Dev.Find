@@ -29,7 +29,7 @@ export function Cadastro() {
                     password: data.password,
                     role: data.isdev ? "dev" : "client"
                 })).data;
-                window.location.replace("../")
+                window.location.replace("/")
             } catch (err) {
                 console.log(err);
             }
