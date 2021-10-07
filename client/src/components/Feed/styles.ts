@@ -15,7 +15,7 @@ export const Tab_Container = styled.div`
 export const Tab = styled.div`
   display: flex;
   margin-top: 20px;
-  padding: 11px 116px 15px;
+  padding: 11px 216px 15px;
   text-align: center;
 
   font-weight: bold;
