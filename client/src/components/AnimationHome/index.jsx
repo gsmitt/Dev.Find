@@ -31,9 +31,6 @@ export function AnimationHome(props) {
             dot.style.height = size + "px";
 
             dot.style.left = x + "vw";
-            dot.style.top = "555px";
-
-
           }
         }
         
@@ -47,7 +44,9 @@ export function AnimationHome(props) {
           easing: "linear",
           targets: document.querySelectorAll(".dot1"),
           translateY: {
-            value: "-560px",
+            value: function(e){
+             return -(window.innerHeight*7.2)/10
+            },
 
             duration: function (e, i) {
               return anime.random(4000, 5000) * e.style.width.replace("px", "")
@@ -61,7 +60,9 @@ export function AnimationHome(props) {
           easing: "linear",
           targets: document.querySelectorAll(".dot2"),
           translateY: {
-            value: "-560px",
+            value: function(e){
+              return -(window.innerHeight*7.2)/10
+             },
 
             duration: function (e, i) {
               return anime.random(4000, 5000) * e.style.width.replace("px", "")

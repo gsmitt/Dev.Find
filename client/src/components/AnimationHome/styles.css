@@ -2,5 +2,11 @@
   position: absolute;
   border-radius: 0%;
   background-color: white;
-  z-index: 0; 
+  z-index: 0;
+  top: 555px;
+}
+@media(min-width: 1800px){
+  .dot{
+    top: 755px;
+  }
 }
