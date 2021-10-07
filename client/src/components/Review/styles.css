@@ -4,7 +4,7 @@
   place-items: center;
   text-align: center;
   background: #000;
-  width: 601px;
+  width: 100%;
   background: #ffffff;
   padding: 20px 30px;
   border-bottom: 1px solid #051120;
@@ -12,7 +12,7 @@
   border-right: 1px solid #051120;
   border-radius: 2px;
   align-items: center;
-  margin-left: 651px;
+  margin-left: 0px;
 }
 .container__review .post{
   display: none;

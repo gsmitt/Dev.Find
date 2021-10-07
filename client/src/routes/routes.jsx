@@ -10,7 +10,7 @@ import Dashboard from '../pages/Dashboard';
 import Cadastro from '../pages/Cadastro/index';
 import Publicar from '../pages/Publicar/index';
 import Profile from '../pages/Profile/index';
-import GlobalStyles from '../styles/GlobalStyles';
+import TypeStyles from '../styles/GlobalStyles';
 
 export function Routes() {
   return (
@@ -25,7 +25,7 @@ export function Routes() {
         <Route path='/sobre' component={Sobre} />
         <Route path='/publicar-projeto' component={Publicar} />
       </Switch>
-      <GlobalStyles />
+      <TypeStyles />
       {/* <Route path='/edit-modal' component={EditModal} /> */}
       <Route path='/perfil-usuario' component={Profile} />
       {/* <Route path='/edit-profile' component={EditProfile} /> */}
