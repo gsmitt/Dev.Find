@@ -11,12 +11,13 @@ import Cadastro from '../pages/Cadastro/index';
 import Publicar from '../pages/Publicar/index';
 import Profile from '../pages/Profile/index';
 import GlobalStyles from '../styles/GlobalStyles';
+import { EditarPerfil } from "../components/EditarPerfil";
 
 export function Routes() {
   return (
     <>
     <Router>
-      <Navbar/>
+      {/* <Navbar/> */}
       <Switch>
         <Route path='/' exact component={Home} />
         <Route path='/login' component={Login} />
@@ -29,7 +30,9 @@ export function Routes() {
       {/* <Route path='/edit-modal' component={EditModal} /> */}
       <Route path='/perfil-usuario' component={Profile} />
       {/* <Route path='/edit-profile' component={EditProfile} /> */}
-      <Footer />
+      <Route path='/editar-perfil' component={EditarPerfil} />
+      
+      {/* <Footer /> */}
     </Router>
   </>
   );
