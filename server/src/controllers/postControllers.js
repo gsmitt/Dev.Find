@@ -76,13 +76,15 @@ async function update(req,res,next) {
 async function get(req,res,next){
     const offset = req.params.offset
     const filter = req.params.filter
+     
+
     try {
         const reviews = await Post.findAll({
-            attributes: ['id', 'updatedAt', 'title'], 
+            attributes: ['id', 'updatedAt', 'createdAt', 'title', 'description'], 
             where:{
-                title: { 
+                title: filter !== 'nullValue' ? {
                     [Op.iLike]: `%${filter}%`
-                }
+                } : {[Op.not]: 'null',}
             }, 
             offset: offset, 
             limit: 5, 

@@ -23,6 +23,10 @@ module.exports = (sequelize, DataTypes) => {
     description: {
       type: DataTypes.TEXT,
       allowNull: null
+    },
+
+    image:{
+      type: DataTypes.STRING
     }
   }, {
     sequelize,
