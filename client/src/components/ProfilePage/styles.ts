@@ -102,7 +102,7 @@ export const LocationIcon = styled(LocationOn)`
 
 export const EditButton = styled(Button)`
   font-size: 13px;
-  margin-left: 440px;
+  margin-left: 800px;
   margin-top: -10px;
 
   @media (min-width: 320px) {

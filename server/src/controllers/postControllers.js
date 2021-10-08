@@ -73,8 +73,38 @@ async function update(req,res,next) {
     }
 }
 
+async function get(req,res,next){
+    const offset = req.params.offset
+    const filter = req.params.filter
+    try {
+        const reviews = await Post.findAll({
+            attributes: ['id', 'updatedAt', 'title'], 
+            where:{
+                title: { 
+                    [Op.iLike]: `%${filter}%`
+                }
+            }, 
+            offset: offset, 
+            limit: 5, 
+            order: [
+            ['updatedAt', 'DESC']
+            ],
+        });
+
+        console.log(reviews);
+
+        res.json(reviews);
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+
+
+
 module.exports = {
     create,
     deletePost,
-    update
+    update,
+    get
 };

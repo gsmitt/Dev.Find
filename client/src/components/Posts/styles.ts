@@ -14,7 +14,7 @@ export const Container = styled.div`
 
 export const Body = styled.div`
   display: flex;
-  margin-top: 3px;
+  margin-top: 5px;
 
 `;
 
@@ -75,8 +75,8 @@ export const Description = styled.p`
 
 export const ImageContent = styled.div`
   margin-top: 12px;
-  width: 100%;
-  height: min(285px, max(175px, 41vw));
+  width: 90%;
+  height: min(400px, max(175px, 41vw));
 
   background: var(--image);
   border-radius: 14px;
