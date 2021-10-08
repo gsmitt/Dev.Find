@@ -1,10 +1,11 @@
 import './styles.css';
 import React from 'react';
+import { CardDashboard } from "../../components/CardDashboard"
 
 export function Dashboard() {
     return (
         <div className="dashboard">
-            <h1>Dashboard</h1>
+            <CardDashboard/>
         </div>
     );
 }
