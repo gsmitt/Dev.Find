@@ -94,7 +94,7 @@ form .private-inp{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 60px;
+    margin-top: 20px;
 }
 .input-container textarea{
     resize: none;

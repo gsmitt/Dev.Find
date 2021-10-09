@@ -16,7 +16,8 @@ export function Dashboard() {
                 const get = (await api.get(`/post/${data.filter? data.filter : "nullValue"}/${data.offset}`)).data;
                 console.log(get)
 
-                const container = document.querySelector(".dashboard")
+                const container = document.querySelector(".placeholder")
+                container.innerHTML=""
                 for (let i of get) {
                     let div = document.createElement("div")
                     div.classList.add("card")
@@ -29,9 +30,20 @@ export function Dashboard() {
             }
         }
     )
+
+    const handleChange = e => {
+        const value = e.target.value;
+        const name = e.target.name;
+        setData(prevData => ({ ...prevData, [name]: value }));
+    }
+
+
     return (
         <div className="dashboard">
-            <h1>Dashboard</h1>
+            <input type="text" name="filter" onChange={handleChange} value={data.filter} />
+            <div className="placeholder">
+
+            </div>
         </div>
     );
 }
