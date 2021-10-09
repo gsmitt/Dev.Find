@@ -22,16 +22,24 @@ export function Publicar() {
 
     async function handleSubmit(e) {
         e.preventDefault();
-        try {
-            const post = (await api.post("/post/", {
-                description: data.description,
-                title: data.name
-            })).data;
+        const body = new FormData()
+        body.append('image', data.image)
+        body.append('title', data.name)
+        body.append('description', data.description)
+        body.append('headers', {"Content-Type": "multipart/form-data"})
 
+        try {
+            const post = (await api.post("/post/", body)).data;
             window.location.replace("../")
         } catch (err) {
             console.log(err);
         }
+    }
+
+    function handleImage(e) {
+        setData(
+            prevData => ({ ...prevData, image: e.target.files[0]})
+        )
     }
     
     return (
@@ -49,6 +57,12 @@ export function Publicar() {
                             <label className="title-input">Descreva sobre o seu projeto.</label>
                             
                             <textarea placeholder="Descreva." id="" cols="30" rows="10" name="description" value={data.description} onChange={handleChange} required></textarea>
+                        </div>
+
+                        <div className="input-container">
+                            <label className="title-input">Adicione uma imagem para complementar.</label>
+                                
+                            <input className="img-input" type="file" name="image" onChange={handleImage} accept="image/png, image/jpeg, image/gif"/>
                         </div>
 
                         <input type="submit" value="Publicar" className="private-inp" />
