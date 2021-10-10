@@ -80,13 +80,25 @@ async function update(req,res,next) {
     }
 }
 
-async function get(req,res,next){
+async function getOne(req, res, next) {
+    const postId = req.params.id
+
+    try {
+        const post = await Post.findOne({where: { id: postId } });
+        res.json(post);
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+
+async function getMany(req,res,next){
     const offset = req.params.offset
     const filter = req.params.filter
      
 
     try {
-        const reviews = await Post.findAll({
+        const posts = await Post.findAll({
             attributes: ['id', 'updatedAt', 'createdAt', 'title', 'description'], 
             where:{
                 title: filter !== 'nullValue' ? {
@@ -100,9 +112,9 @@ async function get(req,res,next){
             ],
         });
 
-        console.log(reviews);
+        console.log(posts);
 
-        res.json(reviews);
+        res.json(posts);
     } catch (err) {
         console.log(err);
     }
@@ -115,5 +127,6 @@ module.exports = {
     create,
     deletePost,
     update,
-    get
+    getOne,
+    getMany
 };
