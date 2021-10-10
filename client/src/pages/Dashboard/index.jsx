@@ -10,15 +10,15 @@ export function Dashboard() {
         target: ""
     });
 
-    async function load(e) {
+    async function load(target) {
         try {
-            const get = (await api.get(`/getMany/${data.target}/${data.filter? data.filter : "nullValue"}/${data.offset}`)).data;
+            const get = (await api.get(`/${target}/getMany/${data.filter? data.filter : "nullValue"}/${data.offset}`)).data;
             console.log(get)
 
             const container = document.querySelector(".placeholder")
             container.innerHTML=""
             
-            data.target == "post" ?
+            target == "post" ?
             (() => {
                 for (let i of get) {
                     let div = document.createElement("div")
@@ -48,20 +48,20 @@ export function Dashboard() {
         setData(prevData => ({ ...prevData, [name]: value }));
     }
 
-    const handleSelector = e => {
-        // essa parte não funciona direito, tentar useStateWhithPromisses
-        const value = e.target.id;
+    async function handleSelector (e){
+        const value = e.target.id
         setData(prevData => ({ ...prevData, target: value }));
-        load()
+        load(e.target.id)
     }
 
     return (
         <div className="dashboard">
             <div className="type-selector">
                 <div className={`selector-element ${data.target=="post"?"selected-element":""}`} onClick={handleSelector} id="post">Projetos</div>
-                <div className={`selector-element ${data.target=="dev"?"selected-element":""}`} onClick={handleSelector} id="dev">Desenvolvedores</div>
+                <div className={`selector-element ${data.target=="user"?"selected-element":""}`} onClick={handleSelector} id="user">Desenvolvedores</div>
             </div>
             <input type="text" name="filter" onChange={handleChange} value={data.filter} />
+            <button onClick={()=>{load(data.target)}}>Pesquisar</button>
             <div className="placeholder">
 
             </div>
