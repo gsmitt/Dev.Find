@@ -4,12 +4,40 @@ const { User } = require("../db/models");
 const fs = require("fs")
 
 
-async function get(req, res, next) {
+async function getOne(req, res, next) {
     const userId = req.params.id
 
     try {
         const user = await User.findOne({where: { id: userId } });
         res.json(user);
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+async function getMany(req,res,next){
+    const offset = req.params.offset
+    const filter = req.params.filter
+     
+
+    try {
+        const users = await Post.findAll({
+            attributes: ['id', 'updatedAt', 'createdAt', 'name'], 
+            where:{
+                name: filter !== 'nullValue' ? {
+                    [Op.iLike]: `%${filter}%`
+                } : {[Op.not]: 'null',}
+            }, 
+            offset: offset, 
+            limit: 5, 
+            order: [
+            ['updatedAt', 'DESC']
+            ],
+        });
+
+        console.log(users);
+
+        res.json(users);
     } catch (err) {
         console.log(err);
     }
@@ -107,8 +135,9 @@ async function update(req,res,next) {
 
 
 module.exports = {
-    get,
+    getOne,
     create,
     deleteUser,
-    update
+    update,
+    getMany
 };
