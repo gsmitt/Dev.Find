@@ -21,7 +21,7 @@ async function getMany(req,res,next){
      
 
     try {
-        const users = await Post.findAll({
+        const users = await User.findAll({
             attributes: ['id', 'updatedAt', 'createdAt', 'name'], 
             where:{
                 name: filter !== 'nullValue' ? {

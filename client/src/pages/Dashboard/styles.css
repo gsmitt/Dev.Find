@@ -17,7 +17,7 @@
     flex-direction: row;
     width: 50vw;
 }
-#dev{
+#user{
     border-top-right-radius: 15px;
 }
 #post{
@@ -39,4 +39,8 @@
     background-color: orange;
     border: solid orange;
     color: white;
+}
+
+.card{
+    max-height: 50px;
 }
