@@ -28,7 +28,7 @@ export function Login() {
         <div className="holder">
             <div className="parent">
                <center>
-               <form action="" onSubmit={handleSubmit}>
+               <form className="login-container" action="" onSubmit={handleSubmit}>
                         <input className="input--login" type="username" placeholder="E-mail/Apelido" name="credential" value={data.credential} onChange={handleChange} required/>
                     <div>
                         <input className="input--login2" type="password" placeholder="Senha" name="password" value={data.password} onChange={handleChange} required/>
