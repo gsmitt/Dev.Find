@@ -1,7 +1,8 @@
+
 .container--header{
   display: flex;
   z-index: 9999;
-  min-width: 200px;
+  min-width: 50px;
   max-height: 450px;
   padding: 8px;
   background: #fff;
@@ -9,14 +10,37 @@
   overflow-y: hidden;
 }
 
+.scroll-off {
+  overflow: hidden;
+}
+
+.scroll-on {
+  background-color: #000;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 3;
+  transition: ease .5s;
+  opacity: 30%;
+}
+
+.all{
+  border-radius: 20px 20px 20px 20px;
+}
+
 .icon--modal{
   font-size: 30px;
+  cursor: pointer;
+  position: relative;
+  left: 66vh;
+  top: 1.5vh;
 }
 
 .header--title{
   margin-top: 20px;
   font-family: 'Roboto Slab', serif;
   font-size: 15px;
+  overflow-y: hidden;
 }
 
 .modal{
@@ -47,11 +71,6 @@
   outline: 0;
   background: transparent;
 
-  @media (min-width: 320px) {
-    top: 10px;
-    padding: 10px 19px;
-    font-size: 15px;
-  }
 }
 
 .modal--button:hover{
@@ -83,6 +102,10 @@
   font-size: 3rem;    
   margin-bottom: 200px;
   overflow-y: scroll;
+}
+.parent-2{
+  margin: 0;
+  margin-bottom: 145px; 
 }
 .input--cadastro{
   border: 5px solid #ff9900;
@@ -140,7 +163,7 @@ form .private-inp{
   background: transparent;
   height: 50px;
   width: 200px;
-  margin-top: 30px;
+  margin-top: 70px;
   margin-bottom: 50px;
   color: #783F04;
   font-size: 20px;
@@ -186,6 +209,11 @@ form .private-inp{
 }
 form{
   margin-top: 550px;
+}
+@media(max-width: 1999px){
+  .container--header{
+    font-size: 18px;
+  }
 }
 @media(min-width: 1200px){
   .modal{
