@@ -19,15 +19,19 @@ import {
 
 
 const ProfilePage: React.FC = () => {
+  
+  let [userData, setUserData] = useState({
+    name: "User Name",
+    ownProfile: authServices.getIdFromAccessToken(localStorage.getItem("access-token")) == window.location.pathname.slice(16)
+  });
 
   useEffect(()=>{
     async function load() {
-    
       const id = window.location.pathname.slice(16)
       try {
         const get = (await api.get(`/user/getOne/${id}`, { cancelToken: cancelTokenSource.token })).data;
         setUserData(prevData => ({ ...prevData, name: get.name}));
-  
+        console.log(get)
       } catch (err) {
         console.log(err);
       }
@@ -38,15 +42,6 @@ const ProfilePage: React.FC = () => {
       cancelTokenSource.cancel();
     }
   },[])
-
-
-  let [userData, setUserData] = useState({
-    name: "User Name",
-    ownProfile: authServices.getIdFromAccessToken(localStorage.getItem("access-token")) == window.location.pathname.slice(16)
-  });
-
-  
-  
 
   return (
     <Container>
