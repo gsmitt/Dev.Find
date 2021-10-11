@@ -52,7 +52,6 @@ export const ProfileData = styled.div`
   display: flex;
   flex-direction: column;
 
-
   > h1 {
     font-weight: bold;
     font-size: 19px;
