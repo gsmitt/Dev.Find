@@ -1,6 +1,6 @@
 import React from "react";
 import { BsBuilding } from 'react-icons/bs';
-import {EditarPerfil } from "../EditarPerfil"
+import { EditarPerfil } from "../EditarPerfil"
 
 import Feed from '../Feed';
 
@@ -22,13 +22,11 @@ const ProfilePage: React.FC = () => {
       </Banner>
 
       <ProfileData>
-        <EditButton
-            outlined
-            onClick = { () => alert('hello') }>Editar
-        </EditButton>
+        {/* <EditButton outlined>Edit Profile</EditButton> */}
+        <EditarPerfil />
 
         <h1>Nome Usuário</h1>
-      
+
         <p>
           Descrição, informações
         </p>
@@ -40,7 +38,7 @@ const ProfilePage: React.FC = () => {
           </li>
           <li>
             <BsBuilding />
-             Company
+            Company
           </li>
         </ul>
 

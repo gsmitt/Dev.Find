@@ -1,3 +1,24 @@
+.container--header{
+  display: flex;
+  z-index: 9999;
+  min-width: 200px;
+  max-height: 450px;
+  padding: 8px;
+  background: #fff;
+  border-bottom: 1px solid #d6d6d6;
+  overflow-y: hidden;
+}
+
+.icon--modal{
+  font-size: 30px;
+}
+
+.header--title{
+  margin-top: 20px;
+  font-family: 'Roboto Slab', serif;
+  font-size: 15px;
+}
+
 .modal{
   z-index: 9999;
   position: absolute;
@@ -6,11 +27,37 @@
   min-width: 200px;
   max-height: 450px;
   padding: 5px;
-  border-radius: 10px;
   transform: translate(-50%, -50%);
   background: #fff;
-  overflow-y: scroll;
 }
+
+.modal--button{
+  font-size: 13px;
+  margin-left: 800px;
+  margin-top: -10px;
+  color: #051120;
+  top: 10px;
+  padding: 11px 20px;
+  font-size: 15px;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 15px;
+  border: 1px solid #d6d6d6;
+  cursor: pointer;
+  outline: 0;
+  background: transparent;
+
+  @media (min-width: 320px) {
+    top: 10px;
+    padding: 10px 19px;
+    font-size: 15px;
+  }
+}
+
+.modal--button:hover{
+  background: #d6d6d6;
+}
+
 .bg{
   z-index: 9998;
   position: absolute;
@@ -32,9 +79,10 @@
   height: 50vh;
   align-items: center;
   justify-content: center;
+  border-radius: 20px;
   font-size: 3rem;    
   margin-bottom: 200px;
-
+  overflow-y: scroll;
 }
 .input--cadastro{
   border: 5px solid #ff9900;
@@ -148,10 +196,8 @@ form{
     min-width: 700px;
     min-height: 450px;
     padding: 0px;
-    border-radius: 10px;
     transform: translate(-50%, -50%);
     background: #fff;
-    overflow-y: scroll;
   }
   .bg{
     z-index: 9998;
