@@ -11,6 +11,7 @@ import Cadastro from '../pages/Cadastro/index';
 import Publicar from '../pages/Publicar/index';
 import Profile from '../pages/Profile/index';
 import TypeStyles from '../styles/GlobalStyles';
+import { EditarPerfil } from "../components/EditarPerfil";
 
 
 export function Routes() {
@@ -30,7 +31,7 @@ export function Routes() {
       {/* <Route path='/edit-modal' component={EditModal} /> */}
       <Route path='/perfil-usuario' component={Profile} />
       {/* <Route path='/edit-profile' component={EditProfile} /> */}
-      {/* <Route path='/editar-perfil' component={EditarPerfil} /> */}
+      <Route path='/editar-perfil' component={EditarPerfil} />
       
       <Footer />
     </Router>

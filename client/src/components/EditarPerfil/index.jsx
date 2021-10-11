@@ -20,15 +20,15 @@ export class EditarPerfil extends React.Component {
           <div className="holder-2">
             <div className="parent-2">
                 <center>
-                    <form action="">
+                    <form  action="">
                         <div className="input-container">
                             <label className="title-input">Nome</label>
-                            <input className="input--cadastro3-" type="text" placeholder="Nome" name="name"  required />
+                            <input className="input--cadastro" type="text" placeholder="Nome" name="name"  required />
                         </div>
 
                         <div className="input-container">
                             <label className="title-input">E-mail</label>
-                            <input className="input--cadastro3-" type="text" placeholder="E-mail" name="name"  required />
+                            <input className="input--cadastro" type="text" placeholder="E-mail" name="name"  required />
                         </div>
                         
                         <div className="input-container">
@@ -38,14 +38,14 @@ export class EditarPerfil extends React.Component {
 
                         <div className="input-container">
                             <label className="title-input">Empresa</label>
-                            <input className="input--cadastro3-" type="text" placeholder="Empresa" name="name"  required />
+                            <input className="input--cadastro3" type="text" placeholder="Empresa" name="name"  required />
                         </div>
 
                         <div className="input-container">
                             <label className="title-input">Localização</label>
-                            <input className="input--cadastro3-" type="text" placeholder="Localização" name="name"  required />
+                            <input className="input--cadastro3" type="text" placeholder="Localização" name="name"  required />
                         </div>
-                        <input type="submit" value="Publicar" className="private-inp" />
+                        <input type="submit" value="Salvar" className="private-inp" />
                     </form>
                 </center>
             </div>
