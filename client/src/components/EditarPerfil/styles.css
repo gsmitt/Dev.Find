@@ -136,7 +136,7 @@
 
 .parent-2{
   margin: 0;
-  margin-bottom: 145px; 
+  margin-bottom: 50px; 
 }
 
 .input--cadastro{
@@ -159,19 +159,7 @@
   font-size: 20px;
   margin-left: 10px;
 }
-.input--cadastro2{
-  border: 5px solid #ff9900;
-  height: 50px;
-  width: 300px;
-  margin-bottom: 20px;
-  font-size: 20px;
-}
-.input--cadastro2::place-2{
-  font-family: 'Roboto Slab', serif;
-  font-size: 20px;
-  margin-left: 10px;
-  
-}
+
 .text--baixo{
   font-size: 16px;
   color: #783F04;
@@ -187,10 +175,7 @@
   border: 5px solid #ff9900;
   font-family: 'Roboto Slab', serif;
   display: block;
-  margin: auto;
   background: transparent;
-  height: 50px;
-  width: 200px;
   margin-top: 250px;
   margin-bottom: 50px;
   font-size: 20px;
