@@ -14,6 +14,17 @@ function getRefreshToken() {
     return localStorage.getItem("refresh-token");
 }
 
+function getIdFromAccessToken(accessToken) {
+    try {
+        const { id } = jwtDecode(accessToken);
+
+        return id;
+    } catch (err) {
+        console.log(err);
+        return;
+    }
+}
+
 function getRoleFromAccessToken(accessToken) {
     try {
         const { role } = jwtDecode(accessToken);
@@ -68,7 +79,8 @@ const authServices = {
     getRoleFromAccessToken,
     getUser,
     refreshToken,
-    signIn
+    signIn,
+    getIdFromAccessToken
 }
 
 export default authServices;

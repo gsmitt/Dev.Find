@@ -8,6 +8,32 @@
   background: #fff;
   border-bottom: 1px solid #d6d6d6;
   overflow-y: hidden;
+  border-top: 1px solid #d6d6d6;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.logo-container{
+  font-size: 25px;
+  font-weight: 500;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  max-width: fit-content;
+}
+
+.logo-dev{
+  color: #783f04;
+}
+
+.logo-find{
+  color: #ff9900; 
+}
+
+.logo-par{
+  color: #ff9900; 
+  margin-left: 4px;
 }
 
 .scroll-off {
@@ -29,17 +55,27 @@
 }
 
 .icon--modal{
-  font-size: 30px;
-  cursor: pointer;
   position: relative;
-  left: 66vh;
-  top: 1.5vh;
+  top: 8px;
+  left: 500px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #051120;
+}
+
+.icon--modal:hover{
+  color: #d6d6d6;
 }
 
 .header--title{
-  margin-top: 20px;
+  position: relative;
+  bottom: 4px;
+  left: 98px;
+  color: #051120;
+  margin-top: 10px;
   font-family: 'Roboto Slab', serif;
-  font-size: 15px;
+  font-size: 12px;
+  font-weight: bold;
   overflow-y: hidden;
 }
 
@@ -48,11 +84,11 @@
   position: absolute;
   top: 50%;
   left: 50%;
+  border-radius: 20px;
   min-width: 200px;
-  max-height: 450px;
+  max-height: 400px;
   padding: 5px;
   transform: translate(-50%, -50%);
-  background: #fff;
 }
 
 .modal--button{
@@ -65,7 +101,6 @@
   font-size: 15px;
   border-radius: 25px;
   font-weight: bold;
-  font-size: 15px;
   border: 1px solid #d6d6d6;
   cursor: pointer;
   outline: 0;
@@ -85,17 +120,12 @@
   top: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.3);
-  
 }
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;  
-}
+
 .holder-2{
   display: flex;
   background: #fff;
-  height: 50vh;
+  height: 60vh;
   align-items: center;
   justify-content: center;
   border-radius: 20px;
@@ -103,10 +133,12 @@
   margin-bottom: 200px;
   overflow-y: scroll;
 }
+
 .parent-2{
   margin: 0;
-  margin-bottom: 145px; 
+  margin-bottom: 50px; 
 }
+
 .input--cadastro{
   border: 5px solid #ff9900;
   height: 50px;
@@ -114,11 +146,7 @@
   margin-bottom: 20px;
   font-size: 20px;
 }
-.input--cadastro::place-2{
-  font-family: 'Roboto Slab', serif;
-  font-size: 20px;
-  margin-left: 10px;
-}
+
 .input--cadastro3{
   border: 5px solid #ff9900;
   height: 50px;
@@ -131,19 +159,7 @@
   font-size: 20px;
   margin-left: 10px;
 }
-.input--cadastro2{
-  border: 5px solid #ff9900;
-  height: 50px;
-  width: 300px;
-  margin-bottom: 20px;
-  font-size: 20px;
-}
-.input--cadastro2::place-2{
-  font-family: 'Roboto Slab', serif;
-  font-size: 20px;
-  margin-left: 10px;
-  
-}
+
 .text--baixo{
   font-size: 16px;
   color: #783F04;
@@ -152,33 +168,24 @@
   text-decoration: none;
   color: #ff9900;
 }
-form{
+.form--modal{
   margin: 0;
 }
-form .private-inp{
+.form--modal .private-inp{
   border: 5px solid #ff9900;
   font-family: 'Roboto Slab', serif;
   display: block;
-  margin: auto;
   background: transparent;
-  height: 50px;
-  width: 200px;
-  margin-top: 70px;
+  margin-top: 250px;
   margin-bottom: 50px;
-  color: #783F04;
   font-size: 20px;
   font-weight: bold;
   cursor: pointer;
 }
-.checkbox{
-  font-size: 19px;
-  
-}
-.checkbox .check-box-feature{
-  margin-right: 10px;
-}
-.title-input{
-  font-size: 25px;
+
+.save--container{
+  position: relative;
+  bottom: 190px;
 }
 
 .input--cadastro3{
@@ -207,14 +214,16 @@ form .private-inp{
   margin-left: 10px;
   
 }
-form{
+.form--modal{
   margin-top: 550px;
 }
+
 @media(max-width: 1999px){
   .container--header{
     font-size: 18px;
   }
 }
+
 @media(min-width: 1200px){
   .modal{
     z-index: 9999;

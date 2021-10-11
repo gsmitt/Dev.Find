@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 
 import { LocationOn, } from '../../styles/Icons';
 import Button from '../Button';
+import Input from '../Input';
 
 export const Container = styled.div`
   display: flex;

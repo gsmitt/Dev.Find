@@ -1,3 +1,5 @@
+import  authServices from "../../services/authServices"
+
 export const LogedSidebarData = [
     {
       title: 'Home',
@@ -16,7 +18,7 @@ export const LogedSidebarData = [
     },
     {
       title: 'Perfil',
-      path: '/perfil-usuario',
+      path: '/perfil-usuario/'+authServices.getIdFromAccessToken(localStorage.getItem("access-token")),
       cName: 'nav-text'
     },
     {
