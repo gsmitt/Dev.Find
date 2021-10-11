@@ -24,6 +24,13 @@ export function Dashboard() {
                     let div = document.createElement("div")
                     div.classList.add("card")
                     div.innerHTML= i.title
+
+                    
+                    if(i.image){let img = document.createElement("img")
+                    img.src = i.image
+                    div.appendChild(img)
+                    }
+
                     container.appendChild(div)
                 }
             })() :
@@ -31,7 +38,10 @@ export function Dashboard() {
                 for (let i of get) {
                     let div = document.createElement("div")
                     div.classList.add("card")
-                    div.innerHTML= i.name
+                    let a = document.createElement("a")
+                    a.innerHTML = i.name
+                    a.href = "/perfil-usuario/"+i.id
+                    div.appendChild(a)
                     container.appendChild(div)
                 }
             })()

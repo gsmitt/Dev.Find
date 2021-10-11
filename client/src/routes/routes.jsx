@@ -29,7 +29,7 @@ export function Routes() {
       </Switch>
       <TypeStyles />
       {/* <Route path='/edit-modal' component={EditModal} /> */}
-      <Route path='/perfil-usuario' component={Profile} />
+      <Route path='/perfil-usuario/:id' component={Profile} />
       {/* <Route path='/edit-profile' component={EditProfile} /> */}
       <Route path='/editar-perfil' component={EditarPerfil} />
       
