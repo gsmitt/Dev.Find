@@ -10,11 +10,11 @@ export class EditarPerfil extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="all">
         <button className="modal--button" onClick={() => this.openModal()}>Editar Perfil</button>
         <Modal isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
           <header className="container--header">
-            <VscClose className="icon--modal" />
+            <VscClose onClick={() => this.closeModal()} className="icon--modal" />
             <div className="header--title"><h1>Editar Perfil</h1></div>
           </header>
           <div className="holder-2">
@@ -23,27 +23,27 @@ export class EditarPerfil extends React.Component {
                 <form action="">
                   <div className="input-container">
                     <label className="title-input">Nome</label>
-                    <input className="input--cadastro" type="text" placeholder="Nome" name="name" required />
+                    <input className="input--cadastro" type="text" placeholder="Nome" name="name" />
                   </div>
 
                   <div className="input-container">
                     <label className="title-input">E-mail</label>
-                    <input className="input--cadastro" type="text" placeholder="E-mail" name="name" required />
+                    <input className="input--cadastro" type="text" placeholder="E-mail" name="name" />
                   </div>
 
                   <div className="input-container">
                     <label className="title-input">Descrição</label>
-                    <textarea placeholder="Descreva." id="" cols="30" rows="10" name="description" required></textarea>
+                    <textarea placeholder="Descreva." id="" cols="30" rows="10" name="description"></textarea>
                   </div>
 
                   <div className="input-container">
                     <label className="title-input">Empresa</label>
-                    <input className="input--cadastro3" type="text" placeholder="Empresa" name="name" required />
+                    <input className="input--cadastro3" type="text" placeholder="Empresa" name="name" />
                   </div>
 
                   <div className="input-container">
                     <label className="title-input">Localização</label>
-                    <input className="input--cadastro3" type="text" placeholder="Localização" name="name" required />
+                    <input className="input--cadastro3" type="text" placeholder="Localização" name="name" />
                   </div>
                   <input type="submit" value="Salvar" className="private-inp" />
                 </form>
