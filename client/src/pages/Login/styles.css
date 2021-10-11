@@ -67,3 +67,7 @@ form .private-inp{
     font-weight: bold;
     cursor: pointer;
 }
+
+.login-container{
+    margin-top: 0;
+}

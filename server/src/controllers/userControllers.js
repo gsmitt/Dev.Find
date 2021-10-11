@@ -29,7 +29,7 @@ async function getMany(req,res,next){
                 } : {[Op.not]: 'null',}
             }, 
             offset: offset, 
-            limit: 5, 
+            limit: 16, 
             order: [
             ['updatedAt', 'DESC']
             ],

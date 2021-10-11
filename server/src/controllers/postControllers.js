@@ -12,7 +12,7 @@ async function create(req, res, next) {
         }
         let image = null
         if(req.files.image){
-            image = req.files.image[0].path
+            image = `http://localhost:3001/image/${req.files.image[0].filename}`;
         }
 
         const { description, title } = post; 
@@ -99,14 +99,14 @@ async function getMany(req,res,next){
 
     try {
         const posts = await Post.findAll({
-            attributes: ['id', 'updatedAt', 'createdAt', 'title', 'description'], 
+            attributes: ['id', 'updatedAt', 'createdAt', 'title', 'description', 'image'], 
             where:{
                 title: filter !== 'nullValue' ? {
                     [Op.iLike]: `%${filter}%`
                 } : {[Op.not]: 'null',}
             }, 
             offset: offset, 
-            limit: 5, 
+            limit: 16, 
             order: [
             ['updatedAt', 'DESC']
             ],

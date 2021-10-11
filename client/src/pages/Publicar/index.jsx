@@ -46,7 +46,7 @@ export function Publicar() {
         <div className="holder">
             <div className="parent">
                 <center>
-                    <form action="" onSubmit={handleSubmit}>
+                    <form className="container-publish" action="" onSubmit={handleSubmit}>
                         <div className="input-container">
                             <label className="title-input">Coloque um nome para o seu projeto</label>
                             
