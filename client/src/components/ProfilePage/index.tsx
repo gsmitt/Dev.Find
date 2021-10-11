@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { BsBuilding } from 'react-icons/bs';
 import { EditarPerfil } from "../EditarPerfil"
-import { api } from "../../services/api";
+import { api, cancelTokenSource } from "../../services/api";
+import  authServices from "../../services/authServices"
 
 
 
@@ -18,19 +19,35 @@ import {
 
 
 const ProfilePage: React.FC = () => {
+
+  useEffect(()=>{
+    async function load() {
+    
+      const id = window.location.pathname.slice(16)
+      try {
+        const get = (await api.get(`/user/getOne/${id}`, { cancelToken: cancelTokenSource.token })).data;
+        setUserData(prevData => ({ ...prevData, name: get.name}));
   
-  
-  async function load() {
-    const id = window.location.pathname.slice(16)
-    try {
-        const get = (await api.get(`/user/getOne/${id}`)).data;
-        console.log(get)    
-    } catch (err) {
+      } catch (err) {
         console.log(err);
+      }
     }
-  }
-  load()
+    load()
+
+    return () => {
+      cancelTokenSource.cancel();
+    }
+  },[])
+
+
+  let [userData, setUserData] = useState({
+    name: "User Name",
+    ownProfile: authServices.getIdFromAccessToken(localStorage.getItem("access-token")) == window.location.pathname.slice(16)
+  });
+
   
+  
+
   return (
     <Container>
       <Banner>
@@ -41,7 +58,7 @@ const ProfilePage: React.FC = () => {
         {/* <EditButton outlined>Edit Profile</EditButton> */}
         <EditarPerfil />
 
-        <h1 id="user-name">Nome Usuário</h1>
+        <h1 id="user-name">{userData.name}</h1>
 
         <p>
           Descrição, informações
