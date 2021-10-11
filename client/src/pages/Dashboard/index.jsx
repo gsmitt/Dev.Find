@@ -15,7 +15,7 @@ export function Dashboard() {
             const get = (await api.get(`/${target}/getMany/${data.filter? data.filter : "nullValue"}/${data.offset}`)).data;
             console.log(get)
 
-            const container = document.querySelector(".placeholder")
+            const container = document.querySelector(".cards-container")
             container.innerHTML=""
             
             target == "post" ?
@@ -27,6 +27,7 @@ export function Dashboard() {
 
                     
                     if(i.image){let img = document.createElement("img")
+                    // img = document.querySelector("image-card")
                     img.src = i.image
                     div.appendChild(img)
                     }
@@ -72,7 +73,7 @@ export function Dashboard() {
             </div>
             <input type="text" name="filter" onChange={handleChange} value={data.filter} />
             <button onClick={()=>{load(data.target)}}>Pesquisar</button>
-            <div className="placeholder">
+            <div className="cards-container">
 
             </div>
         </div>

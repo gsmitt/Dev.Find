@@ -12,7 +12,8 @@ import Publicar from '../pages/Publicar/index';
 import Profile from '../pages/Profile/index';
 import TypeStyles from '../styles/GlobalStyles';
 import { EditarPerfil } from "../components/EditarPerfil";
-
+import NotFound from '../pages/NotFound';
+import TesteDashboard from '../pages/TesteDashboard';
 
 export function Routes() {
   return (
@@ -33,6 +34,9 @@ export function Routes() {
       {/* <Route path='/edit-profile' component={EditProfile} /> */}
       <Route path='/editar-perfil' component={EditarPerfil} />
       
+      <Route path='/teste-dashboard' component={TesteDashboard} />
+      <Route path='/not-found' component={NotFound} />
+
       <Footer />
     </Router>
   </>
