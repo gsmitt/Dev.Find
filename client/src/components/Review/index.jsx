@@ -54,15 +54,15 @@ export function Review() {
             </div>
             <div className="star-widget">
                 <input type="radio" className="after__input" onClick={()=>{updateRate(5)}} name="rate" id="rate-5"></input>
-                <label for="rate-5" className="fas fa-star"><FaStar /></label>
+                <label htmlFor="rate-5" className="fas fa-star"><FaStar /></label>
                 <input type="radio" className="after__input" onClick={()=>{updateRate(4)}} name="rate" id="rate-4"></input>
-                <label for="rate-4" className="after__input" className="fas fa-star"><FaStar /></label>
+                <label htmlFor="rate-4" className="after__input" className="fas fa-star"><FaStar /></label>
                 <input type="radio" className="after__input" onClick={()=>{updateRate(3)}} name="rate" id="rate-3"></input>
-                <label for="rate-3" className="fas fa-star"><FaStar /></label>
+                <label htmlFor="rate-3" className="fas fa-star"><FaStar /></label>
                 <input type="radio" className="after__input" onClick={()=>{updateRate(2)}} name="rate" id="rate-2"></input>
-                <label for="rate-2" className="fas fa-star"><FaStar /></label>
+                <label htmlFor="rate-2" className="fas fa-star"><FaStar /></label>
                 <input type="radio" className="after__input" onClick={()=>{updateRate(1)}} name="rate" id="rate-1"></input>
-                <label for="rate-1" className="fas fa-star"><FaStar /></label>
+                <label htmlFor="rate-1" className="fas fa-star"><FaStar /></label>
                 <form action="#">
                     <div className="review-area">
                         <textarea className="review-text" cols="30" placeholder="Deixe um comentário..." name="review" onChange={handleChange} value={data.review}></textarea>
