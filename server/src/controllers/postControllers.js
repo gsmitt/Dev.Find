@@ -99,11 +99,15 @@ async function getMany(req,res,next){
 
     try {
         const posts = await Post.findAll({
-            attributes: ['id', 'updatedAt', 'createdAt', 'title', 'description', 'image'], 
+            attributes: ['id', 'updatedAt', 'createdAt', 'title', 'description', 'image', 'user_id'], 
             where:{
-                title: filter !== 'nullValue' ? {
-                    [Op.iLike]: `%${filter}%`
-                } : {[Op.not]: 'null',}
+                [Op.or]: [
+                    {title: filter !== 'nullValue' ? {
+                        [Op.iLike]: `%${filter}%`
+                    } : {[Op.not]: 'null',}},
+                    {user_id: filter !== 'nullValue'?
+                        filter: {[Op.is]: null}}
+                ]
             }, 
             offset: offset, 
             limit: 16, 
@@ -111,8 +115,6 @@ async function getMany(req,res,next){
             ['updatedAt', 'DESC']
             ],
         });
-
-        console.log(posts);
 
         res.json(posts);
     } catch (err) {

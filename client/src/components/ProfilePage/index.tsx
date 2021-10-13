@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { BsBuilding } from 'react-icons/bs';
-import { EditarPerfil } from "../EditarPerfil"
+import { EditarPerfil } from "../EditarPerfil";
 import { api, cancelTokenSource } from "../../services/api";
-import authServices from "../../services/authServices"
+import authServices from "../../services/authServices";
 
 
 

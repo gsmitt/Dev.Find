@@ -24,9 +24,14 @@ async function getMany(req,res,next){
         const users = await User.findAll({
             attributes: ['id', 'updatedAt', 'createdAt', 'name'], 
             where:{
-                name: filter !== 'nullValue' ? {
-                    [Op.iLike]: `%${filter}%`
-                } : {[Op.not]: 'null',}
+                [Op.or]: [
+                    {name: filter !== 'nullValue' ? {
+                        [Op.iLike]: `%${filter}%`
+                    } : {[Op.not]: 'null',}},
+                    {description: filter !== 'nullValue' ? {
+                        [Op.iLike]: `%${filter}%`
+                    } : {[Op.not]: 'null',}}
+                ]
             }, 
             offset: offset, 
             limit: 16, 
