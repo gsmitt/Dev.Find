@@ -40,10 +40,18 @@ module.exports = {
         type: Sequelize.STRING
       },
 
+      avatar_key:{
+        type: Sequelize.STRING
+      },
+
       background: {
         type: Sequelize.STRING
       },
 
+      background_key:{
+        type: Sequelize.STRING
+      },
+  
       role: {
         type: Sequelize.ENUM("dev", "client", "admin"),
         allowNull: false

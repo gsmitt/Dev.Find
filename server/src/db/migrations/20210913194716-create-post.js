@@ -31,6 +31,10 @@ module.exports = {
         type: Sequelize.STRING
       },
 
+      image_key:{
+        type: Sequelize.STRING
+      },
+
       description: {
         type: Sequelize.TEXT,
         allowNull: null

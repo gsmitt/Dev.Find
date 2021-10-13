@@ -10,24 +10,24 @@ async function create(req, res, next) {
         const post = {
             ...req.body
         }
-        let image = null
+        let image = null, image_key = null;
         if(req.files.image){
-            image = `http://localhost:3001/image/${req.files.image[0].filename}`;
+            image = `${req.files.image.location}`;
+            if(req.files.image.key){
+                image_key = `${req.files.image.key}`;
+            }
         }
 
         const { description, title } = post; 
-        console.log(image) 
-        
+
         const newPost = await Post.create({
             user_id,
             description,
             title,
-            image
+            image,
+            image_key
         });
         
-        if (!newPost){
-
-        }
         res.json(newPost);
     } catch (err) {
         console.log(err);

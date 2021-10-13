@@ -1,47 +1,11 @@
 const multer = require("multer");
 const path = require("path");
-
-const verify = {         
-    fileFilter: (req, file, cb) => {
-        const allowedMimes = [
-            "image/jpeg",
-            "image/png",
-            "image/gif"
-        ];
-
-        if (allowedMimes.includes(file.mimetype)) {
-            cb(null, true);
-        } else {
-            cb(new Error("Invalid file type"));
-        }
-    },
-
-    storage: multer.diskStorage({
-        destination: (req, file, cb) => {
-            cb(null, path.resolve(__dirname, "..", "..", "uploads"));
-        },
-        filename: (req, file, cb) => {
-            const fileName = `${Date.now()}-${Math.floor(Math.random()*999+1)}-${replaceAll(file.originalname," ", "-")}`;
-            cb(null, fileName);
-        }
-    })    
-};
-
-function replaceAll(str, find, replace) {
-    return str.replace(new RegExp(find, 'g'), replace);
-  }
-const upload = multer({ storage: verify.storage })
-
-module.exports= upload
-
-/*
-const multer = require("multer");
-const path = require("path");
 const { randomBytes } = require("crypto");
 const multerS3 = require("multer-s3");
 const aws = require("aws-sdk");
 
 const storages = {
+    
     local: multer.diskStorage({
         destination: (req, file, cb) => {
             cb(null, path.resolve(__dirname, "..", "..", "uploads"));
@@ -50,7 +14,7 @@ const storages = {
             randomBytes(16, (err, buf) => {
                 if (err) throw err;
 
-                const fileName = `${buf.toString("hex")}-${file.originalname}`;
+                const fileName = `${buf.toString("hex")}-${replaceAll(file.originalname," ", "-")}`;
 
                 cb(null, fileName);
             });
@@ -65,20 +29,24 @@ const storages = {
             randomBytes(16, (err, hash) => {
                 if (err) cb(err);
 
-                const fileName = `${hash.toString("hex")}-${file.originalname}`;
-
+                const fileName = `${hash.toString("hex")}-${replaceAll(file.originalname," ", "-")}`;
+                
                 cb(null, fileName);
             });
         }
     })
 }
+function replaceAll(str, find, replace) {
+    return str.replace(new RegExp(find, 'g'), replace);
+}
 
-module.exports = {         
+module.exports = multer({         
     fileFilter: (req, file, cb) => {
         const allowedMimes = [
             "image/png",
             "image/jpg",
-            "image/jpeg"
+            "image/jpeg",
+            "image/gif"
         ];
 
         if (allowedMimes.includes(file.mimetype)) {
@@ -88,6 +56,5 @@ module.exports = {
         }
     },
     storage: storages[process.env.STORAGE_TYPE]
-};
+});
 
-*/
