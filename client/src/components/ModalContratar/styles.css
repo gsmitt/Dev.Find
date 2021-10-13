@@ -168,7 +168,7 @@
   text-decoration: none;
   color: #ff9900;
 }
-.form--modal{
+.form--modal-2{
   margin: 0;
 }
 .form--modal .private-inp{
@@ -181,11 +181,11 @@
   font-size: 20px;
   font-weight: bold;
   cursor: pointer;
+  
 }
 
-.save--container{
-  position: relative;
-  bottom: 190px;
+.save--container-2{
+
 }
 
 .input--cadastro3{

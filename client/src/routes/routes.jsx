@@ -12,6 +12,7 @@ import Publicar from '../pages/Publicar/index';
 import Profile from '../pages/Profile/index';
 import TypeStyles from '../styles/GlobalStyles';
 import { EditarPerfil } from "../components/EditarPerfil";
+import { ModalContratar } from "../components/ModalContratar";
 import NotFound from '../pages/NotFound';
 import TesteDashboard from '../pages/TesteDashboard';
 
@@ -34,6 +35,7 @@ export function Routes() {
       {/* <Route path='/edit-profile' component={EditProfile} /> */}
       <Route path='/editar-perfil' component={EditarPerfil} />
       
+      <Route path='/modal-contratar' component={ModalContratar} />
       <Route path='/teste-dashboard' component={TesteDashboard} />
       <Route path='/not-found' component={NotFound} />
 
