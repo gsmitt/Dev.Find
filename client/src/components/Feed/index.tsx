@@ -8,7 +8,6 @@ const Feed: React.FC = () => {
   return (
     <Container_Feed>
       <Tab_Container>
-        <Tab>Overview</Tab>
         <Tab>Projetos</Tab>
       </Tab_Container>
 
