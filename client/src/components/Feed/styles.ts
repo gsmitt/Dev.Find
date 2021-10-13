@@ -15,7 +15,7 @@ export const Tab_Container = styled.div`
 export const Tab = styled.div`
   display: flex;
   margin-top: 20px;
-  padding: 11px 216px 15px;
+  padding: 11px 469px 15px;
   text-align: center;
 
   font-weight: bold;
@@ -31,6 +31,12 @@ export const Tab = styled.div`
   &:hover {
     background: var(--tertiary);
     color: var(--white)
+  }
+
+  @media(max-width: 812px){
+    position: relative;
+    padding: 11px 154px 15px;
+    height: 100%;
   }
 `;
 

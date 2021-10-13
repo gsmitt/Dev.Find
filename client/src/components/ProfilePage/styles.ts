@@ -16,6 +16,12 @@ export const Container = styled.div`
   ::-webkit-scrollbar {
     display: none;
   }
+
+  @media(max-width: 812px){
+    position: relative;
+    width: 37%;
+    height: 100%;
+  }
 `;
 
 export const Banner = styled.div`
@@ -42,6 +48,14 @@ export const Avatar = styled.div`
   cursor: pointer;
   &:hover {
     opacity: 0.7;
+  }
+
+  @media(max-width: 812px){
+    position: relative;
+    left: 1px;
+    top: 15px;
+    width: max(45px, min(135px, 30vw));
+    height: max(45px, min(135px, 30vw));
   }
 `;
 
@@ -87,6 +101,12 @@ export const ProfileData = styled.div`
       }
     }
   }
+
+  @media(max-width: 812px){
+    position: relative;
+    left: 10px;
+    bottom: 30px;
+  }
 `;
 
 const iconCSS = css`
@@ -110,4 +130,10 @@ export const EditButton = styled(Button)`
     padding: 10px 19px;
     font-size: 15px;
   }
+
+  @media(max-width: 812px){
+    position: relative;
+    margi-left: 500px;
+  }
+
 `;

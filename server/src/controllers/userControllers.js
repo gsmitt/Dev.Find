@@ -1,42 +1,51 @@
 const { Op } = require("sequelize");
 const createHttpError = require("http-errors");
 const { User } = require("../db/models");
-const fs = require("fs")
+//const fs = require("fs")
+const aws = require("aws-sdk");
 
 
 async function getOne(req, res, next) {
     const userId = req.params.id
 
     try {
-        const user = await User.findOne({where: { id: userId } });
+        const user = await User.findOne({ where: { id: userId } });
         res.json(user);
     } catch (err) {
         console.log(err);
     }
 }
 
-async function getMany(req,res,next){
+async function getMany(req, res, next) {
     const offset = req.params.offset
     const filter = req.params.filter
-     
+
 
     try {
         const users = await User.findAll({
-            attributes: ['id', 'updatedAt', 'createdAt', 'name'], 
-            where:{
-                [Op.or]: [
-                    {name: filter !== 'nullValue' ? {
-                        [Op.iLike]: `%${filter}%`
-                    } : {[Op.not]: 'null',}},
-                    {description: filter !== 'nullValue' ? {
-                        [Op.iLike]: `%${filter}%`
-                    } : {[Op.not]: 'null',}}
+            attributes: ['id', 'updatedAt', 'createdAt', 'name', 'avatar', 'description'],
+            where: {
+                [Op.and]: [{
+                    [Op.or]: [
+                        {
+                            name: filter !== 'nullValue' ? {
+                                [Op.iLike]: `%${filter}%`
+                            } : { [Op.not]: 'null', }
+                        },
+                        {
+                            description: filter !== 'nullValue' ? {
+                                [Op.iLike]: `%${filter}%`
+                            } : { [Op.not]: 'null', }
+                        }
+                    ]
+                },
+                { role: "dev" }
                 ]
-            }, 
-            offset: offset, 
-            limit: 16, 
+            },
+            offset: offset,
+            limit: 16,
             order: [
-            ['updatedAt', 'DESC']
+                ['updatedAt', 'DESC']
             ],
         });
 
@@ -53,13 +62,13 @@ async function create(req, res, next) {
         const user = {
             ...req.body
         }
-        const { name, email, password, role, username} = user;  
-        
-        const [ newUser, created ] = await User.findOrCreate({
-            where: {[Op.or]: [{ email }, { username }]},
-            defaults: {name, password, role, email, username}
+        const { name, email, password, role, username } = user;
+
+        const [newUser, created] = await User.findOrCreate({
+            where: { [Op.or]: [{ email }, { username }] },
+            defaults: { name, password, role, email, username }
         });
-    
+
         if (!created) {
             throw new createHttpError(409, "User already exists");
         }
@@ -71,19 +80,19 @@ async function create(req, res, next) {
     }
 }
 
-async function deleteUser(req,res,next) {
+async function deleteUser(req, res, next) {
     const target = req.params.id
     const userId = res.locals.userId;
     const userRole = res.locals.userRole;
     try {
-        const user = await User.findOne({where: { id: target } });
-        
+        const user = await User.findOne({ where: { id: target } });
+
         if (!user) throw new createHttpError(404, "This user does not exist");
 
         if (!((userId == user.id) || (userRole == "admin"))) throw new createHttpError(403, "You don't have permission to do this");
 
-        User.destroy({where: { id: target }})
-        
+        User.destroy({ where: { id: target } })
+
         res.json()
     } catch (err) {
         console.log(err);
@@ -91,48 +100,70 @@ async function deleteUser(req,res,next) {
     }
 }
 
-async function update(req,res,next) {
+async function update(req, res, next) {
     const target = req.params.id
     const userId = res.locals.userId;
     const userRole = res.locals.userRole;
 
-    const newData = {...req.body}
+    const newData = { ...req.body }
 
-    if(req.files.avatar){
+    if (req.files.avatar) {
         av = req.files.avatar[0]
-        newData.avatar = `http://localhost:3001/image/${av.filename}`
-    }
-    if(req.files.background){
-        bg = req.files.background[0]
-        newData.background = `http://localhost:3001/image/${bg.filename}`;
+        newData.avatar = `${av.location}`
+        if (av.key) {
+            newData.avatar_key = `${av.key}`;
+        }
     }
 
-    try{
-        const user = await User.findOne({where: { id: target } });
-        
+    if (req.files.background) {
+        bg = req.files.background[0]
+        newData.background = `${bg.location}`;
+        if (bg.key) {
+            newData.background_key = `${bg.key}`;
+        }
+    }
+
+    try {
+        const user = await User.findOne({ where: { id: target } });
+
         if (!user) throw new createHttpError(404, "This user does not exist");
 
         if (!((userId == user.id) || (userRole == "admin"))) throw new createHttpError(403, "You don't have permission to do this");
 
-        if (newData.avatar){
-            if (user.avatar && user.avatar != "undefined") {
-                fs.unlinkSync(user.avatar)
-            }
+        const s3 = new aws.S3()
+        
+        if(user.avatar_key){
+            var avatar_params = {
+                Bucket: process.env.BUCKET_NAME,
+                Key: user.avatar_key
+            };
+            
+            s3.deleteObject(avatar_params, function (err, data) {
+                if (err) console.log(err, err.stack);
+                else console.log(data);           
+            }); 
         }
 
-        if (newData.background){
-            if (user.background && user.avatar != "undefined") {
-                fs.unlinkSync(user.background)
-            }
+        if(user.background_key){
+            var background_params = {
+                Bucket: process.env.BUCKET_NAME,
+                Key: user.background_key
+            };
+            
+            s3.deleteObject(background_params, function (err, data) {
+                if (err) console.log(err, err.stack);
+                else console.log(data);           
+            }); 
         }
 
 
         Object.assign(user, newData);
+        console.log(user)
 
         const updated = await user.save();
 
         res.json(updated)
-    } catch(err) {
+    } catch (err) {
         console.log(err);
         next(err);
     }
