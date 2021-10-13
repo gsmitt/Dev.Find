@@ -21,12 +21,15 @@ const verify = {
             cb(null, path.resolve(__dirname, "..", "..", "uploads"));
         },
         filename: (req, file, cb) => {
-            const fileName = `${Date.now()}-${Math.floor(Math.random()*999+1)}-${file.originalname}`;
+            const fileName = `${Date.now()}-${Math.floor(Math.random()*999+1)}-${replaceAll(file.originalname," ", "-")}`;
             cb(null, fileName);
         }
     })    
 };
 
+function replaceAll(str, find, replace) {
+    return str.replace(new RegExp(find, 'g'), replace);
+  }
 const upload = multer({ storage: verify.storage })
 
 module.exports= upload
