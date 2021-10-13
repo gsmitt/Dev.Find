@@ -5,7 +5,7 @@ import { FaChevronRight } from "react-icons/fa";
 import { api, cancelTokenSource } from "../../services/api";
 import authServices from "../../services/authServices";
 
-export function EditarPerfil() {
+export function ModalContratar() {
   let [data, setData] = useState({
     isModalOpen: false,
     name: "",
@@ -83,49 +83,36 @@ export function EditarPerfil() {
           <div className="header--title"><h1>Editar Perfil</h1></div>
         </header>
         <div className="holder-2">
-          <div className="parent-2">
+          <div className="parent-2-1">
             <center>
-              <form onSubmit={handleSubmit} className="form--modal" action="">
-                <div className="input-container">
-                  <label id="special"  className="title-input">Nome</label>
-                  <input className="input--cadastro"  type="text" placeholder="Nome" name="name" onChange={handleChange} value={data.name} />
+              <form onSubmit={handleSubmit} className="form--modal-2" action="">
+                <div className="">
+                  <label id="special"  className="title-input">Nome:</label>
+                 
                 </div>
 
-                <div className="input-container">
-                  <label className="title-input">Senha</label>
-                  <input className="input--cadastro" type="text" placeholder="Senha" name="password" onChange={handleChange} value={data.password} />
+                <div className="">
+                  <label className="title-input">Descrição:</label>
+                
                 </div>
 
-                <div className="input-container">
-                  <label className="title-input">Descrição</label>
-                  <textarea placeholder="Descreva." id="" cols="30" rows="10" name="description" onChange={handleChange} value={data.description} />
+                <div className="">
+                  <label className="title-input">Empresa:</label>
+                 
                 </div>
 
-                <div className="input-container">
-                  <label className="title-input">Empresa</label>
-                  <input className="input--cadastro3" type="text" placeholder="Empresa" name="company" onChange={handleChange} value={data.company} />
+                <div className="">
+                  <label className="title-input">Localização:</label>
+                
                 </div>
 
-                <div className="input-container">
-                  <label className="title-input">Localização</label>
-                  <input className="input--cadastro3" type="text" placeholder="Localização" name="location" onChange={handleChange} value={data.location} />
+                <div className="">
+                  <label className="title-input">Número/Telefone:</label>
+                 
                 </div>
-
-                <div className="input-container">
-                  <label className="title-input">Número/Telefone</label>
-                  <input className="input--cadastro3" type="tel" placeholder="Número" name="telephone"  minlength="11" maxlength="11" onChange={handleChange} value={data.telephone} />
-                </div>
-
-                <div className="input-container">
-                  <label className="title-input">Avatar</label>
-                  <input  type="file" name="avatar" onChange={handleImage} accept="image/png, image/jpeg, image/gif"/>
-                </div>
-                <div className="input-container">
-                  <label className="title-input">Plano de Fundo</label>
-                  <input type="file" name="background" onChange={handleImage} accept="image/png, image/jpeg, image/gif"/>
-                </div>
-                <div className="save--container">
-                  <input type="submit" value="Salvar" className="private-inp" />
+         
+                <div className="save--container-2">
+                  <input type="submit" value="Contratar!" className="private-inp" />
                 </div>
               </form>
             </center>

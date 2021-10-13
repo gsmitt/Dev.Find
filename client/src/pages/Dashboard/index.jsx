@@ -71,11 +71,12 @@ export function Dashboard() {
                 <div className={`selector-element ${data.target=="post"?"selected-element":""}`} onClick={handleSelector} id="post">Projetos</div>
                 <div className={`selector-element ${data.target=="user"?"selected-element":""}`} onClick={handleSelector} id="user">Desenvolvedores</div>
             </div>
-            <input type="text" name="filter" onChange={handleChange} value={data.filter} />
-            <button onClick={()=>{load(data.target)}}>Pesquisar</button>
-            <div className="cards-container">
-
-            </div>
+            <form  className="flex-form">
+      <input type="search" placeholder="O que você deseja?" name="filter" onChange={handleChange} value={data.filter}>
+      </input>
+      <input type="submit" value="Pesquisar" onClick={()=>{load(data.target)}}>
+      </input>
+    </form>
         </div>
     );
 }
