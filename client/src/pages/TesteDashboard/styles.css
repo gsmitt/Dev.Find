@@ -17,7 +17,7 @@
     justify-content: space-evenly;
     flex-wrap: wrap;
   }
-  .card {
+  .card-1- {
     margin: 10px;
     background-color: #fff;
     border-radius: 10px;
@@ -61,6 +61,11 @@
     bottom: 50px;
   }
   
+  .img-user{
+    
+  }
+
+
   .user img {
     border-radius: 50%;
     width: 40px;
