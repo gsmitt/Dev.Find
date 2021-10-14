@@ -2,7 +2,7 @@ import "./styles.css";
 import React, { useState } from "react";
 import { VscClose } from 'react-icons/vsc';
 import { FaChevronRight } from "react-icons/fa";
-import { api, cancelTokenSource } from "../../services/api";
+import { api } from "../../services/api";
 import authServices from "../../services/authServices";
 
 export function EditarPerfil() {
@@ -33,6 +33,7 @@ export function EditarPerfil() {
     body.append('headers', {"Content-Type": "multipart/form-data"})
     try {
       const edit = (await api.put(`/user/${authServices.getIdFromAccessToken(localStorage.getItem("access-token"))}`, body)).data;
+      closeModal()
       window.location.reload()
     } catch (err) {
       console.log(err);

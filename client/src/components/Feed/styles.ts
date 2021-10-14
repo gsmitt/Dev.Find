@@ -15,7 +15,7 @@ export const Tab_Container = styled.div`
 export const Tab = styled.div`
   display: flex;
   margin-top: 20px;
-  padding: 11px 469px 15px;
+  padding: 11px 218px 15px;
   text-align: center;
 
   font-weight: bold;
@@ -35,7 +35,7 @@ export const Tab = styled.div`
 
   @media(max-width: 768px){
     position: relative;
-    padding: 11px 159px 15px;
+    padding: 11px 63px 15px;
     height: 100%;
   }
 `;
