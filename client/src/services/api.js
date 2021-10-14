@@ -26,5 +26,3 @@ api.interceptors.response.use(function (response) {
     }
     return Promise.reject(error);
 });
-
-export const cancelTokenSource = axios.CancelToken.source();

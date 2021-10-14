@@ -19,7 +19,9 @@ export const LogedSidebarData = [
     {
       title: 'Perfil',
       path: '/perfil-usuario/'+authServices.getIdFromAccessToken(localStorage.getItem("access-token")),
-      cName: 'nav-text'
+      cName: 'nav-text',
+      isProfile: true
+
     },
     {
       title: 'Publicar Projeto',
