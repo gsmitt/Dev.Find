@@ -11,7 +11,7 @@ export function Dashboard() {
     });
 
     async function load(target) {
-        try {
+        try {        
             const get = (await api.get(`/${target}/getMany/${data.filter? data.filter : "nullValue"}/${data.offset}`)).data;
             console.log(get)
 
@@ -22,23 +22,33 @@ export function Dashboard() {
             (() => {
                 for (let i of get) {
                     let div = document.createElement("div")
-                    div.classList.add("card")
-                    div.innerHTML= i.title
-
+                    div.classList.add("card--2")
+                    let h3 = document.createElement("h3")
+                    h3.classList.add("titulow")
+                    h3.innerHTML = i.title
+                    
                     
                     if(i.image){let img = document.createElement("img")
-                    // img = document.querySelector("image-card")
+                    // div = document.querySelector("image-card")
                     img.src = i.image
+                    img.classList.add("imageee-")
                     div.appendChild(img)
                     }
+                    let p = document.createElement("p")
+                    p.classList.add("subtituloww")
+                    p.innerHTML = i.description
 
+
+
+                    div.appendChild(h3)
+                    div.appendChild(p)
                     container.appendChild(div)
                 }
             })() :
             (() => {
                 for (let i of get) {
                     let div = document.createElement("div")
-                    div.classList.add("card")
+                    div.classList.add("card--2")
                     let a = document.createElement("a")
                     a.innerHTML = i.name
                     a.href = "/perfil-usuario/"+i.id
@@ -71,12 +81,14 @@ export function Dashboard() {
                 <div className={`selector-element ${data.target=="post"?"selected-element":""}`} onClick={handleSelector} id="post">Projetos</div>
                 <div className={`selector-element ${data.target=="user"?"selected-element":""}`} onClick={handleSelector} id="user">Desenvolvedores</div>
             </div>
+            
             <form  className="flex-form">
       <input type="search" placeholder="O que você deseja?" name="filter" onChange={handleChange} value={data.filter}>
       </input>
       <input type="submit" value="Pesquisar" onClick={()=>{load(data.target)}}>
       </input>
     </form>
+        <div className="cards-container"></div>
         </div>
     );
 }

@@ -11,10 +11,10 @@ async function create(req, res, next) {
             ...req.body
         }
         let image = null, image_key = null;
-        if(req.files.image){
-            image = `${req.files.image.location}`;
-            if(req.files.image.key){
-                image_key = `${req.files.image.key}`;
+        if(req.file){
+            image = `${req.file.location}`;
+            if(req.file.key){
+                image_key = `${req.file.key}`;
             }
         }
 
