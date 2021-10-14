@@ -33,9 +33,9 @@ export const Tab = styled.div`
     color: var(--white)
   }
 
-  @media(max-width: 812px){
+  @media(max-width: 768px){
     position: relative;
-    padding: 11px 154px 15px;
+    padding: 11px 159px 15px;
     height: 100%;
   }
 `;
