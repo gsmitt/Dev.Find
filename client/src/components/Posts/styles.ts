@@ -23,8 +23,6 @@ export const Avatar = styled.div`
   height: 49px;
   border-radius: 50%;
   flex-shrink: 0;
-  background: var(--gray);
-
   position: relative;
   top: 0;
   left: 0;

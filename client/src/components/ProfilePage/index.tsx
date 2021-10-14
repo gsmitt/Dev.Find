@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { BsBuilding } from 'react-icons/bs';
 import { EditarPerfil } from "../EditarPerfil";
-import { api, cancelTokenSource } from "../../services/api";
+import { api } from "../../services/api";
 import authServices from "../../services/authServices";
+import axios from "axios";
 
 
 
@@ -28,11 +29,12 @@ const ProfilePage: React.FC = () => {
     ownProfile: authServices.getIdFromAccessToken(localStorage.getItem("access-token")) == window.location.pathname.slice(16)
   });
 
-  useEffect(() => {
+  useEffect(() => {  
+    const cancelToken = axios.CancelToken.source()
     async function load() {
       const id = window.location.pathname.slice(16)
       try {
-        const get = (await api.get(`/user/getOne/${id}`, { cancelToken: cancelTokenSource.token })).data;
+        const get = (await api.get(`/user/getOne/${id}`, { cancelToken: cancelToken.token })).data;
         setUserData(prevData => (
           {
             ...prevData,
@@ -63,7 +65,7 @@ const ProfilePage: React.FC = () => {
 
     load()
     return () => {
-      cancelTokenSource.cancel();
+      cancelToken.cancel();
     }
   }, [])
 
@@ -78,7 +80,11 @@ const ProfilePage: React.FC = () => {
 
       <ProfileData>
         {/* <EditButton outlined>Edit Profile</EditButton> */}
-        <EditarPerfil />
+        {
+          userData.ownProfile? 
+          (()=>{return(<EditarPerfil />)})(): 
+          (()=>{return(<button/>)})()
+        }
 
         <h1 id="user-name">{userData.name}</h1>
 

@@ -11,10 +11,10 @@ async function create(req, res, next) {
             ...req.body
         }
         let image = null, image_key = null;
-        if(req.files.image){
-            image = `${req.files.image.location}`;
-            if(req.files.image.key){
-                image_key = `${req.files.image.key}`;
+        if(req.file){
+            image = `${req.file.location}`;
+            if(req.file.key){
+                image_key = `${req.file.key}`;
             }
         }
 
@@ -122,6 +122,29 @@ async function getMany(req,res,next){
     }
 }
 
+async function getByUser(req,res,next){
+    const offset = req.params.offset
+    const filter = req.params.filter
+    try {
+        const posts = await Post.findAll({
+            attributes: ['id', 'updatedAt', 'createdAt', 'title', 'description', 'image'], 
+            where:{
+                user_id: filter
+            }, 
+            offset: offset, 
+            limit: 3, 
+            order: [
+            ['updatedAt', 'DESC']
+            ],
+        });
+
+        res.json(posts);
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+
 
 
 
@@ -130,5 +153,6 @@ module.exports = {
     deletePost,
     update,
     getOne,
-    getMany
+    getMany,
+    getByUser
 };
