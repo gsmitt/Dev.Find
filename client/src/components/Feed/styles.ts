@@ -35,7 +35,7 @@ export const Tab = styled.div`
 
   @media(max-width: 768px){
     position: relative;
-    padding: 11px 159px 15px;
+    padding: 11px 157px 15px;
     height: 100%;
   }
 `;

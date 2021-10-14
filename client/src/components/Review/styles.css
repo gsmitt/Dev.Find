@@ -54,19 +54,19 @@
   color: #fe7;
   text-shadow: 0 0 20px #952;
 }
-.after__input#rate-1:checked ~ form header:before{
+.after__input .rate-1:checked ~ form header:before{
   content: "I just hate it ";
 }
-.after__input#rate-2:checked ~ form header:before{
+.after__input .rate-2:checked ~ form header:before{
   content: "I don't like it ";
 }
-.after__input#rate-3:checked ~ form header:before{
+.after__input .rate-3:checked ~ form header:before{
   content: "It is awesome ";
 }
-.after__input#rate-4:checked ~ form header:before{
+.after__input .rate-4:checked ~ form header:before{
   content: "I just like it ";
 }
-.after__input#rate-5:checked ~ form header:before{
+.after__input .rate-5:checked ~ form header:before{
   content: "I just love it ";
 }
 
@@ -88,7 +88,6 @@ form header{
 form .review-area{
   height: 100px;
   width: 100%;
-  overflow: hidden;
 }
 .review-text{
   height: 50px;
@@ -128,10 +127,17 @@ form .btn{
 
 @media(max-width: 812px){
   .container__review{
+    border-left: 0px solid #051120;
+    border-right: 0px solid #051120;
     position: relative;
     width: 375px;
     height: 300px;
     right: 452px;
-    overflow-y: hidden;
+  }
+
+  .star-widget label{
+    font-size: 35px;
+    padding: 12px;
+    margin-left: 2px;
   }
 }

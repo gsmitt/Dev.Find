@@ -50,7 +50,6 @@ const Posts: React.FC = () => {
     <Container>
 
       <Body>
-        <Avatar />
 
         <Content>
           <Header>
@@ -59,9 +58,9 @@ const Posts: React.FC = () => {
             <time>Post - Data</time>
           </Header>
 
-          <i>Descrição Projeto</i>
-
           <ImageContent />
+
+          <i>Descrição Projeto</i>
 
         </Content>
       </Body>

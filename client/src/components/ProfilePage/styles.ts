@@ -10,7 +10,6 @@ export const Container = styled.div`
   margin-top: 65px;
 
   max-height: 100%;
-  overflow-y: auto;
 
   scrollbar-width: none; /** Firefox */
   ::-webkit-scrollbar {
@@ -23,9 +22,8 @@ export const Container = styled.div`
 
   @media(max-width: 768px){
     position: relative;
-    width: 38%;
+    width: 100%;
     height: 100%;
-    overflow-y: hidden;
   }
 `;
 
@@ -57,8 +55,8 @@ export const Avatar = styled.div`
 
   @media(max-width: 768px){
     position: relative;
-    top: 15px;
-    right: 21px;
+    top: 10px;
+    right: 20px;
     width: max(45px, min(135px, 30vw));
     height: max(45px, min(135px, 30vw));
   }
@@ -80,7 +78,6 @@ export const ProfileData = styled.div`
   > h2 {
     font-weight: normal;
     font-size: 15px;
-
   }
   > p {
     font-size: 15px;
@@ -110,7 +107,7 @@ export const ProfileData = styled.div`
   @media(max-width: 768px){
     position: relative;
     right: 5px;
-    bottom: 30px;
+    bottom: 35px;
   }
 `;
 
