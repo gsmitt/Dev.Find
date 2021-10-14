@@ -17,10 +17,15 @@ export const Container = styled.div`
     display: none;
   }
 
-  @media(max-width: 812px){
+  @media(min-width: 1800px){
+    min-height: 750px;
+   }
+
+  @media(max-width: 768px){
     position: relative;
-    width: 37%;
+    width: 38%;
     height: 100%;
+    overflow-y: hidden;
   }
 `;
 
@@ -50,10 +55,10 @@ export const Avatar = styled.div`
     opacity: 0.7;
   }
 
-  @media(max-width: 812px){
+  @media(max-width: 768px){
     position: relative;
-    left: 1px;
     top: 15px;
+    right: 21px;
     width: max(45px, min(135px, 30vw));
     height: max(45px, min(135px, 30vw));
   }
@@ -102,9 +107,9 @@ export const ProfileData = styled.div`
     }
   }
 
-  @media(max-width: 812px){
+  @media(max-width: 768px){
     position: relative;
-    left: 10px;
+    right: 5px;
     bottom: 30px;
   }
 `;
@@ -121,19 +126,14 @@ export const LocationIcon = styled(LocationOn)`
 `;
 
 export const EditButton = styled(Button)`
-  font-size: 13px;
+  /* font-size: 13px;
   margin-left: 800px;
-  margin-top: -10px;
+  margin-top: -10px; */
 
   @media (min-width: 320px) {
     top: 10px;
     padding: 10px 19px;
     font-size: 15px;
-  }
-
-  @media(max-width: 812px){
-    position: relative;
-    margi-left: 500px;
   }
 
 `;

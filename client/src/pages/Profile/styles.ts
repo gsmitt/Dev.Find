@@ -3,16 +3,11 @@ import styled from 'styled-components';
 export const Container = styled.div`
   background: var(--white);
 
-  @media(max-width: 360px){
-    height: 100%;
-    max-width: 1280px;
-    display: flex;
-    justify-content: center;
-  }
+  @media(min-width: 1800px){
+    min-height: 750px;
+   }
   
   @media(min-width: 360px){
-    height: 100%;
-    max-width: 100%;
   }
   
   @media(min-width: 768px){
@@ -47,8 +42,7 @@ export const Wrapper = styled.div`
 
   }
 
-  @media(max-width: 812px){
-    position: relative;
+  @media(max-width: 768px){
     flex-direction: column;
   }
   

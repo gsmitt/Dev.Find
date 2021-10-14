@@ -99,14 +99,22 @@
   top: 10px;
   padding: 11px 20px;
   font-size: 15px;
-  border-radius: 25px;
+  border-radius: 15px;
   font-weight: bold;
   border: 1px solid #d6d6d6;
   cursor: pointer;
   outline: 0;
   background: transparent;
-
 }
+
+@media(max-width: 768px){
+  .modal--button{
+    position: relative;
+    right: 540px;
+    height: 100%;
+  }
+}
+
 
 .modal--button:hover{
   background: #d6d6d6;
