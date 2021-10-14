@@ -15,7 +15,6 @@ const Posts: React.FC = (props) => {
   return (
     <Container>
       <Body>
-        <Avatar/>
         <Content>
           <Header>
             <strong>Titulo</strong>
@@ -23,9 +22,9 @@ const Posts: React.FC = (props) => {
             <time>Post - Data</time>
           </Header>
 
-          <i>Descrição Projeto</i>
-
           <ImageContent />
+
+          <i>Descrição Projeto</i>
 
         </Content>
       </Body>

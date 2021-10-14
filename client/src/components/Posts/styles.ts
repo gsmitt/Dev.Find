@@ -34,6 +34,10 @@ export const Content = styled.div`
   width: 100%;
   margin-top: 2px;
   padding-left: 30px;
+
+  > i {
+    margin-left: 50px;
+  }
 `;
 export const Header = styled.div`
   display: flex;
@@ -43,7 +47,7 @@ export const Header = styled.div`
   white-space: nowrap;
 
   > strong {
-    margin-right: 5px;
+    margin-right: 10px;
   }
 
   > span,
@@ -53,6 +57,7 @@ export const Header = styled.div`
 
   > strong,
   span {
+    margin-left: 20px;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -72,8 +77,10 @@ export const Description = styled.p`
 `;
 
 export const ImageContent = styled.div`
-  margin-top: 12px;
-  width: 90%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 55px;
+  width: 85%;
   height: min(400px, max(175px, 41vw));
 
   background: var(--image);
@@ -82,5 +89,11 @@ export const ImageContent = styled.div`
   cursor: pointer;
   &:hover {
     opacity: 0.7;
+  }
+
+  @media(max-width: 768px){
+    position: relative;
+    right: 70px;
+    width: 100%;
   }
 `;
