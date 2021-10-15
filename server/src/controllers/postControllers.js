@@ -1,6 +1,6 @@
 const { Op } = require("sequelize");
 const createHttpError = require("http-errors");
-const { Post } = require("../db/models");
+const { Post, User } = require("../db/models");
 
 
 
@@ -100,6 +100,9 @@ async function getMany(req,res,next){
     try {
         const posts = await Post.findAll({
             attributes: ['id', 'updatedAt', 'createdAt', 'title', 'description', 'image', 'user_id'], 
+            include: [
+                {model:User, attributes:["name","avatar"], as: "user"}
+            ],
             where:{
                 [Op.or]: [
                     {title: filter !== 'nullValue' ? {
@@ -122,6 +125,29 @@ async function getMany(req,res,next){
     }
 }
 
+async function getByUser(req,res,next){
+    const offset = req.params.offset
+    const filter = req.params.filter
+    try {
+        const posts = await Post.findAll({
+            attributes: ['id', 'updatedAt', 'createdAt', 'title', 'description', 'image'], 
+            where:{
+                user_id: filter
+            }, 
+            offset: offset, 
+            limit: 3,
+            order: [
+            ['updatedAt', 'DESC']
+            ],
+        });
+
+        res.json(posts);
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+
 
 
 
@@ -130,5 +156,6 @@ module.exports = {
     deletePost,
     update,
     getOne,
-    getMany
+    getMany,
+    getByUser
 };

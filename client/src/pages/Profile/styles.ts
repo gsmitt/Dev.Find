@@ -3,6 +3,8 @@ import styled from 'styled-components';
 export const Container = styled.div`
   background: var(--white);
 
+  overflow-x: hidden;
+
   @media(min-width: 1800px){
     min-height: 750px;
    }
@@ -11,7 +13,6 @@ export const Container = styled.div`
   }
   
   @media(min-width: 768px){
-  
   }
   
   @media(min-width: 1024px){
@@ -58,9 +59,7 @@ export const Wrapper = styled.div`
        
     }
   @media(min-width: 1199px){
-        // top: 10px;
-        // padding: 10px 19px;
-        // font-size: 15px;
+
     }
 `;
 

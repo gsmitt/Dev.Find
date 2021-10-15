@@ -1,7 +1,7 @@
 import "./styles.css";
 import React, { useState, useEffect } from 'react';
 import { FaBars } from 'react-icons/fa'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { SidebarData } from './SidebarData';
 import { LogedSidebarData } from "./LogedSidebarData";
 import * as AiIcons from 'react-icons/ai';
@@ -10,6 +10,7 @@ import { Logo } from "../Logo";
 import authServices from "../../services/authServices";
 
 function Navbar() {
+    const history = useHistory();
     const [sidebar, setSidebar] = useState(false);
     
     const showSidebar = () => setSidebar(!sidebar);
@@ -52,7 +53,7 @@ function Navbar() {
               {(accessToken ? LogedSidebarData : SidebarData).map((item, index) => {
                 return (
                   <li onClick={handleClick} key={index} className={item.cName}>
-                    <Link to={item.path} onClick={item.logout ? logout : () => {}}>
+                    <Link to={item.path} onClick={() => item.logout ? logout() : (item.isProfile? window.location.href = item.path : "")}>
                       {item.icon}
                       <span>{item.title}</span>
                     </Link>

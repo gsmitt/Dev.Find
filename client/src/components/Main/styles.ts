@@ -4,9 +4,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
 
-  width: 1000px;
-
-  @media (min-width: 500px) {
+  @media (min-width: 768px) {
     border-left: 1px solid var(--black);
     border-right: 1px solid var(--black);
   }
