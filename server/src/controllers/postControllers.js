@@ -1,6 +1,6 @@
 const { Op } = require("sequelize");
 const createHttpError = require("http-errors");
-const { Post } = require("../db/models");
+const { Post, User } = require("../db/models");
 
 
 
@@ -100,6 +100,9 @@ async function getMany(req,res,next){
     try {
         const posts = await Post.findAll({
             attributes: ['id', 'updatedAt', 'createdAt', 'title', 'description', 'image', 'user_id'], 
+            include: [
+                {model:User, attributes:["name","avatar"], as: "user"}
+            ],
             where:{
                 [Op.or]: [
                     {title: filter !== 'nullValue' ? {
@@ -132,7 +135,7 @@ async function getByUser(req,res,next){
                 user_id: filter
             }, 
             offset: offset, 
-            limit: 3, 
+            limit: 3,
             order: [
             ['updatedAt', 'DESC']
             ],
