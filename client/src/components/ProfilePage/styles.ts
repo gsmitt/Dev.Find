@@ -49,21 +49,18 @@ export const Avatar = styled.div`
   margin-top: 70px;
   margin-left: 20px;
   cursor: pointer;
-  &:hover {
-    opacity: 0.7;
-  }
 
   @media(max-width: 768px){
     position: relative;
     top: 10px;
-    right: 20px;
+    right: 15px;
     width: max(45px, min(135px, 30vw));
     height: max(45px, min(135px, 30vw));
   }
 `;
 
 export const ProfileData = styled.div`
-  padding: min(calc(10vw + 7px), 35px) 16px 0;
+  padding: min(calc(10vw + 7px), 30px) 16px 0;
   background-color: var(--tertiary)
   color: var(--black)
 
@@ -73,6 +70,8 @@ export const ProfileData = styled.div`
   > h1 {
     font-weight: bold;
     font-size: 19px;
+    margin-left: 12px;
+    margin-top: -5px;
     color: var(--black)
   }
   > h2 {
@@ -82,6 +81,7 @@ export const ProfileData = styled.div`
   > p {
     font-size: 15px;
     margin-top: 12px;
+    margin-left: 12px;
 
     > a {
       text-decoration: none;
@@ -92,6 +92,7 @@ export const ProfileData = styled.div`
     list-style: none;
     margin-top: 10px;
     margin-bottom: 20px;
+    margin-left: 12px;
 
     > li {
       font-size: 15px;
@@ -106,8 +107,8 @@ export const ProfileData = styled.div`
 
   @media(max-width: 768px){
     position: relative;
-    right: 5px;
-    bottom: 35px;
+    right: 20px;
+    bottom: 12px;
   }
 `;
 

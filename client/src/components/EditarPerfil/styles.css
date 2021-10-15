@@ -7,7 +7,6 @@
   padding: 8px;
   background: #fff;
   border-bottom: 1px solid #d6d6d6;
-  overflow-y: hidden;
   border-top: 1px solid #d6d6d6;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
@@ -76,7 +75,6 @@
   font-family: 'Roboto Slab', serif;
   font-size: 12px;
   font-weight: bold;
-  overflow-y: hidden;
 }
 
 .modal{
@@ -108,29 +106,62 @@
 
 @media(max-width: 768px){
   .modal--button{
+    display: flex;
     position: relative;
     font-size: 13px;
     color: #051120;
-    top: 15px;
-    padding: 11px 50px;
-    right: 575px;
+    top: 12px;
+    padding: 11px 20px;
+    right: 550px;
+    white-space: pre;
+    
   }
+.container--header{
+  position: relative;
+  bottom: 70px;
+  right: 1px;
+  border-radius: 0%;
+  width: 375px;
+  height: 70px;
 }
 
+.logo-container{
+  font-size: 18px;
+}
+
+.header--title{
+  font-size: 10px;
+  position: relative;
+  top: 5%;
+  left: 0%;
+}
+
+.icon--modal{
+  position: relative;
+  top: 20%;
+  left: 62%;
+}
+
+  .modal{
+    position: relative;
+    left: 50%;
+  }
+  .holder-2{
+    position: relative;
+    bottom: 70px;
+    right: 2px;
+    width: 376px;
+  }
+  .input-container{
+    margin-top: 10px;
+  }
+}
 
 .modal--button:hover{
   background: #d6d6d6;
 }
 
-.bg{
-  z-index: 9998;
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.3);
-}
+
 
 .holder-2{
   display: flex;
@@ -142,11 +173,6 @@
   font-size: 3rem;    
   margin-bottom: 300px;
   overflow-y: scroll;
-}
-
-.parent-2{
-  margin: 0;
-  margin-bottom: 50px; 
 }
 
 .input--cadastro{
@@ -230,6 +256,32 @@
 
 #special{
   margin-top: 300px;
+}
+
+.avatar--input{
+  width: max(45px, min(135px, 22vw));
+  height: max(45px, min(135px, 22vw));
+
+  border: 3.75px solid var(--tertiary);
+  background: var(--gray);
+  border-radius: 50%;
+    cursor: pointer;
+}
+
+.avatar--input:hover{
+  opacity: 0.7;
+}
+
+.bg--container{
+  width: min( 400px);
+  height: min( 130px);
+
+  background: var(--tertiary);
+  cursor: pointer;
+}
+
+.bg--container:hover{
+  opacity: 0.7;
 }
 
 @media(max-width: 1999px){
