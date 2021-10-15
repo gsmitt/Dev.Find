@@ -8,7 +8,7 @@ export function Dashboard() {
     let [data, setData] = useState({
         filter: "",
         offset: 0,
-        target: ""
+        target: "post"
     });
     
 
@@ -30,7 +30,10 @@ export function Dashboard() {
                     
                     let h3 = document.createElement("h3")
                     h3.classList.add("titulow")
-                    h3.innerHTML = i.title.substring(0, 10)
+                    h3.innerHTML = i.title.substring(0, 18) 
+                    if(i.title != h3.innerHTML){
+                        h3.innerHTML += "...";
+                    }
                     
                     let img = document.createElement("img")
                     img.src = i.image
@@ -63,7 +66,7 @@ export function Dashboard() {
                     div2.classList.add("div2-style")
                     
                     let imgUser = document.createElement("img")
-                    imgUser.src = i.image;
+                    imgUser.src = i.user.avatar;
                     imgUser.classList.add("user");
                     imgUser.classList.add("img-user")
                     
@@ -71,7 +74,7 @@ export function Dashboard() {
                    
 
                     let titleUser = document.createElement("a")
-                    titleUser.innerHTML = i.name
+                    titleUser.innerHTML = i.user.name;
                     titleUser.href = "/perfil-usuario/"+i.user_id
                     titleUser.classList.add("user");
                     titleUser.classList.add("title-user")
