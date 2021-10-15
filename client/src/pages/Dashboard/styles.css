@@ -128,6 +128,7 @@
     margin-bottom: 10px;
     position: relative;
     bottom: 36px;
+    max-width: 230px;
   }
   .imageee-{
     width: 270px;
@@ -165,6 +166,8 @@
   .div2-style{
     display: flex;
     align-items: center;
+    position: relative;
+    bottom: -35px;
   }
 /* https://codepen.io/kathykato/pen/dzdgPJ */
 
