@@ -53,7 +53,7 @@ function Navbar() {
               {(accessToken ? LogedSidebarData : SidebarData).map((item, index) => {
                 return (
                   <li onClick={handleClick} key={index} className={item.cName}>
-                    <Link to={item.path} onClick={() => item.logout ? logout : item.isProfile? window.location.href = item.path : ""}>
+                    <Link to={item.path} onClick={() => item.logout ? logout() : (item.isProfile? window.location.href = item.path : "")}>
                       {item.icon}
                       <span>{item.title}</span>
                     </Link>
