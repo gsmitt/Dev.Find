@@ -23,17 +23,27 @@ export function Dashboard() {
                 for (let i of get) {
                     let div = document.createElement("div")
                     div.classList.add("card--2")
+                    
                     let h3 = document.createElement("h3")
                     h3.classList.add("titulow")
-                    h3.innerHTML = i.title
+                    h3.innerHTML = i.title.substring(0, 10)
                     
-                    
-                    if(i.image){let img = document.createElement("img")
-                    // div = document.querySelector("image-card")
+                    let img = document.createElement("img")
                     img.src = i.image
-                    img.classList.add("imageee-")
-                    div.appendChild(img)
+                    if(i.image){
+                    }else{
+                        let imgPadrao = document.createElement("img")
+                        imgPadrao = "https://uploaddeimagens.com.br/images/003/482/514/original/postvazio.png?1634321165"
+                        img.src = imgPadrao;
                     }
+                    div.appendChild(img)
+                    img.classList.add("imageee-")   
+
+                    let br = document.createElement("br")
+                    
+                    
+                    
+                    
                     let p = document.createElement("p")
                     p.classList.add("subtituloww")
                     p.innerHTML = i.description
@@ -41,8 +51,46 @@ export function Dashboard() {
 
 
                     div.appendChild(h3)
+                    
+                    div.appendChild(br)
                     div.appendChild(p)
+
+                    let div2 = document.createElement("div")
+                    div2.classList.add("div2-style")
+                    
+                    let imgUser = document.createElement("img")
+                    imgUser.src = i.image;
+                    imgUser.classList.add("user");
+                    imgUser.classList.add("img-user")
+                    
+                    div2.appendChild(imgUser)
+                   
+
+                    let titleUser = document.createElement("a")
+                    titleUser.innerHTML = i.name
+                    titleUser.href = "/perfil-usuario/"+i.user_id
+                    titleUser.classList.add("user");
+                    titleUser.classList.add("title-user")
+                    
+                    let subtitleUser = document.createElement("small")
+                    subtitleUser.innerHTML = i.updatedAt;
+                    
+                    
+                    subtitleUser.classList.add("user");
+                    subtitleUser.classList.add("sub-user")
+                    
+                    
+
+
+                    div2.appendChild(titleUser)
+                    
+                    div2.appendChild(subtitleUser)
+                    div.appendChild(div2)
+                    
+                    
+                    
                     container.appendChild(div)
+
                 }
             })() :
             (() => {
@@ -78,7 +126,7 @@ export function Dashboard() {
     return (
         <div className="dashboard">
             <div className="type-selector">
-                <div className={`selector-element ${data.target=="post"?"selected-element":""}`} onClick={handleSelector} id="post">Projetos</div>
+                <div className={`selector-element ${data.target=="post"?"selected-element":""}`} onClick={handleSelector} id="post" >Projetos</div>
                 <div className={`selector-element ${data.target=="user"?"selected-element":""}`} onClick={handleSelector} id="user">Desenvolvedores</div>
             </div>
             

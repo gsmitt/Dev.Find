@@ -117,18 +117,55 @@
     flex-basis: 500px;
   }
   .titulow{   
-    font-size: 20px;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-left: 10px;
   }
   .subtituloww{
-    font-size: 20px;
-    margin-left: 50px;
+    font-size: 13px;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    bottom: 36px;
   }
   .imageee-{
-    width: 100%;
+    width: 270px;
     height: 200px;
     object-fit: cover;
   }
 
+  .user {
+    /* display: flex;
+    position: relative;
+    bottom: 50px; */
+  }
+
+  .img-user {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    margin-top: 10px;
+    object-fit: cover;
+  }
+
+  .title-user {
+    font-size: 13px;
+    margin-left: 8px;
+    /* margin: 0; */
+  }
+
+  .sub-user {
+    font-size: 12px;
+    color: #545d7a;
+    margin-left: 10px;
+  }
+
+  .div2-style{
+    display: flex;
+    align-items: center;
+  }
 /* https://codepen.io/kathykato/pen/dzdgPJ */
 
 @media(min-width: 768px){
