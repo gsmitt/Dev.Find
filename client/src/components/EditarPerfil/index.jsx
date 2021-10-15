@@ -119,11 +119,11 @@ export function EditarPerfil() {
 
                 <div className="input-container">
                   <label className="title-input">Avatar</label>
-                  <input  type="file" name="avatar" onChange={handleImage} accept="image/png, image/jpeg, image/gif"/>
+                  <input  className="avatar--input" type="file" name="avatar" onChange={handleImage} accept="image/png, image/jpeg, image/gif"/>
                 </div>
                 <div className="input-container">
                   <label className="title-input">Plano de Fundo</label>
-                  <input type="file" name="background" onChange={handleImage} accept="image/png, image/jpeg, image/gif"/>
+                  <input className="bg--container" type="file" name="background" onChange={handleImage} accept="image/png, image/jpeg, image/gif"/>
                 </div>
                 <div className="save--container">
                   <input type="submit" value="Salvar" className="private-inp" />
