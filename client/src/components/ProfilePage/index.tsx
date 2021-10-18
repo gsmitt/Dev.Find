@@ -71,8 +71,6 @@ const ProfilePage: React.FC = () => {
   }, [])
 
 
-
-
   return (
     <Container>
       <Banner className="banner">
