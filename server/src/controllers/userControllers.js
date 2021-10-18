@@ -1,6 +1,6 @@
 const { Op } = require("sequelize");
 const createHttpError = require("http-errors");
-const { User } = require("../db/models");
+const { User, Review } = require("../db/models");
 //const fs = require("fs")
 const aws = require("aws-sdk");
 
@@ -9,7 +9,25 @@ async function getOne(req, res, next) {
     const userId = req.params.id
 
     try {
-        const user = await User.findOne({ where: { id: userId } });
+        //const reviewCount = await Review.count({
+        //    where: {
+        //        user_get: userId
+        //    }
+        //});
+        //const reviewSum = await Review.sum({
+        //    where: {
+        //        user_get: userId
+        //    }
+        //});
+
+        const user = await User.findOne({
+            where: {
+                id: userId
+            }
+        });
+
+        //user.score = Math.round(reviewCount / reviewSum * 10) / 10
+        
         res.json(user);
     } catch (err) {
         console.log(err);
@@ -19,10 +37,29 @@ async function getOne(req, res, next) {
 async function getMany(req, res, next) {
     const offset = req.params.offset
     const filter = req.params.filter
-
-
     try {
-        const users = await User.findAll({
+        const userCount = await User.count({
+            where: {
+                [Op.and]: [{
+                    [Op.or]: [
+                        {
+                            name: filter !== 'nullValue' ? {
+                                [Op.iLike]: `%${filter}%`
+                            } : { [Op.not]: 'null', }
+                        },
+                        {
+                            description: filter !== 'nullValue' ? {
+                                [Op.iLike]: `%${filter}%`
+                            } : { [Op.not]: 'null', }
+                        }
+                    ]
+                },
+                { role: "dev" }
+                ]
+            }
+        });
+
+        const list = await User.findAll({
             attributes: ['id', 'updatedAt', 'createdAt', 'name', 'avatar', 'description'],
             where: {
                 [Op.and]: [{
@@ -48,6 +85,8 @@ async function getMany(req, res, next) {
                 ['updatedAt', 'DESC']
             ],
         });
+
+        const users = { userCount, list }
 
         console.log(users);
 
@@ -131,29 +170,29 @@ async function update(req, res, next) {
         if (!((userId == user.id) || (userRole == "admin"))) throw new createHttpError(403, "You don't have permission to do this");
 
         const s3 = new aws.S3()
-        
-        if(user.avatar_key){
+
+        if (user.avatar_key) {
             var avatar_params = {
                 Bucket: process.env.BUCKET_NAME,
                 Key: user.avatar_key
             };
-            
+
             s3.deleteObject(avatar_params, function (err, data) {
                 if (err) console.log(err, err.stack);
-                else console.log(data);           
-            }); 
+                else console.log(data);
+            });
         }
 
-        if(user.background_key){
+        if (user.background_key) {
             var background_params = {
                 Bucket: process.env.BUCKET_NAME,
                 Key: user.background_key
             };
-            
+
             s3.deleteObject(background_params, function (err, data) {
                 if (err) console.log(err, err.stack);
-                else console.log(data);           
-            }); 
+                else console.log(data);
+            });
         }
 
 

@@ -1,8 +1,6 @@
 import './styles.css';
 import React, { useEffect, useState } from 'react';
 import { api } from "../../services/api";
-import { Link } from 'react-router-dom'
-
 
 export function Dashboard() {
     let [data, setData] = useState({
@@ -14,7 +12,7 @@ export function Dashboard() {
 
     async function load(target) {
         try {
-            const get = (await api.get(`/${target}/getMany/${data.filter ? data.filter : "nullValue"}/${data.offset}`)).data;
+            const get = (await api.get(`/${target}/getMany/${data.filter ? data.filter : "nullValue"}/${data.offset}`)).data.list;
             console.log(get)
 
             const container = document.querySelector(".cards-container")

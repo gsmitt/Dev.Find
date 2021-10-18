@@ -98,7 +98,15 @@ async function getMany(req, res, next) {
 
 
     try {
-        const posts = await Post.findAll({
+        const postCount = await Post.count({
+            where: {
+                title: filter !== 'nullValue' ? {
+                    [Op.iLike]: `%${filter}%`
+                } : { [Op.not]: 'null', }
+            }
+          });
+
+        const list = await Post.findAll({
             attributes: ['id', 'updatedAt', 'createdAt', 'title', 'description', 'image', 'user_id'],
             include: [
                 { model: User, attributes: ["name", "avatar"], as: "user" }
@@ -116,6 +124,9 @@ async function getMany(req, res, next) {
                 ['updatedAt', 'DESC']
             ],
         });
+        
+        const posts = {postCount, list}
+
 
         res.json(posts);
     } catch (err) {
@@ -127,7 +138,13 @@ async function getByUser(req, res, next) {
     const offset = req.params.offset
     const filter = req.params.filter
     try {
-        const posts = await Post.findAll({
+        const postCount = await Post.count({
+            where: {
+                user_id: filter
+            }
+          });
+
+        const list = await Post.findAll({
             attributes: ['id', 'updatedAt', 'createdAt', 'title', 'description', 'image'],
             where: {
                 user_id: filter
@@ -138,6 +155,7 @@ async function getByUser(req, res, next) {
                 ['updatedAt', 'DESC']
             ],
         });
+        const posts = {postCount, list}
 
         res.json(posts);
     } catch (err) {
