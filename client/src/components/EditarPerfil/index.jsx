@@ -111,19 +111,13 @@ export function EditarPerfil() {
                   <label className="title-input">Localização</label>
                   <input className="input--cadastro3" type="text" placeholder="Localização" name="location" onChange={handleChange} value={data.location} />
                 </div>
-
-                <div className="input-container">
-                  <label className="title-input">Número/Telefone</label>
-                  <input className="input--cadastro3" type="tel" placeholder="Número" name="telephone"  minlength="11" maxlength="11" onChange={handleChange} value={data.telephone} />
-                </div>
-
                 <div className="input-container">
                   <label className="title-input">Avatar</label>
-                  <input  className="avatar--input" type="file" name="avatar" onChange={handleImage} accept="image/png, image/jpeg, image/gif"/>
+                  <input  className="avatar-input" type="file" name="avatar" onChange={handleImage} accept="image/png, image/jpeg, image/gif"/>
                 </div>
                 <div className="input-container">
                   <label className="title-input">Plano de Fundo</label>
-                  <input className="bg--container" type="file" name="background" onChange={handleImage} accept="image/png, image/jpeg, image/gif"/>
+                  <input className="bg-container" type="file" name="background" onChange={handleImage} accept="image/png, image/jpeg, image/gif"/>
                 </div>
                 <div className="save--container">
                   <input type="submit" value="Salvar" className="private-inp" />

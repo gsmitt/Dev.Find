@@ -98,7 +98,7 @@ async function getMany(req, res, next) {
 
 
     try {
-        const postCount = await Post.count({
+        const count = await Post.count({
             where: {
                 title: filter !== 'nullValue' ? {
                     [Op.iLike]: `%${filter}%`
@@ -119,13 +119,13 @@ async function getMany(req, res, next) {
 
             },
             offset: offset,
-            limit: 16,
+            limit: 6,
             order: [
                 ['updatedAt', 'DESC']
             ],
         });
         
-        const posts = {postCount, list}
+        const posts = {count, list}
 
 
         res.json(posts);
@@ -138,7 +138,7 @@ async function getByUser(req, res, next) {
     const offset = req.params.offset
     const filter = req.params.filter
     try {
-        const postCount = await Post.count({
+        const count = await Post.count({
             where: {
                 user_id: filter
             }
@@ -155,7 +155,7 @@ async function getByUser(req, res, next) {
                 ['updatedAt', 'DESC']
             ],
         });
-        const posts = {postCount, list}
+        const posts = {count, list}
 
         res.json(posts);
     } catch (err) {

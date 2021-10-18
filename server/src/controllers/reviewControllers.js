@@ -6,12 +6,16 @@ async function get(req, res, next) {
     const filter = req.params.id
     const offset = req.params.offset
     try {
-        const reviewCount = await Review.count({
+        const count = await Review.count({
             where: {
                 user_get: filter
             }
         });
-
+        const sum = await Review.sum({
+            where: {
+                user_get: userId
+            }
+        });
 
         const list = await Review.findAll({
             where: {
@@ -28,7 +32,7 @@ async function get(req, res, next) {
             ],
         });
 
-        const reviews = {reviewCount, list}
+        const reviews = {count, list, sum}
         
 
         console.log(reviews);

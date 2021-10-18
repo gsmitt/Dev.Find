@@ -4,3 +4,17 @@
 .selected-tab p{
     color: white;
 }
+.nav-buttons {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    font-size: 25px;
+    margin: auto;
+}
+.nav-buttons li{
+    margin: 0 3px;
+}
+
+.nav-buttons p{
+    font-size: 20px;
+}

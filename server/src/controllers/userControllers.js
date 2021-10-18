@@ -9,17 +9,6 @@ async function getOne(req, res, next) {
     const userId = req.params.id
 
     try {
-        //const reviewCount = await Review.count({
-        //    where: {
-        //        user_get: userId
-        //    }
-        //});
-        //const reviewSum = await Review.sum({
-        //    where: {
-        //        user_get: userId
-        //    }
-        //});
-
         const user = await User.findOne({
             where: {
                 id: userId
@@ -38,7 +27,7 @@ async function getMany(req, res, next) {
     const offset = req.params.offset
     const filter = req.params.filter
     try {
-        const userCount = await User.count({
+        const count = await User.count({
             where: {
                 [Op.and]: [{
                     [Op.or]: [
@@ -80,13 +69,13 @@ async function getMany(req, res, next) {
                 ]
             },
             offset: offset,
-            limit: 16,
+            limit: 6,
             order: [
                 ['updatedAt', 'DESC']
             ],
         });
 
-        const users = { userCount, list }
+        const users = { count, list }
 
         console.log(users);
 

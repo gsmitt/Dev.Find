@@ -39,7 +39,7 @@ export function Routes() {
       <Route path='/teste-dashboard' component={TesteDashboard} />
       <Route path='/not-found' component={NotFound} />
 
-      {/* <Footer /> */}
+      <Footer />
     </Router>
   </>
   );
