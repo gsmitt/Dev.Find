@@ -35,6 +35,7 @@ const ProfilePage: React.FC = () => {
       const id = window.location.pathname.slice(16)
       try {
         const get = (await api.get(`/user/getOne/${id}`, { cancelToken: cancelToken.token })).data;
+        console.log(get)
         setUserData(prevData => (
           {
             ...prevData,
