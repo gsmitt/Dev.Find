@@ -1,6 +1,7 @@
 import './styles.css';
 import React, { useEffect, useState } from 'react';
 import { api } from "../../services/api";
+import date from 'date-and-time';
 
 export function Dashboard() {
     let [data, setData] = useState({
@@ -68,6 +69,14 @@ export function Dashboard() {
                     imgUser.classList.add("user");
                     imgUser.classList.add("img-user")
                     
+
+                    if(i.user.avatar == null){
+                        let imgPadrao3 = document.createElement("img")
+                        imgPadrao3 = "https://uploaddeimagens.com.br/images/003/490/495/thumb/useravatar-----.png?1634584859"
+                        imgUser.src = imgPadrao3;
+                    } 
+
+
                     div2.appendChild(imgUser)
                    
 
@@ -100,12 +109,34 @@ export function Dashboard() {
             })() :
             (() => {
                 for (let i of get) {
+                   
                     let div = document.createElement("div")
                     div.classList.add("card--2")
+                    
+                    
+                    
                     let a = document.createElement("a")
+                    a.classList.add("title--user")
                     a.innerHTML = i.name
                     a.href = "/perfil-usuario/"+i.id
+                    
+                    let imgUser2 = document.createElement("img");
+                    imgUser2.src = i.avatar;         
+                    imgUser2.classList.add("img-user2")
+                    
+                    if(i.avatar == null){
+                        let imgPadrao2 = document.createElement("img")
+                        imgPadrao2 = "https://uploaddeimagens.com.br/images/003/490/495/thumb/useravatar-----.png?1634584859"
+                        imgUser2.src = imgPadrao2;
+                    } 
+                    
+                    
+                    
+                    
+                    div.appendChild(imgUser2)
+
                     div.appendChild(a)
+                    
                     container.appendChild(div)
                 }
             })()

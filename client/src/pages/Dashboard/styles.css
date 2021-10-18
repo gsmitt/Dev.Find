@@ -151,7 +151,28 @@
     object-fit: cover;
   }
 
+  .img-user2 {
+    border-radius: 50%;
+    border: 10px black;
+    width: 240px;
+    height: 240px;
+    margin-left: 10px;
+    margin-top: 10px;
+    object-fit: cover;
+    
+  }
+
+  .title--user{
+    text-decoration: none;
+    
+    color: black;
+    /* text-align: center; */
+    margin-left: 25%;
+  }
+
   .title-user {
+    text-decoration: none;
+    color: black;
     font-size: 13px;
     margin-left: 8px;
     /* margin: 0; */
