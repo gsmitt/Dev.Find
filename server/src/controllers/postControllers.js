@@ -11,14 +11,14 @@ async function create(req, res, next) {
             ...req.body
         }
         let image = null, image_key = null;
-        if(req.file){
+        if (req.file) {
             image = `${req.file.location}`;
-            if(req.file.key){
+            if (req.file.key) {
                 image_key = `${req.file.key}`;
             }
         }
 
-        const { description, title } = post; 
+        const { description, title } = post;
 
         const newPost = await Post.create({
             user_id,
@@ -27,7 +27,7 @@ async function create(req, res, next) {
             image,
             image_key
         });
-        
+
         res.json(newPost);
     } catch (err) {
         console.log(err);
@@ -35,36 +35,36 @@ async function create(req, res, next) {
     }
 }
 
-async function deletePost(req,res,next) {
+async function deletePost(req, res, next) {
     const target = req.params.id
     const userId = res.locals.userId;
     const userRole = res.locals.userRole;
-    
+
     try {
-        const post = await Post.findOne({where: { id: target } });
-        
+        const post = await Post.findOne({ where: { id: target } });
+
         if (!post) throw new createHttpError(404, "This post does not exist");
 
 
         if (!((userId == post.user_id) || (userRole == "admin"))) throw new createHttpError(403, "You don't have permission to do this");
 
-        Post.destroy({where: { id: target }})
-        
+        Post.destroy({ where: { id: target } })
+
         res.json()
     } catch (err) {
         console.log(err);
         next(err);
     }
 }
- 
-async function update(req,res,next) {
+
+async function update(req, res, next) {
     const target = req.params.id
     const userId = res.locals.userId;
     const userRole = res.locals.userRole;
-    
-    try{
-        const post = await Post.findOne({where: { id: target } });
-        
+
+    try {
+        const post = await Post.findOne({ where: { id: target } });
+
         if (!post) throw new createHttpError(404, "This post does not exist");
 
         if (!((userId == post.user_id) || (userRole == "admin"))) throw new createHttpError(403, "You don't have permission to do this");
@@ -74,7 +74,7 @@ async function update(req,res,next) {
         const updated = await post.save();
 
         res.json(updated)
-    } catch(err) {
+    } catch (err) {
         console.log(err);
         next(err);
     }
@@ -84,7 +84,7 @@ async function getOne(req, res, next) {
     const postId = req.params.id
 
     try {
-        const post = await Post.findOne({where: { id: postId } });
+        const post = await Post.findOne({ where: { id: postId } });
         res.json(post);
     } catch (err) {
         console.log(err);
@@ -92,30 +92,28 @@ async function getOne(req, res, next) {
 }
 
 
-async function getMany(req,res,next){
+async function getMany(req, res, next) {
     const offset = req.params.offset
     const filter = req.params.filter
-     
+
 
     try {
         const posts = await Post.findAll({
-            attributes: ['id', 'updatedAt', 'createdAt', 'title', 'description', 'image', 'user_id'], 
+            attributes: ['id', 'updatedAt', 'createdAt', 'title', 'description', 'image', 'user_id'],
             include: [
-                {model:User, attributes:["name","avatar"], as: "user"}
+                { model: User, attributes: ["name", "avatar"], as: "user" }
             ],
-            where:{
-                [Op.or]: [
-                    {title: filter !== 'nullValue' ? {
-                        [Op.iLike]: `%${filter}%`
-                    } : {[Op.not]: 'null',}},
-                    {user_id: filter !== 'nullValue'?
-                        filter: {[Op.is]: null}}
-                ]
-            }, 
-            offset: offset, 
-            limit: 16, 
+            where: {
+
+                title: filter !== 'nullValue' ? {
+                    [Op.iLike]: `%${filter}%`
+                } : { [Op.not]: 'null', }
+
+            },
+            offset: offset,
+            limit: 16,
             order: [
-            ['updatedAt', 'DESC']
+                ['updatedAt', 'DESC']
             ],
         });
 
@@ -125,19 +123,19 @@ async function getMany(req,res,next){
     }
 }
 
-async function getByUser(req,res,next){
+async function getByUser(req, res, next) {
     const offset = req.params.offset
     const filter = req.params.filter
     try {
         const posts = await Post.findAll({
-            attributes: ['id', 'updatedAt', 'createdAt', 'title', 'description', 'image'], 
-            where:{
+            attributes: ['id', 'updatedAt', 'createdAt', 'title', 'description', 'image'],
+            where: {
                 user_id: filter
-            }, 
-            offset: offset, 
+            },
+            offset: offset,
             limit: 3,
             order: [
-            ['updatedAt', 'DESC']
+                ['updatedAt', 'DESC']
             ],
         });
 
