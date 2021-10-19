@@ -29,8 +29,8 @@ export function EditarPerfil() {
         }
       }
     }
-
     body.append('headers', {"Content-Type": "multipart/form-data"})
+    
     try {
       const edit = (await api.put(`/user/${authServices.getIdFromAccessToken(localStorage.getItem("access-token"))}`, body)).data;
       closeModal()

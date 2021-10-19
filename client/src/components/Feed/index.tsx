@@ -43,22 +43,28 @@ const Feed: React.FC = () => {
 
   async function handleSelector(e) {
     const value = e.target.id.slice(1)
-    setData(prevData => ({ ...prevData, selected: value }));
+    setData(prevData => ({ ...prevData, selected: value, offset: 0 }));
     load(value, 0)
   }
   async function handleArrows(e) {
     const direction = e.target.id
     let value = 0
-    if (direction == "back" && data.offset > 0){
-      value = data.offset - data.posts.length
-      setData(prevData => ({ ...prevData, offset: prevData.offset - data.posts.length}));
-    } else if (direction == "forwards" && data.offset < data.count){
-      value = data.offset + data.posts.length
-      setData(prevData => ({ ...prevData, offset: prevData.offset + data.posts.length}));
+    if (data.selected == "post"){
+      value = 3
+    } else {
+      value = 10
     }
-    console.log(data.offset, data.count)
+
+    if (direction == "back" && data.offset - value >= 0){
+      setData(prevData => ({ ...prevData, offset: prevData.offset - value}));
+  
+    } 
+    if (direction == "forward" && data.offset + value < data.count){
+      setData(prevData => ({ ...prevData, offset: prevData.offset + value}));
+    }
+    console.log(data.offset)
     
-    load(data.selected, value)
+    load(data.selected, data.offset)
   }
 
   return (
@@ -77,7 +83,8 @@ const Feed: React.FC = () => {
                   date={item.updatedAt}
                   image={item.image}
                   description={item.description}
-                  num={index} />
+                  num={index} 
+                  key={index}/>
               );
             }
           }) :
@@ -91,23 +98,24 @@ const Feed: React.FC = () => {
                   avatar={item.reviewer.avatar}
                   score={item.score}
                   description={item.description}
-                  num={index} />
+                  num={index} 
+                  key={index}/>
               );
             } else {
 
             }
           })}
         <ul className="nav-buttons">
-          <li id="back" onClick={handleArrows}>
-            <FaChevronLeft color="#ff9900" fontSize="inherit" />
+          <li id="back" onClick={(e)=>{handleArrows(e)}}>
+            <FaChevronLeft color="#ff9900" fontSize="inherit" id="back"/>
           </li>
           <li>
             <p>
-              {`${Math.floor(data.offset / data.posts.length) + 1}`}
+              {`${Math.floor(data.offset / (data.selected == "post"? 3 : 10)) + 1}`}
             </p>
           </li>
-          <li id="foward" onClick={handleArrows}>
-            <FaChevronRight color="#ff9900" fontSize="inherit" />
+          <li id="forward" onClick={(e)=>{handleArrows(e)}}>
+            <FaChevronRight color="#ff9900" fontSize="inherit" id="forward"/>
           </li>
         </ul>
 
