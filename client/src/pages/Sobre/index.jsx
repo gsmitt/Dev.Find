@@ -26,7 +26,7 @@ export function Sobre() {
                 <div className="cards">
                     <div class="card">
                         <div class="img-bx">
-                            <img src="https://i.postimg.cc/dQ7zWbS5/img-4.jpg" alt="img" />
+                            <img src="https://uploaddeimagens.com.br/images/003/491/427/full/gustavo.jpg?1634609242" alt="img" />
                         </div>
                         <div class="content">
                             <div class="detail">
@@ -45,7 +45,7 @@ export function Sobre() {
                     </div>
                     <div class="card">
                         <div class="img-bx">
-                            <img src="https://i.postimg.cc/dQ7zWbS5/img-4.jpg" alt="img" />
+                            <img src="https://uploaddeimagens.com.br/images/003/491/426/full/jesse.jpg?1634609159" alt="img" />
                         </div>
                         <div class="content">
                             <div class="detail">
@@ -64,7 +64,7 @@ export function Sobre() {
                     </div>
                     <div class="card">
                         <div class="img-bx">
-                            <img src="https://i.postimg.cc/dQ7zWbS5/img-4.jpg" alt="img" />
+                            <img src="https://uploaddeimagens.com.br/images/003/491/432/full/jaion.jpg?1634609415" alt="img" />
                         </div>
                         <div class="content">
                             <div class="detail">
@@ -83,7 +83,7 @@ export function Sobre() {
                     </div>
                     <div class="card">
                         <div class="img-bx">
-                            <img src="https://i.postimg.cc/dQ7zWbS5/img-4.jpg" alt="img" />
+                            <img src="https://uploaddeimagens.com.br/images/003/491/433/full/marcio.jpg?1634609441" alt="img" />
                         </div>
                         <div class="content">
                             <div class="detail">
