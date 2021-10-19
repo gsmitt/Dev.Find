@@ -11,11 +11,6 @@ async function get(req, res, next) {
                 user_get: filter
             }
         });
-        const sum = await Review.sum({
-            where: {
-                user_get: userId
-            }
-        });
 
         const list = await Review.findAll({
             where: {
@@ -26,13 +21,13 @@ async function get(req, res, next) {
                 { model: User, attributes: ["name", "avatar"], as: "reviewer" }
             ],
             offset: offset,
-            limit: 8,
+            limit: 10,
             order: [
                 ['updatedAt', 'DESC']
             ],
         });
 
-        const reviews = {count, list, sum}
+        const reviews = {count, list}
         
 
         console.log(reviews);

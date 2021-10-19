@@ -6,20 +6,28 @@
 .dashboard{
     display: block;
     margin:0 auto 0 auto;
-    width:50%;
+    width:100%;
     position: relative;
     top: 125px;
-    height: 90vh;
+    min-height: 100vh;
     align-items: center;
     justify-content: center;
     font-size: 20px;
     flex-direction: column;
+    margin-bottom: 200px;
+}
+
+.centralizer{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .type-selector{
     display: flex;
     flex-direction: row;
-    width: 50vw;
+    width: 100vw;
 }
 #user{
     border-top-right-radius: 15px;
@@ -58,7 +66,8 @@
 .cards-container{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  justify-items: center;
+    justify-items: center;
+    position: relative;
 }
 
 .image-card{
@@ -92,8 +101,7 @@
     justify-content: center;
     z-index: 0;
     position: relative;
-    margin-left: 25%;
-    width: 500px;
+    width: 375px;
     font-family: 'Roboto Slab', serif;
   }
   
@@ -134,12 +142,6 @@
     width: 270px;
     height: 200px;
     object-fit: cover;
-  }
-
-  .user {
-    /* display: flex;
-    position: relative;
-    bottom: 50px; */
   }
 
   .img-user {
@@ -193,8 +195,40 @@
 /* https://codepen.io/kathykato/pen/dzdgPJ */
 
 @media(min-width: 768px){
-    .card--2{
+  .dashboard{
+    width:50%;
+  } 
+  .card--2{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-    }
+  }
+  .type-selector{
+    display: flex;
+    flex-direction: row;
+    width: 50vw;
+  }
+  .flex-form {
+    display: -webkit-box;
+    display: flex;
+    justify-content: center;
+    z-index: 0;
+    position: relative;
+    margin-left: 25%;
+    width: 500px;
+    font-family: 'Roboto Slab', serif;
+  }
+  .flex-form > * {
+    display: flex;
+    justify-content: center;
+    border: 0;
+    padding: 0 0 0 10px;
+    background: #fff;
+    line-height: 50px;
+    font-size: 1rem;
+    border-radius: 0;
+    outline: 0;
+    -webkit-appearance: none;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 300;
+  }
 }
