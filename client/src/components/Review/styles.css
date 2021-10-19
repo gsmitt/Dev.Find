@@ -3,14 +3,14 @@
   height: 100%;
   place-items: center;
   text-align: center;
-  width: 1000px;
+  width: 1001px;
   background: #ffffff;
   padding: 20px 30px;
   border-bottom: 1px solid #051120;
   border-left: 1px solid #051120;
   border-right: 1px solid #051120;
   align-items: center;
-  margin-left: 452px;
+  margin-left: 12.9%;
 }
 .container__review .post{
   display: none;
@@ -129,10 +129,10 @@ form .btn{
   .container__review{
     border-left: 0px solid #051120;
     border-right: 0px solid #051120;
-    position: relative;
     width: 375px;
     height: 300px;
     right: 452px;
+    margin-left: 0vw;
   }
 
   .star-widget label{

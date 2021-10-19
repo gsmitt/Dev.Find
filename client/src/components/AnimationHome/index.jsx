@@ -45,7 +45,7 @@ export function AnimationHome(props) {
           targets: document.querySelectorAll(".dot1"),
           translateY: {
             value: function(e){
-             return -(window.innerHeight*7.2)/10
+             return -(window.innerHeight*7.6)/10
             },
 
             duration: function (e, i) {
@@ -61,7 +61,7 @@ export function AnimationHome(props) {
           targets: document.querySelectorAll(".dot2"),
           translateY: {
             value: function(e){
-              return -(window.innerHeight*7.2)/10
+              return -(window.innerHeight*7.6)/10
              },
 
             duration: function (e, i) {

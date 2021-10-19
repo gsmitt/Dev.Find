@@ -34,6 +34,7 @@ export function Review() {
 
     async function handleSubmit(e) {
         e.preventDefault();
+        setData(prevData => ({ ...prevData, review: ""}));
         try {
             const review = (await api.post("/review/", {
                 user_get: targetId,

@@ -102,7 +102,7 @@ export function Sobre() {
                     </div>
                     <div class="card">
                         <div class="img-bx">
-                            <img src="https://i.postimg.cc/dQ7zWbS5/img-4.jpg" alt="img" />
+                            <img src="https://uploaddeimagens.com.br/images/003/492/563/full/WhatsApp_Image_2021-10-19_at_10.44.46.jpeg?1634671570" alt="img" />
                         </div>
                         <div class="content">
                             <div class="detail">
